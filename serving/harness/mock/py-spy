@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+# Mock py-spy for harness/dryrun_session.sh: `py-spy record ... -o <file> ...` writes a one-line raw (folded) profile.
+out=""; prev=""; for x in "$@"; do [ "$prev" = "-o" ] && out="$x"; prev="$x"; done
+echo "mock py-spy $*"; sleep 1
+[ -n "$out" ] && echo "process 0:\"sglang::scheduler_TP0_EP0\";event_loop_overlap (scheduler.py:1);run_batch (scheduler.py:2) 1" > "$out"
+exit 0

@@ -1,0 +1,375 @@
+✓ Initialized. View run at 
+https://modal.com/apps/<workspace>/main/ap-FOsPZSLOk6egu4B5J9yHOv
+Building image im-CQK2Df3vYsqkjEeWCq4d4E
+
+=> Step 0: FROM base
+
+=> Step 1: ENV PYTHONPATH=/root/lane/kmask/python
+
+=> Step 2: ENV SGLANG_JIT_CACHE_DIR=/root/kcache/jit
+
+=> Step 3: ENV KMASK_LANE_PY=/root/lane/kmask/python
+
+=> Step 4: ENV KMASK_EXT=/root/lane/kmask_tools/kbranch_adapter.py
+Saving image...
+Image saved, took 6.18s
+
+Built image im-CQK2Df3vYsqkjEeWCq4d4E in 8.70s
+
+
+✓ Created objects.
+├── ✓ Uploaded 
+│   <repo>/serving/h
+│   arness/modal_kmask_ubench.py
+├── ✓ Uploaded 
+│   <repo>/serving/l
+│   anes/kwide2_tools
+├── ✓ Uploaded 
+│   <repo>/serving/l
+│   anes/kmask_tools
+├── ✓ Uploaded 
+│   <repo>/serving/l
+│   anes/kbranch/test
+├── ✓ Uploaded 
+│   <repo>/serving/l
+│   anes/kbranch/python/sglang
+├── ✓ Created Function cpu_compile.
+├── ✓ Created Function cputests.
+└── ✓ Created Function run.
+
+==========
+== CUDA ==
+==========
+
+CUDA Version 13.0.3
+
+Container image Copyright (c) 2016-2023, NVIDIA CORPORATION & AFFILIATES. All rights reserved.
+
+This container image and its contents are governed by the NVIDIA Deep Learning Container License.
+By pulling and using the container, you accept the terms and conditions of this license:
+https://developer.nvidia.com/ngc/nvidia-deep-learning-container-license
+
+A copy of this license is made available in this container at /NGC-DL-CONTAINER-LICENSE for your convenience.
+
+GPU 0: NVIDIA H200 (UUID: GPU-e0685e20-c68f-c708-cb01-cfeeddc90957)
+===== /opt/sglang/bin/python kmask_ubench.py --parts abi,exact,time --out /vol/out/kmask/20261119T075812Z/kmask.json --impls fixp,proto,ext --calib base_s1  (limit 560s)
+2.14.1+cu130 NVIDIA H200 SMs 132
+ABI {"full": {"n_returned": 4, "shapes": [[32, 16, 64], [16, 32], [16, 16, 32, 64], [16, 16, 32]], "dtypes": ["torch.bfloat16", "torch.float32", "torch.float32", "torch.float32"], "static_splits": 16, "dyn_splits": [16, 12, 2, 2], "order_vec": [3, 0, 2, 1]}, "swa": {"n_returned": 4, "shapes": [[32, 16, 64], [16, 32], [6, 16, 32, 64], [6, 16, 32]], "dtypes": ["torch.bfloat16", "torch.float32", "torch.float32", "torch.float32"], "static_splits": 6, "dyn_splits": [6, 2, 6, 6], "order_vec": [2, 2, 2, 2]}}
+== part abi done in 2s
+[exact B=1 p=0 full] base_relfp64=0.00314 badtab=0 gated=1 | base_s1: ulp=0.0 >1ulp=0 rel/base=1.000
+   fixp   a: ulp=1.0 >1ulp=0/8192 rel/base=0.999 det=True fin=True | b: chain6: ulp=1.0 abs=0.00391 branch2: ulp=1.0 abs=0.00781 relfp64=0.00357 fin=True
+   proto  a: ulp=185.0 >1ulp=794/8192 rel/base=0.416 det=True fin=True | b: chain6: ulp=299.6 abs=0.0312 branch2: ulp=351.1 abs=0.0391 relfp64=0.00119 fin=True
+   ext    a: ulp=1.0 >1ulp=0/8192 rel/base=0.999 det=True fin=True | b: chain6: ulp=1.0 abs=0.00391 branch2: ulp=1.0 abs=0.00781 relfp64=0.00357 fin=True
+[exact B=1 p=0 swa] base_relfp64=0.00314 badtab=0 gated=1 | base_s1: ulp=0.0 >1ulp=0 rel/base=1.000
+   fixp   a: ulp=1.0 >1ulp=0/8192 rel/base=0.999 det=True fin=True | b: chain6: ulp=1.0 abs=0.00391 branch2: ulp=1.0 abs=0.00781 relfp64=0.00357 fin=True
+   proto  a: ulp=185.0 >1ulp=794/8192 rel/base=0.416 det=True fin=True | b: chain6: ulp=299.6 abs=0.0312 branch2: ulp=351.1 abs=0.0391 relfp64=0.00119 fin=True
+   ext    a: ulp=1.0 >1ulp=0/8192 rel/base=0.999 det=True fin=True | b: chain6: ulp=1.0 abs=0.00391 branch2: ulp=1.0 abs=0.00781 relfp64=0.00357 fin=True
+[exact B=1 p=5 full] base_relfp64=0.00725 badtab=0 gated=1 | base_s1: ulp=0.0 >1ulp=0 rel/base=1.000
+   fixp   a: ulp=779.0 >1ulp=1523/8192 rel/base=0.706 det=True fin=True | b: chain6: ulp=239.6 abs=0.0469 branch2: ulp=183.1 abs=0.0469 relfp64=0.00384 fin=True
+   proto  a: ulp=433.0 >1ulp=1888/8192 rel/base=0.493 det=True fin=True | b: chain6: ulp=243.6 abs=0.041 branch2: ulp=179.0 abs=0.0391 relfp64=0.00356 fin=True
+   ext    a: ulp=779.0 >1ulp=1523/8192 rel/base=0.706 det=True fin=True | b: chain6: ulp=239.6 abs=0.0469 branch2: ulp=183.1 abs=0.0469 relfp64=0.00384 fin=True
+[exact B=1 p=5 swa] base_relfp64=0.00725 badtab=0 gated=1 | base_s1: ulp=0.0 >1ulp=0 rel/base=1.000
+   fixp   a: ulp=779.0 >1ulp=1523/8192 rel/base=0.706 det=True fin=True | b: chain6: ulp=239.6 abs=0.0469 branch2: ulp=183.1 abs=0.0469 relfp64=0.00384 fin=True
+   proto  a: ulp=433.0 >1ulp=1888/8192 rel/base=0.493 det=True fin=True | b: chain6: ulp=243.6 abs=0.041 branch2: ulp=179.0 abs=0.0391 relfp64=0.00356 fin=True
+   ext    a: ulp=779.0 >1ulp=1523/8192 rel/base=0.706 det=True fin=True | b: chain6: ulp=239.6 abs=0.0469 branch2: ulp=183.1 abs=0.0469 relfp64=0.00384 fin=True
+[exact B=1 p=2040 full] base_relfp64=0.0044 badtab=0 gated=1 | base_s1: ulp=289.0 >1ulp=2978 rel/base=1.743
+   fixp   a: ulp=16.0 >1ulp=23/8192 rel/base=0.999 det=True fin=True | b: chain6: ulp=129.0 abs=0.0156 branch2: ulp=57.4 abs=0.0127 relfp64=0.00439 fin=True
+   proto  a: ulp=129.0 >1ulp=975/8192 rel/base=0.906 det=True fin=True | b: chain6: ulp=3.0 abs=0.00781 branch2: ulp=1.0 abs=0.00781 relfp64=0.00398 fin=True
+   ext    a: ulp=16.0 >1ulp=23/8192 rel/base=0.999 det=True fin=True | b: chain6: ulp=129.0 abs=0.0156 branch2: ulp=57.4 abs=0.0127 relfp64=0.00439 fin=True
+[exact B=1 p=2040 swa] base_relfp64=0.00386 badtab=0 gated=1 | base_s1: ulp=311.5 >1ulp=2922 rel/base=1.942
+   fixp   a: ulp=70.0 >1ulp=1033/8192 rel/base=1.069 det=True fin=True | b: chain6: ulp=70.0 abs=0.0156 branch2: ulp=53.5 abs=0.00781 relfp64=0.00412 fin=True
+   proto  a: ulp=9.0 >1ulp=12/8192 rel/base=1.003 det=True fin=True | b: chain6: ulp=4.0 abs=0.00781 branch2: ulp=1.0 abs=0.00781 relfp64=0.00387 fin=True
+   ext    a: ulp=8.0 >1ulp=11/8192 rel/base=0.999 det=True fin=True | b: chain6: ulp=4.0 abs=0.00391 branch2: ulp=1.0 abs=0.00195 relfp64=0.00387 fin=True
+[exact B=1 p=2048 full] base_relfp64=0.00451 badtab=0 gated=1 | base_s1: ulp=336.0 >1ulp=2886 rel/base=1.679
+   fixp   a: ulp=1.0 >1ulp=0/8192 rel/base=1.000 det=True fin=True | b: chain6: ulp=150.0 abs=0.0312 branch2: ulp=88.0 abs=0.00781 relfp64=0.00451 fin=True
+   proto  a: ulp=150.0 >1ulp=961/8192 rel/base=0.866 det=True fin=True | b: chain6: ulp=1.0 abs=0.00781 branch2: ulp=1.0 abs=0.00781 relfp64=0.00389 fin=True
+   ext    a: ulp=1.0 >1ulp=0/8192 rel/base=1.000 det=True fin=True | b: chain6: ulp=150.0 abs=0.0312 branch2: ulp=88.0 abs=0.00781 relfp64=0.00451 fin=True
+[exact B=1 p=2048 swa] base_relfp64=0.00469 badtab=0 gated=1 | base_s1: ulp=245.0 >1ulp=2970 rel/base=1.704
+   fixp   a: ulp=150.5 >1ulp=1269/8192 rel/base=0.993 det=True fin=True | b: chain6: ulp=150.5 abs=0.0195 branch2: ulp=69.0 abs=0.00879 relfp64=0.00465 fin=True
+   proto  a: ulp=4.0 >1ulp=4/8192 rel/base=1.003 det=True fin=True | b: chain6: ulp=4.0 abs=0.00781 branch2: ulp=17.0 abs=0.00781 relfp64=0.00471 fin=True
+   ext    a: ulp=4.0 >1ulp=4/8192 rel/base=1.000 det=True fin=True | b: chain6: ulp=4.0 abs=0.00195 branch2: ulp=16.1 abs=0.00781 relfp64=0.00469 fin=True
+[exact B=1 p=2100 full] base_relfp64=0.00449 badtab=0 gated=1 | base_s1: ulp=220.5 >1ulp=2890 rel/base=1.667
+   fixp   a: ulp=21.2 >1ulp=10/8192 rel/base=0.999 det=True fin=True | b: chain6: ulp=150.0 abs=0.0312 branch2: ulp=88.0 abs=0.00781 relfp64=0.0045 fin=True
+   proto  a: ulp=150.0 >1ulp=953/8192 rel/base=0.869 det=True fin=True | b: chain6: ulp=2.0 abs=0.00391 branch2: ulp=1.0 abs=0.00781 relfp64=0.00388 fin=True
+   ext    a: ulp=21.2 >1ulp=10/8192 rel/base=0.999 det=True fin=True | b: chain6: ulp=150.0 abs=0.0312 branch2: ulp=88.0 abs=0.00781 relfp64=0.0045 fin=True
+[exact B=1 p=2100 swa] base_relfp64=0.00427 badtab=0 gated=1 | base_s1: ulp=494.0 >1ulp=2988 rel/base=1.849
+   fixp   a: ulp=156.6 >1ulp=1208/8192 rel/base=1.057 det=True fin=True | b: chain6: ulp=156.6 abs=0.0215 branch2: ulp=72.0 abs=0.00781 relfp64=0.00451 fin=True
+   proto  a: ulp=20.1 >1ulp=7/8192 rel/base=1.006 det=True fin=True | b: chain6: ulp=2.0 abs=0.00781 branch2: ulp=54.0 abs=0.00781 relfp64=0.00428 fin=True
+   ext    a: ulp=8.8 >1ulp=4/8192 rel/base=1.000 det=True fin=True | b: chain6: ulp=2.0 abs=0.00391 branch2: ulp=54.0 abs=0.00781 relfp64=0.00427 fin=True
+[exact B=1 p=70000 full] base_relfp64=0.00239 badtab=0 gated=1 | base_s1: ulp=288.5 >1ulp=3770 rel/base=3.632
+   fixp   a: ulp=1.0 >1ulp=0/8192 rel/base=1.000 det=True fin=True | b: chain6: ulp=1.0 abs=0.000977 branch2: ulp=0.0 abs=4.77e-07 relfp64=0.00239 fin=True
+   proto  a: ulp=1.0 >1ulp=0/8192 rel/base=1.000 det=True fin=True | b: chain6: ulp=1.0 abs=0.00195 branch2: ulp=0.0 abs=0 relfp64=0.00239 fin=True
+   ext    a: ulp=1.0 >1ulp=0/8192 rel/base=1.000 det=True fin=True | b: chain6: ulp=1.0 abs=0.000977 branch2: ulp=0.0 abs=4.77e-07 relfp64=0.00239 fin=True
+[exact B=1 p=70000 swa] base_relfp64=0.00428 badtab=0 gated=1 | base_s1: ulp=382.5 >1ulp=3039 rel/base=1.921
+   fixp   a: ulp=145.0 >1ulp=1041/8192 rel/base=1.038 det=True fin=True | b: chain6: ulp=145.0 abs=0.0117 branch2: ulp=90.5 abs=0.00781 relfp64=0.00445 fin=True
+   proto  a: ulp=9.8 >1ulp=6/8192 rel/base=1.003 det=True fin=True | b: chain6: ulp=3.0 abs=0.00391 branch2: ulp=51.5 abs=0.00781 relfp64=0.0043 fin=True
+   ext    a: ulp=5.6 >1ulp=7/8192 rel/base=1.000 det=True fin=True | b: chain6: ulp=3.0 abs=0.00195 branch2: ulp=51.5 abs=0.00781 relfp64=0.00428 fin=True
+[exact B=1 p=100000 full] base_relfp64=0.00205 badtab=0 gated=1 | base_s1: ulp=247.8 >1ulp=3547 rel/base=3.716
+   fixp   a: ulp=1.0 >1ulp=0/8192 rel/base=1.000 det=True fin=True | b: chain6: ulp=1.0 abs=0.000488 branch2: ulp=0.0 abs=0 relfp64=0.00205 fin=True
+   proto  a: ulp=1.0 >1ulp=0/8192 rel/base=1.000 det=True fin=True | b: chain6: ulp=1.0 abs=0.00391 branch2: ulp=1.0 abs=0.00391 relfp64=0.00205 fin=True
+   ext    a: ulp=1.0 >1ulp=0/8192 rel/base=1.000 det=True fin=True | b: chain6: ulp=1.0 abs=0.000488 branch2: ulp=0.0 abs=0 relfp64=0.00205 fin=True
+[exact B=1 p=100000 swa] base_relfp64=0.00413 badtab=0 gated=1 | base_s1: ulp=340.7 >1ulp=3156 rel/base=1.813
+   fixp   a: ulp=274.7 >1ulp=1182/8192 rel/base=1.071 det=True fin=True | b: chain6: ulp=258.0 abs=0.0312 branch2: ulp=265.5 abs=0.0234 relfp64=0.00441 fin=True
+   proto  a: ulp=1.0 >1ulp=0/8192 rel/base=1.002 det=True fin=True | b: chain6: ulp=1.0 abs=0.00781 branch2: ulp=993.1 abs=0.104 relfp64=0.00735 fin=True
+   ext    a: ulp=1.0 >1ulp=0/8192 rel/base=1.000 det=True fin=True | b: chain6: ulp=1.0 abs=0.00781 branch2: ulp=12.0 abs=0.00781 relfp64=0.00412 fin=True
+[exact B=1 p=mixed full] base_relfp64=0.00314 badtab=0 gated=1 | base_s1: ulp=0.0 >1ulp=0 rel/base=1.000
+   fixp   a: ulp=1.0 >1ulp=0/8192 rel/base=0.999 det=True fin=True | b: chain6: ulp=1.0 abs=0.00391 branch2: ulp=1.0 abs=0.00781 relfp64=0.00357 fin=True
+   proto  a: ulp=185.0 >1ulp=794/8192 rel/base=0.416 det=True fin=True | b: chain6: ulp=299.6 abs=0.0312 branch2: ulp=351.1 abs=0.0391 relfp64=0.00119 fin=True
+   ext    a: ulp=1.0 >1ulp=0/8192 rel/base=0.999 det=True fin=True | b: chain6: ulp=1.0 abs=0.00391 branch2: ulp=1.0 abs=0.00781 relfp64=0.00357 fin=True
+[exact B=1 p=mixed swa] base_relfp64=0.00314 badtab=0 gated=1 | base_s1: ulp=0.0 >1ulp=0 rel/base=1.000
+   fixp   a: ulp=1.0 >1ulp=0/8192 rel/base=0.999 det=True fin=True | b: chain6: ulp=1.0 abs=0.00391 branch2: ulp=1.0 abs=0.00781 relfp64=0.00357 fin=True
+   proto  a: ulp=185.0 >1ulp=794/8192 rel/base=0.416 det=True fin=True | b: chain6: ulp=299.6 abs=0.0312 branch2: ulp=351.1 abs=0.0391 relfp64=0.00119 fin=True
+   ext    a: ulp=1.0 >1ulp=0/8192 rel/base=0.999 det=True fin=True | b: chain6: ulp=1.0 abs=0.00391 branch2: ulp=1.0 abs=0.00781 relfp64=0.00357 fin=True
+[exact B=4 p=0 full] base_relfp64=0.00471 badtab=0 gated=2 | base_s1: ulp=0.0 >1ulp=0 rel/base=1.000
+   fixp   a: ulp=10.0 >1ulp=17/32768 rel/base=0.999 det=True fin=True | b: chain6: ulp=1.0 abs=0.0156 branch2: ulp=1.0 abs=0.0156 ungated: ulp=10.0 abs=0.0156 relfp64=0.00419 fin=True
+   proto  a: ulp=438.5 >1ulp=5315/32768 rel/base=0.290 det=True fin=True | b: chain6: ulp=343.0 abs=0.0391 branch2: ulp=214.5 abs=0.0312 ungated: ulp=438.5 abs=0.0469 relfp64=0.00131 fin=True
+   ext    a: ulp=10.0 >1ulp=17/32768 rel/base=0.999 det=True fin=True | b: chain6: ulp=1.0 abs=0.0156 branch2: ulp=1.0 abs=0.0156 ungated: ulp=10.0 abs=0.0156 relfp64=0.00419 fin=True
+[exact B=4 p=0 swa] base_relfp64=0.00471 badtab=0 gated=2 | base_s1: ulp=0.0 >1ulp=0 rel/base=1.000
+   fixp   a: ulp=10.0 >1ulp=17/32768 rel/base=0.999 det=True fin=True | b: chain6: ulp=1.0 abs=0.00781 branch2: ulp=1.0 abs=0.0156 ungated: ulp=10.0 abs=0.0156 relfp64=0.00416 fin=True
+   proto  a: ulp=438.5 >1ulp=5315/32768 rel/base=0.290 det=True fin=True | b: chain6: ulp=303.0 abs=0.0391 branch2: ulp=214.5 abs=0.0352 ungated: ulp=438.5 abs=0.0469 relfp64=0.00132 fin=True
+   ext    a: ulp=10.0 >1ulp=17/32768 rel/base=0.999 det=True fin=True | b: chain6: ulp=1.0 abs=0.00781 branch2: ulp=1.0 abs=0.0156 ungated: ulp=10.0 abs=0.0156 relfp64=0.00416 fin=True
+[exact B=4 p=5 full] base_relfp64=0.00682 badtab=0 gated=3 | base_s1: ulp=0.0 >1ulp=0 rel/base=1.000
+   fixp   a: ulp=417.0 >1ulp=4638/32768 rel/base=0.809 det=True fin=True | b: chain6: ulp=378.0 abs=0.0547 branch2: ulp=297.5 abs=0.0391 ungated: ulp=417.0 abs=0.0469 relfp64=0.00582 fin=True
+   proto  a: ulp=562.0 >1ulp=5626/32768 rel/base=0.689 det=True fin=True | b: chain6: ulp=394.0 abs=0.0508 branch2: ulp=303.5 abs=0.0391 ungated: ulp=562.0 abs=0.0547 relfp64=0.00539 fin=True
+   ext    a: ulp=417.0 >1ulp=4638/32768 rel/base=0.809 det=True fin=True | b: chain6: ulp=378.0 abs=0.0547 branch2: ulp=297.5 abs=0.0391 ungated: ulp=417.0 abs=0.0469 relfp64=0.00582 fin=True
+[exact B=4 p=5 swa] base_relfp64=0.00682 badtab=0 gated=3 | base_s1: ulp=0.0 >1ulp=0 rel/base=1.000
+   fixp   a: ulp=417.0 >1ulp=4638/32768 rel/base=0.809 det=True fin=True | b: chain6: ulp=378.0 abs=0.0547 branch2: ulp=292.8 abs=0.0391 ungated: ulp=417.0 abs=0.0469 relfp64=0.00575 fin=True
+   proto  a: ulp=562.0 >1ulp=5626/32768 rel/base=0.689 det=True fin=True | b: chain6: ulp=394.0 abs=0.0508 branch2: ulp=300.8 abs=0.0391 ungated: ulp=562.0 abs=0.0547 relfp64=0.0053 fin=True
+   ext    a: ulp=417.0 >1ulp=4638/32768 rel/base=0.809 det=True fin=True | b: chain6: ulp=378.0 abs=0.0547 branch2: ulp=292.8 abs=0.0391 ungated: ulp=417.0 abs=0.0469 relfp64=0.00575 fin=True
+[exact B=4 p=2040 full] base_relfp64=0.00333 badtab=0 gated=2 | base_s1: ulp=378.0 >1ulp=10752 rel/base=2.007
+   fixp   a: ulp=20.0 >1ulp=31/32768 rel/base=1.000 det=True fin=True | b: chain6: ulp=183.5 abs=0.0156 branch2: ulp=197.0 abs=0.0312 ungated: ulp=8.2 abs=0.0156 relfp64=0.00333 fin=True
+   proto  a: ulp=25.0 >1ulp=29/32768 rel/base=1.007 det=True fin=True | b: chain6: ulp=183.5 abs=0.0156 branch2: ulp=197.0 abs=0.0312 ungated: ulp=25.0 abs=0.0156 relfp64=0.00334 fin=True
+   ext    a: ulp=20.0 >1ulp=31/32768 rel/base=1.000 det=True fin=True | b: chain6: ulp=183.5 abs=0.0156 branch2: ulp=197.0 abs=0.0312 ungated: ulp=8.2 abs=0.0156 relfp64=0.00333 fin=True
+[exact B=4 p=2040 swa] base_relfp64=0.0038 badtab=0 gated=1 | base_s1: ulp=345.0 >1ulp=11349 rel/base=1.885
+   fixp   a: ulp=175.6 >1ulp=4137/32768 rel/base=1.081 det=True fin=True | b: chain6: ulp=146.0 abs=0.0234 branch2: ulp=44.5 abs=0.0176 ungated: ulp=175.6 abs=0.0234 relfp64=0.00411 fin=True
+   proto  a: ulp=13.5 >1ulp=50/32768 rel/base=1.002 det=True fin=True | b: chain6: ulp=8.5 abs=0.00781 branch2: ulp=1.0 abs=0.00391 ungated: ulp=13.5 abs=0.0156 relfp64=0.00381 fin=True
+   ext    a: ulp=20.5 >1ulp=50/32768 rel/base=0.999 det=True fin=True | b: chain6: ulp=6.5 abs=0.00391 branch2: ulp=1.0 abs=6.1e-05 ungated: ulp=20.5 abs=0.00781 relfp64=0.0038 fin=True
+[exact B=4 p=2048 full] base_relfp64=0.00335 badtab=0 gated=3 | base_s1: ulp=379.0 >1ulp=10933 rel/base=2.036
+   fixp   a: ulp=1.0 >1ulp=0/32768 rel/base=1.000 det=True fin=True | b: chain6: ulp=172.0 abs=0.0312 branch2: ulp=195.0 abs=0.0312 ungated: ulp=1.0 abs=0.00391 relfp64=0.00334 fin=True
+   proto  a: ulp=2.0 >1ulp=6/32768 rel/base=1.005 det=True fin=True | b: chain6: ulp=172.0 abs=0.0312 branch2: ulp=195.0 abs=0.0312 ungated: ulp=1.4 abs=0.00781 relfp64=0.00334 fin=True
+   ext    a: ulp=1.0 >1ulp=0/32768 rel/base=1.000 det=True fin=True | b: chain6: ulp=172.0 abs=0.0312 branch2: ulp=195.0 abs=0.0312 ungated: ulp=1.0 abs=0.00391 relfp64=0.00334 fin=True
+[exact B=4 p=2048 swa] base_relfp64=0.00396 badtab=0 gated=1 | base_s1: ulp=313.0 >1ulp=11253 rel/base=1.825
+   fixp   a: ulp=198.8 >1ulp=4085/32768 rel/base=1.057 det=True fin=True | b: chain6: ulp=198.8 abs=0.0234 branch2: ulp=38.3 abs=0.0176 ungated: ulp=172.4 abs=0.0195 relfp64=0.0042 fin=True
+   proto  a: ulp=11.8 >1ulp=24/32768 rel/base=1.005 det=True fin=True | b: chain6: ulp=17.0 abs=0.00781 branch2: ulp=160.0 abs=0.0371 ungated: ulp=7.0 abs=0.0156 relfp64=0.00444 fin=True
+   ext    a: ulp=12.1 >1ulp=23/32768 rel/base=0.999 det=True fin=True | b: chain6: ulp=12.2 abs=0.00391 branch2: ulp=30.8 abs=0.00781 ungated: ulp=5.0 abs=0.00781 relfp64=0.00396 fin=True
+[exact B=4 p=2100 full] base_relfp64=0.00345 badtab=0 gated=3 | base_s1: ulp=398.0 >1ulp=11135 rel/base=2.138
+   fixp   a: ulp=3.0 >1ulp=7/32768 rel/base=1.000 det=True fin=True | b: chain6: ulp=106.9 abs=0.0156 branch2: ulp=211.5 abs=0.0195 ungated: ulp=1.6 abs=0.00391 relfp64=0.00345 fin=True
+   proto  a: ulp=4.0 >1ulp=14/32768 rel/base=1.009 det=True fin=True | b: chain6: ulp=107.9 abs=0.0156 branch2: ulp=211.5 abs=0.0156 ungated: ulp=3.5 abs=0.0156 relfp64=0.00348 fin=True
+   ext    a: ulp=3.0 >1ulp=7/32768 rel/base=1.000 det=True fin=True | b: chain6: ulp=106.9 abs=0.0156 branch2: ulp=211.5 abs=0.0195 ungated: ulp=1.6 abs=0.00391 relfp64=0.00345 fin=True
+[exact B=4 p=2100 swa] base_relfp64=0.00381 badtab=0 gated=2 | base_s1: ulp=308.8 >1ulp=10900 rel/base=1.977
+   fixp   a: ulp=181.0 >1ulp=3898/32768 rel/base=1.064 det=True fin=True | b: chain6: ulp=181.0 abs=0.0254 branch2: ulp=72.0 abs=0.0156 ungated: ulp=121.0 abs=0.0312 relfp64=0.00406 fin=True
+   proto  a: ulp=11.0 >1ulp=19/32768 rel/base=1.006 det=True fin=True | b: chain6: ulp=11.0 abs=0.00781 branch2: ulp=17451.8 abs=1.07 ungated: ulp=1.5 abs=0.00781 relfp64=0.0125 fin=True
+   ext    a: ulp=10.5 >1ulp=18/32768 rel/base=1.000 det=True fin=True | b: chain6: ulp=10.5 abs=0.00781 branch2: ulp=52.4 abs=0.0156 ungated: ulp=2.0 abs=0.00781 relfp64=0.00381 fin=True
+[exact B=4 p=70000 full] base_relfp64=0.00345 badtab=0 gated=3 | base_s1: ulp=275.5 >1ulp=14706 rel/base=2.303
+   fixp   a: ulp=1.0 >1ulp=0/32768 rel/base=1.000 det=True fin=True | b: chain6: ulp=124.0 abs=0.0195 branch2: ulp=184.0 abs=0.0156 ungated: ulp=1.0 abs=0.00391 relfp64=0.00345 fin=True
+   proto  a: ulp=1.0 >1ulp=0/32768 rel/base=1.001 det=True fin=True | b: chain6: ulp=124.0 abs=0.0195 branch2: ulp=184.0 abs=0.0156 ungated: ulp=1.0 abs=0.00391 relfp64=0.00345 fin=True
+   ext    a: ulp=1.0 >1ulp=0/32768 rel/base=1.000 det=True fin=True | b: chain6: ulp=124.0 abs=0.0195 branch2: ulp=184.0 abs=0.0156 ungated: ulp=1.0 abs=0.00391 relfp64=0.00345 fin=True
+[exact B=4 p=70000 swa] base_relfp64=0.00369 badtab=0 gated=2 | base_s1: ulp=523.3 >1ulp=11052 rel/base=1.856
+   fixp   a: ulp=186.0 >1ulp=3905/32768 rel/base=1.093 det=True fin=True | b: chain6: ulp=149.0 abs=0.0273 branch2: ulp=100.5 abs=0.0117 ungated: ulp=186.0 abs=0.0273 relfp64=0.00403 fin=True
+   proto  a: ulp=28.4 >1ulp=26/32768 rel/base=1.003 det=True fin=True | b: chain6: ulp=28.4 abs=0.00781 branch2: ulp=11.5 abs=0.0156 ungated: ulp=3.5 abs=0.0156 relfp64=0.00369 fin=True
+   ext    a: ulp=29.1 >1ulp=22/32768 rel/base=0.999 det=True fin=True | b: chain6: ulp=29.1 abs=0.00781 branch2: ulp=5.5 abs=0.00781 ungated: ulp=1.2 abs=0.00781 relfp64=0.00368 fin=True
+[exact B=4 p=100000 full] base_relfp64=0.00317 badtab=0 gated=3 | base_s1: ulp=257.5 >1ulp=14212 rel/base=2.332
+   fixp   a: ulp=1.0 >1ulp=0/32768 rel/base=1.000 det=True fin=True | b: chain6: ulp=101.6 abs=0.0117 branch2: ulp=61.2 abs=0.0195 ungated: ulp=0.2 abs=1.53e-05 relfp64=0.00317 fin=True
+   proto  a: ulp=1.0 >1ulp=0/32768 rel/base=1.001 det=True fin=True | b: chain6: ulp=101.6 abs=0.0117 branch2: ulp=61.2 abs=0.0195 ungated: ulp=1.0 abs=0.00781 relfp64=0.00317 fin=True
+   ext    a: ulp=1.0 >1ulp=0/32768 rel/base=1.000 det=True fin=True | b: chain6: ulp=101.6 abs=0.0117 branch2: ulp=61.2 abs=0.0195 ungated: ulp=0.2 abs=1.53e-05 relfp64=0.00317 fin=True
+[exact B=4 p=100000 swa] base_relfp64=0.0038 badtab=0 gated=2 | base_s1: ulp=433.0 >1ulp=10920 rel/base=1.821
+   fixp   a: ulp=150.5 >1ulp=3750/32768 rel/base=1.114 det=True fin=True | b: chain6: ulp=150.5 abs=0.0234 branch2: ulp=87.5 abs=0.0156 ungated: ulp=77.2 abs=0.0332 relfp64=0.00423 fin=True
+   proto  a: ulp=5.0 >1ulp=12/32768 rel/base=1.004 det=True fin=True | b: chain6: ulp=3.2 abs=0.0156 branch2: ulp=5519.0 abs=0.337 ungated: ulp=5.0 abs=0.00781 relfp64=0.00385 fin=True
+   ext    a: ulp=3.2 >1ulp=6/32768 rel/base=1.000 det=True fin=True | b: chain6: ulp=3.2 abs=0.00195 branch2: ulp=44.0 abs=0.0156 ungated: ulp=3.0 abs=0.00391 relfp64=0.0038 fin=True
+[exact B=4 p=mixed full] base_relfp64=0.00513 badtab=0 gated=2 | base_s1: ulp=559.0 >1ulp=5519 rel/base=1.150
+   fixp   a: ulp=446.4 >1ulp=1195/32768 rel/base=0.881 det=True fin=True | b: chain6: ulp=119.5 abs=0.0156 branch2: ulp=32.0 abs=0.0156 ungated: ulp=446.4 abs=0.0703 relfp64=0.0047 fin=True
+   proto  a: ulp=488.4 >1ulp=2763/32768 rel/base=0.629 det=True fin=True | b: chain6: ulp=278.5 abs=0.0391 branch2: ulp=398.5 abs=0.0332 ungated: ulp=488.4 abs=0.0703 relfp64=0.00324 fin=True
+   ext    a: ulp=446.4 >1ulp=1195/32768 rel/base=0.881 det=True fin=True | b: chain6: ulp=119.5 abs=0.0156 branch2: ulp=32.0 abs=0.0156 ungated: ulp=446.4 abs=0.0703 relfp64=0.0047 fin=True
+[exact B=4 p=mixed swa] base_relfp64=0.00534 badtab=0 gated=2 | base_s1: ulp=370.0 >1ulp=5452 rel/base=1.122
+   fixp   a: ulp=360.0 >1ulp=3455/32768 rel/base=0.866 det=True fin=True | b: chain6: ulp=97.8 abs=0.0156 branch2: ulp=152.8 abs=0.0156 ungated: ulp=360.0 abs=0.0859 relfp64=0.00472 fin=True
+   proto  a: ulp=347.0 >1ulp=2936/32768 rel/base=0.622 det=True fin=True | b: chain6: ulp=190.0 abs=0.0469 branch2: ulp=101.0 abs=0.0469 ungated: ulp=345.0 abs=0.0469 relfp64=0.00332 fin=True
+   ext    a: ulp=360.0 >1ulp=1434/32768 rel/base=0.854 det=True fin=True | b: chain6: ulp=28.0 abs=0.00781 branch2: ulp=1.0 abs=0.00781 ungated: ulp=360.0 abs=0.0859 relfp64=0.00466 fin=True
+[exact B=16 p=0 full] base_relfp64=0.00491 badtab=0 gated=12 | base_s1: ulp=0.0 >1ulp=0 rel/base=1.000
+   fixp   a: ulp=1112.0 >1ulp=271/131072 rel/base=1.001 det=True fin=True | b: chain6: ulp=45.0 abs=0.0312 branch2: ulp=422.0 abs=0.0625 ungated: ulp=58.0 abs=0.0742 relfp64=0.00503 fin=True
+   proto  a: ulp=558.0 >1ulp=22716/131072 rel/base=0.275 det=True fin=True | b: chain6: ulp=497.0 abs=0.0625 branch2: ulp=558.7 abs=0.0469 ungated: ulp=315.5 abs=0.0469 relfp64=0.00132 fin=True
+   ext    a: ulp=1112.0 >1ulp=271/131072 rel/base=1.001 det=True fin=True | b: chain6: ulp=45.0 abs=0.0312 branch2: ulp=422.0 abs=0.0625 ungated: ulp=58.0 abs=0.0742 relfp64=0.00503 fin=True
+[exact B=16 p=0 swa] base_relfp64=0.00491 badtab=0 gated=14 | base_s1: ulp=0.0 >1ulp=0 rel/base=1.000
+   fixp   a: ulp=1112.0 >1ulp=271/131072 rel/base=1.001 det=True fin=True | b: chain6: ulp=260.0 abs=0.041 branch2: ulp=162.8 abs=0.0199 ungated: ulp=2.0 abs=0.0156 relfp64=0.00437 fin=True
+   proto  a: ulp=558.0 >1ulp=22716/131072 rel/base=0.275 det=True fin=True | b: chain6: ulp=351.0 abs=0.0625 branch2: ulp=476.0 abs=0.0469 ungated: ulp=541.5 abs=0.0469 relfp64=0.00127 fin=True
+   ext    a: ulp=1112.0 >1ulp=271/131072 rel/base=1.001 det=True fin=True | b: chain6: ulp=260.0 abs=0.041 branch2: ulp=162.8 abs=0.0199 ungated: ulp=2.0 abs=0.0156 relfp64=0.00437 fin=True
+[exact B=16 p=5 full] base_relfp64=0.00661 badtab=0 gated=12 | base_s1: ulp=0.0 >1ulp=0 rel/base=1.000
+   fixp   a: ulp=534.0 >1ulp=14296/131072 rel/base=0.806 det=True fin=True | b: chain6: ulp=546.0 abs=0.0625 branch2: ulp=395.5 abs=0.0522 ungated: ulp=534.0 abs=0.0664 relfp64=0.0051 fin=True
+   proto  a: ulp=566.0 >1ulp=15501/131072 rel/base=0.726 det=True fin=True | b: chain6: ulp=588.0 abs=0.0625 branch2: ulp=437.0 abs=0.0522 ungated: ulp=566.0 abs=0.0547 relfp64=0.00481 fin=True
+   ext    a: ulp=534.0 >1ulp=14296/131072 rel/base=0.806 det=True fin=True | b: chain6: ulp=546.0 abs=0.0625 branch2: ulp=395.5 abs=0.0522 ungated: ulp=534.0 abs=0.0664 relfp64=0.0051 fin=True
+[exact B=16 p=5 swa] base_relfp64=0.00661 badtab=0 gated=14 | base_s1: ulp=0.0 >1ulp=0 rel/base=1.000
+   fixp   a: ulp=703.5 >1ulp=15139/131072 rel/base=0.752 det=True fin=True | b: chain6: ulp=703.5 abs=0.0645 branch2: ulp=271.0 abs=0.0547 ungated: ulp=484.5 abs=0.0547 relfp64=0.00503 fin=True
+   proto  a: ulp=703.5 >1ulp=16202/131072 rel/base=0.670 det=True fin=True | b: chain6: ulp=703.5 abs=0.0645 branch2: ulp=283.0 abs=0.0508 ungated: ulp=492.5 abs=0.0547 relfp64=0.00475 fin=True
+   ext    a: ulp=703.5 >1ulp=15139/131072 rel/base=0.752 det=True fin=True | b: chain6: ulp=703.5 abs=0.0645 branch2: ulp=271.0 abs=0.0547 ungated: ulp=484.5 abs=0.0547 relfp64=0.00503 fin=True
+[exact B=16 p=2040 full] base_relfp64=0.00484 badtab=0 gated=13 | base_s1: ulp=444.7 >1ulp=39042 rel/base=1.528
+   fixp   a: ulp=236.0 >1ulp=2905/131072 rel/base=0.949 det=True fin=True | b: chain6: ulp=278.0 abs=0.0332 branch2: ulp=238.4 abs=0.0469 ungated: ulp=208.5 abs=0.0391 relfp64=0.0046 fin=True
+   proto  a: ulp=236.0 >1ulp=2935/131072 rel/base=0.953 det=True fin=True | b: chain6: ulp=278.0 abs=0.0332 branch2: ulp=239.4 abs=0.0469 ungated: ulp=208.5 abs=0.0391 relfp64=0.00461 fin=True
+   ext    a: ulp=236.0 >1ulp=2905/131072 rel/base=0.949 det=True fin=True | b: chain6: ulp=278.0 abs=0.0332 branch2: ulp=238.4 abs=0.0469 ungated: ulp=208.5 abs=0.0391 relfp64=0.0046 fin=True
+[exact B=16 p=2040 swa] base_relfp64=0.00511 badtab=0 gated=13 | base_s1: ulp=410.9 >1ulp=37726 rel/base=1.405
+   fixp   a: ulp=455.0 >1ulp=21851/131072 rel/base=0.970 det=True fin=True | b: chain6: ulp=20.0 abs=0.00781 branch2: ulp=86.5 abs=0.0156 ungated: ulp=217.0 abs=0.0508 relfp64=0.00495 fin=True
+   proto  a: ulp=455.0 >1ulp=21934/131072 rel/base=0.974 det=True fin=True | b: chain6: ulp=19.0 abs=0.0156 branch2: ulp=528.0 abs=0.152 ungated: ulp=217.0 abs=0.0508 relfp64=0.00497 fin=True
+   ext    a: ulp=455.0 >1ulp=21851/131072 rel/base=0.970 det=True fin=True | b: chain6: ulp=20.0 abs=0.00781 branch2: ulp=86.5 abs=0.0156 ungated: ulp=217.0 abs=0.0508 relfp64=0.00495 fin=True
+[exact B=16 p=2048 full] base_relfp64=0.00523 badtab=0 gated=14 | base_s1: ulp=431.0 >1ulp=38570 rel/base=1.361
+   fixp   a: ulp=148.0 >1ulp=1573/131072 rel/base=0.954 det=True fin=True | b: chain6: ulp=262.0 abs=0.0352 branch2: ulp=380.0 abs=0.0391 ungated: ulp=110.0 abs=0.0117 relfp64=0.00499 fin=True
+   proto  a: ulp=147.5 >1ulp=1616/131072 rel/base=0.960 det=True fin=True | b: chain6: ulp=262.0 abs=0.0352 branch2: ulp=380.0 abs=0.0391 ungated: ulp=94.0 abs=0.0117 relfp64=0.00501 fin=True
+   ext    a: ulp=148.0 >1ulp=1573/131072 rel/base=0.954 det=True fin=True | b: chain6: ulp=262.0 abs=0.0352 branch2: ulp=380.0 abs=0.0391 ungated: ulp=110.0 abs=0.0117 relfp64=0.00499 fin=True
+[exact B=16 p=2048 swa] base_relfp64=0.0047 badtab=0 gated=10 | base_s1: ulp=558.0 >1ulp=39196 rel/base=1.528
+   fixp   a: ulp=440.0 >1ulp=24535/131072 rel/base=0.932 det=True fin=True | b: chain6: ulp=475.8 abs=0.0547 branch2: ulp=293.5 abs=0.0234 ungated: ulp=243.5 abs=0.0312 relfp64=0.00438 fin=True
+   proto  a: ulp=440.0 >1ulp=24600/131072 rel/base=0.935 det=True fin=True | b: chain6: ulp=475.8 abs=0.0547 branch2: ulp=1891.0 abs=0.225 ungated: ulp=243.5 abs=0.0312 relfp64=0.0112 fin=True
+   ext    a: ulp=440.0 >1ulp=24535/131072 rel/base=0.932 det=True fin=True | b: chain6: ulp=475.8 abs=0.0547 branch2: ulp=293.5 abs=0.0234 ungated: ulp=243.5 abs=0.0312 relfp64=0.00438 fin=True
+[exact B=16 p=2100 full] base_relfp64=0.00463 badtab=0 gated=11 | base_s1: ulp=405.0 >1ulp=38048 rel/base=1.485
+   fixp   a: ulp=42.0 >1ulp=254/131072 rel/base=0.998 det=True fin=True | b: chain6: ulp=312.5 abs=0.0312 branch2: ulp=198.2 abs=0.0312 ungated: ulp=38.9 abs=0.00781 relfp64=0.00462 fin=True
+   proto  a: ulp=40.6 >1ulp=259/131072 rel/base=1.001 det=True fin=True | b: chain6: ulp=312.5 abs=0.0312 branch2: ulp=198.2 abs=0.0312 ungated: ulp=40.6 abs=0.0156 relfp64=0.00463 fin=True
+   ext    a: ulp=42.0 >1ulp=254/131072 rel/base=0.998 det=True fin=True | b: chain6: ulp=312.5 abs=0.0312 branch2: ulp=198.2 abs=0.0312 ungated: ulp=38.9 abs=0.00781 relfp64=0.00462 fin=True
+[exact B=16 p=2100 swa] base_relfp64=0.00498 badtab=0 gated=11 | base_s1: ulp=462.0 >1ulp=38455 rel/base=1.497
+   fixp   a: ulp=416.0 >1ulp=23644/131072 rel/base=0.878 det=True fin=True | b: chain6: ulp=21.0 abs=0.00781 branch2: ulp=91.1 abs=0.0156 ungated: ulp=416.0 abs=0.0469 relfp64=0.00438 fin=True
+   proto  a: ulp=416.0 >1ulp=23714/131072 rel/base=0.880 det=True fin=True | b: chain6: ulp=21.0 abs=0.0156 branch2: ulp=2164.0 abs=0.274 ungated: ulp=416.0 abs=0.0469 relfp64=0.00444 fin=True
+   ext    a: ulp=416.0 >1ulp=23644/131072 rel/base=0.878 det=True fin=True | b: chain6: ulp=21.0 abs=0.00781 branch2: ulp=91.1 abs=0.0156 ungated: ulp=416.0 abs=0.0469 relfp64=0.00438 fin=True
+[exact B=16 p=70000 full] base_relfp64=0.00451 badtab=0 gated=12 | base_s1: ulp=556.0 >1ulp=49864 rel/base=1.534
+   fixp   a: ulp=1.6 >1ulp=1/131072 rel/base=1.000 det=True fin=True | b: chain6: ulp=206.8 abs=0.0312 branch2: ulp=190.4 abs=0.0234 ungated: ulp=1.0 abs=0.00391 relfp64=0.00451 fin=True
+   proto  a: ulp=2.0 >1ulp=2/131072 rel/base=1.000 det=True fin=True | b: chain6: ulp=206.8 abs=0.0312 branch2: ulp=190.4 abs=0.0234 ungated: ulp=1.0 abs=0.00391 relfp64=0.00452 fin=True
+   ext    a: ulp=1.6 >1ulp=1/131072 rel/base=1.000 det=True fin=True | b: chain6: ulp=206.8 abs=0.0312 branch2: ulp=190.4 abs=0.0234 ungated: ulp=1.0 abs=0.00391 relfp64=0.00451 fin=True
+[exact B=16 p=70000 swa] base_relfp64=0.00487 badtab=0 gated=12 | base_s1: ulp=430.0 >1ulp=38308 rel/base=1.469
+   fixp   a: ulp=245.0 >1ulp=23711/131072 rel/base=0.982 det=True fin=True | b: chain6: ulp=42.0 abs=0.0156 branch2: ulp=85.0 abs=0.0156 ungated: ulp=245.0 abs=0.0273 relfp64=0.00479 fin=True
+   proto  a: ulp=245.0 >1ulp=23823/131072 rel/base=0.988 det=True fin=True | b: chain6: ulp=41.0 abs=0.0156 branch2: ulp=1431.0 abs=0.24 ungated: ulp=245.0 abs=0.0273 relfp64=0.00493 fin=True
+   ext    a: ulp=245.0 >1ulp=23711/131072 rel/base=0.982 det=True fin=True | b: chain6: ulp=42.0 abs=0.0156 branch2: ulp=85.0 abs=0.0156 ungated: ulp=245.0 abs=0.0273 relfp64=0.00479 fin=True
+[exact B=16 p=100000 full] base_relfp64=0.00473 badtab=0 gated=11 | base_s1: ulp=453.5 >1ulp=51787 rel/base=1.555
+   fixp   a: ulp=1.0 >1ulp=0/131072 rel/base=1.000 det=True fin=True | b: chain6: ulp=218.8 abs=0.0391 branch2: ulp=260.5 abs=0.0332 ungated: ulp=1.0 abs=0.00195 relfp64=0.00473 fin=True
+   proto  a: ulp=2.0 >1ulp=1/131072 rel/base=1.000 det=True fin=True | b: chain6: ulp=218.8 abs=0.0391 branch2: ulp=260.5 abs=0.0332 ungated: ulp=2.0 abs=0.00781 relfp64=0.00473 fin=True
+   ext    a: ulp=1.0 >1ulp=0/131072 rel/base=1.000 det=True fin=True | b: chain6: ulp=218.8 abs=0.0391 branch2: ulp=260.5 abs=0.0332 ungated: ulp=1.0 abs=0.00195 relfp64=0.00473 fin=True
+[exact B=16 p=100000 swa] base_relfp64=0.00471 badtab=0 gated=13 | base_s1: ulp=367.0 >1ulp=37726 rel/base=1.439
+   fixp   a: ulp=448.8 >1ulp=24119/131072 rel/base=0.949 det=True fin=True | b: chain6: ulp=32.0 abs=0.00781 branch2: ulp=45.8 abs=0.0117 ungated: ulp=448.8 abs=0.043 relfp64=0.00447 fin=True
+   proto  a: ulp=452.8 >1ulp=24161/131072 rel/base=0.951 det=True fin=True | b: chain6: ulp=36.0 abs=0.0156 branch2: ulp=3628.0 abs=0.978 ungated: ulp=452.8 abs=0.043 relfp64=0.0333 fin=True
+   ext    a: ulp=448.8 >1ulp=24119/131072 rel/base=0.949 det=True fin=True | b: chain6: ulp=32.0 abs=0.00781 branch2: ulp=45.8 abs=0.0117 ungated: ulp=448.8 abs=0.043 relfp64=0.00447 fin=True
+[exact B=16 p=mixed full] base_relfp64=0.00589 badtab=0 gated=12 | base_s1: ulp=273.0 >1ulp=12463 rel/base=1.000
+   fixp   a: ulp=498.0 >1ulp=15885/131072 rel/base=0.862 det=True fin=True | b: chain6: ulp=366.5 abs=0.0625 branch2: ulp=497.5 abs=0.0469 ungated: ulp=498.0 abs=0.0547 relfp64=0.00495 fin=True
+   proto  a: ulp=538.0 >1ulp=13373/131072 rel/base=0.732 det=True fin=True | b: chain6: ulp=350.0 abs=0.0352 branch2: ulp=236.4 abs=0.0312 ungated: ulp=538.0 abs=0.0469 relfp64=0.00437 fin=True
+   ext    a: ulp=498.0 >1ulp=15885/131072 rel/base=0.862 det=True fin=True | b: chain6: ulp=366.5 abs=0.0625 branch2: ulp=497.5 abs=0.0469 ungated: ulp=498.0 abs=0.0547 relfp64=0.00495 fin=True
+[exact B=16 p=mixed swa] base_relfp64=0.00537 badtab=0 gated=14 | base_s1: ulp=467.4 >1ulp=24153 rel/base=1.068
+   fixp   a: ulp=348.0 >1ulp=19411/131072 rel/base=0.828 det=True fin=True | b: chain6: ulp=453.6 abs=0.0703 branch2: ulp=549.0 abs=0.0508 ungated: ulp=272.8 abs=0.043 relfp64=0.00431 fin=True
+   proto  a: ulp=444.0 >1ulp=29258/131072 rel/base=0.736 det=True fin=True | b: chain6: ulp=445.0 abs=0.0703 branch2: ulp=3067.5 abs=0.298 ungated: ulp=430.1 abs=0.041 relfp64=0.00398 fin=True
+   ext    a: ulp=348.0 >1ulp=19411/131072 rel/base=0.828 det=True fin=True | b: chain6: ulp=453.6 abs=0.0703 branch2: ulp=549.0 abs=0.0508 ungated: ulp=272.8 abs=0.043 relfp64=0.00431 fin=True
+[exact B=32 p=0 full] base_relfp64=0.00509 badtab=0 gated=25 | base_s1: ulp=0.0 >1ulp=0 rel/base=1.000
+   fixp   a: ulp=1160.1 >1ulp=528/262144 rel/base=1.000 det=True fin=True | b: chain6: ulp=313.5 abs=0.0781 branch2: ulp=32.0 abs=0.0156 ungated: ulp=1160.1 abs=0.0938 relfp64=0.00434 fin=True
+   proto  a: ulp=584.1 >1ulp=45222/262144 rel/base=0.270 det=True fin=True | b: chain6: ulp=474.0 abs=0.0474 branch2: ulp=436.0 abs=0.0547 ungated: ulp=584.1 abs=0.0742 relfp64=0.00133 fin=True
+   ext    a: ulp=1160.1 >1ulp=528/262144 rel/base=1.000 det=True fin=True | b: chain6: ulp=313.5 abs=0.0781 branch2: ulp=32.0 abs=0.0156 ungated: ulp=1160.1 abs=0.0938 relfp64=0.00434 fin=True
+[exact B=32 p=0 swa] base_relfp64=0.00478 badtab=0 gated=22 | base_s1: ulp=0.0 >1ulp=0 rel/base=1.000
+   fixp   a: ulp=656.4 >1ulp=550/262144 rel/base=1.003 det=True fin=True | b: chain6: ulp=656.4 abs=0.0938 branch2: ulp=56.8 abs=0.0176 ungated: ulp=302.0 abs=0.0312 relfp64=0.00385 fin=True
+   proto  a: ulp=795.9 >1ulp=44579/262144 rel/base=0.288 det=True fin=True | b: chain6: ulp=784.5 abs=0.0625 branch2: ulp=420.0 abs=0.0547 ungated: ulp=633.0 abs=0.0625 relfp64=0.00135 fin=True
+   ext    a: ulp=656.4 >1ulp=550/262144 rel/base=1.003 det=True fin=True | b: chain6: ulp=656.4 abs=0.0938 branch2: ulp=56.8 abs=0.0176 ungated: ulp=302.0 abs=0.0312 relfp64=0.00385 fin=True
+[exact B=32 p=5 full] base_relfp64=0.00636 badtab=0 gated=23 | base_s1: ulp=0.0 >1ulp=0 rel/base=1.000
+   fixp   a: ulp=505.0 >1ulp=22772/262144 rel/base=0.741 det=True fin=True | b: chain6: ulp=363.0 abs=0.0547 branch2: ulp=350.0 abs=0.0352 ungated: ulp=505.0 abs=0.0547 relfp64=0.00461 fin=True
+   proto  a: ulp=489.0 >1ulp=23932/262144 rel/base=0.674 det=True fin=True | b: chain6: ulp=363.0 abs=0.0547 branch2: ulp=353.0 abs=0.0352 ungated: ulp=489.0 abs=0.0508 relfp64=0.00444 fin=True
+   ext    a: ulp=505.0 >1ulp=22772/262144 rel/base=0.741 det=True fin=True | b: chain6: ulp=363.0 abs=0.0547 branch2: ulp=350.0 abs=0.0352 ungated: ulp=505.0 abs=0.0547 relfp64=0.00461 fin=True
+[exact B=32 p=5 swa] base_relfp64=0.00675 badtab=0 gated=23 | base_s1: ulp=0.0 >1ulp=0 rel/base=1.000
+   fixp   a: ulp=422.0 >1ulp=22190/262144 rel/base=0.807 det=True fin=True | b: chain6: ulp=459.7 abs=0.048 branch2: ulp=361.0 abs=0.0391 ungated: ulp=422.0 abs=0.043 relfp64=0.00523 fin=True
+   proto  a: ulp=446.0 >1ulp=23637/262144 rel/base=0.724 det=True fin=True | b: chain6: ulp=471.7 abs=0.0494 branch2: ulp=294.0 abs=0.0469 ungated: ulp=434.0 abs=0.0439 relfp64=0.00491 fin=True
+   ext    a: ulp=422.0 >1ulp=22190/262144 rel/base=0.807 det=True fin=True | b: chain6: ulp=459.7 abs=0.048 branch2: ulp=361.0 abs=0.0391 ungated: ulp=422.0 abs=0.043 relfp64=0.00523 fin=True
+[exact B=32 p=2040 full] base_relfp64=0.00539 badtab=0 gated=24 | base_s1: ulp=414.0 >1ulp=57222 rel/base=1.265
+   fixp   a: ulp=331.0 >1ulp=2026/262144 rel/base=0.987 det=True fin=True | b: chain6: ulp=338.5 abs=0.0352 branch2: ulp=386.5 abs=0.043 ungated: ulp=261.5 abs=0.0391 relfp64=0.00533 fin=True
+   proto  a: ulp=331.0 >1ulp=2087/262144 rel/base=0.988 det=True fin=True | b: chain6: ulp=338.5 abs=0.0352 branch2: ulp=386.5 abs=0.043 ungated: ulp=261.5 abs=0.0391 relfp64=0.00534 fin=True
+   ext    a: ulp=331.0 >1ulp=2026/262144 rel/base=0.987 det=True fin=True | b: chain6: ulp=338.5 abs=0.0352 branch2: ulp=386.5 abs=0.043 ungated: ulp=261.5 abs=0.0391 relfp64=0.00533 fin=True
+[exact B=32 p=2040 swa] base_relfp64=0.00527 badtab=0 gated=22 | base_s1: ulp=468.5 >1ulp=54645 rel/base=1.275
+   fixp   a: ulp=311.2 >1ulp=22701/262144 rel/base=0.993 det=True fin=True | b: chain6: ulp=345.5 abs=0.0449 branch2: ulp=282.0 abs=0.0371 ungated: ulp=251.5 abs=0.0312 relfp64=0.00523 fin=True
+   proto  a: ulp=311.2 >1ulp=22798/262144 rel/base=0.996 det=True fin=True | b: chain6: ulp=345.5 abs=0.0449 branch2: ulp=2883.0 abs=0.787 ungated: ulp=251.5 abs=0.0312 relfp64=0.0153 fin=True
+   ext    a: ulp=311.2 >1ulp=22701/262144 rel/base=0.993 det=True fin=True | b: chain6: ulp=345.5 abs=0.0449 branch2: ulp=282.0 abs=0.0371 ungated: ulp=251.5 abs=0.0312 relfp64=0.00523 fin=True
+[exact B=32 p=2048 full] base_relfp64=0.00591 badtab=0 gated=21 | base_s1: ulp=498.0 >1ulp=56411 rel/base=1.234
+   fixp   a: ulp=125.0 >1ulp=1072/262144 rel/base=0.993 det=True fin=True | b: chain6: ulp=450.0 abs=0.0391 branch2: ulp=336.0 abs=0.0391 ungated: ulp=67.6 abs=0.00781 relfp64=0.00587 fin=True
+   proto  a: ulp=125.0 >1ulp=1099/262144 rel/base=0.994 det=True fin=True | b: chain6: ulp=450.0 abs=0.0391 branch2: ulp=336.0 abs=0.0391 ungated: ulp=67.6 abs=0.00781 relfp64=0.00588 fin=True
+   ext    a: ulp=125.0 >1ulp=1072/262144 rel/base=0.993 det=True fin=True | b: chain6: ulp=450.0 abs=0.0391 branch2: ulp=336.0 abs=0.0391 ungated: ulp=67.6 abs=0.00781 relfp64=0.00587 fin=True
+[exact B=32 p=2048 swa] base_relfp64=0.00552 badtab=0 gated=25 | base_s1: ulp=545.0 >1ulp=57939 rel/base=1.268
+   fixp   a: ulp=447.5 >1ulp=24008/262144 rel/base=1.006 det=True fin=True | b: chain6: ulp=439.0 abs=0.043 branch2: ulp=345.2 abs=0.0312 ungated: ulp=192.8 abs=0.0312 relfp64=0.00555 fin=True
+   proto  a: ulp=447.5 >1ulp=24113/262144 rel/base=1.008 det=True fin=True | b: chain6: ulp=439.0 abs=0.043 branch2: ulp=6847.0 abs=1.09 ungated: ulp=192.8 abs=0.0312 relfp64=0.0354 fin=True
+   ext    a: ulp=447.5 >1ulp=24008/262144 rel/base=1.006 det=True fin=True | b: chain6: ulp=439.0 abs=0.043 branch2: ulp=345.2 abs=0.0312 ungated: ulp=192.8 abs=0.0312 relfp64=0.00555 fin=True
+[exact B=32 p=2100 full] base_relfp64=0.00502 badtab=0 gated=26 | base_s1: ulp=550.0 >1ulp=56246 rel/base=1.311
+   fixp   a: ulp=81.5 >1ulp=561/262144 rel/base=1.000 det=True fin=True | b: chain6: ulp=362.0 abs=0.0508 branch2: ulp=370.0 abs=0.0391 ungated: ulp=58.0 abs=0.00977 relfp64=0.00501 fin=True
+   proto  a: ulp=80.5 >1ulp=585/262144 rel/base=1.002 det=True fin=True | b: chain6: ulp=362.0 abs=0.0508 branch2: ulp=370.0 abs=0.0391 ungated: ulp=74.0 abs=0.0156 relfp64=0.00503 fin=True
+   ext    a: ulp=81.5 >1ulp=561/262144 rel/base=1.000 det=True fin=True | b: chain6: ulp=362.0 abs=0.0508 branch2: ulp=370.0 abs=0.0391 ungated: ulp=58.0 abs=0.00977 relfp64=0.00501 fin=True
+[exact B=32 p=2100 swa] base_relfp64=0.00558 badtab=0 gated=17 | base_s1: ulp=645.2 >1ulp=57441 rel/base=1.231
+   fixp   a: ulp=480.0 >1ulp=23084/262144 rel/base=1.013 det=True fin=True | b: chain6: ulp=408.0 abs=0.0508 branch2: ulp=490.1 abs=0.0312 ungated: ulp=300.0 abs=0.0469 relfp64=0.00565 fin=True
+   proto  a: ulp=480.0 >1ulp=23201/262144 rel/base=1.015 det=True fin=True | b: chain6: ulp=409.0 abs=0.0508 branch2: ulp=7483.8 abs=0.564 ungated: ulp=300.0 abs=0.0469 relfp64=0.00571 fin=True
+   ext    a: ulp=480.0 >1ulp=23084/262144 rel/base=1.013 det=True fin=True | b: chain6: ulp=408.0 abs=0.0508 branch2: ulp=490.1 abs=0.0312 ungated: ulp=300.0 abs=0.0469 relfp64=0.00565 fin=True
+[exact B=32 p=70000 full] base_relfp64=0.00567 badtab=0 gated=23 | base_s1: ulp=406.0 >1ulp=77267 rel/base=1.194
+   fixp   a: ulp=66.5 >1ulp=68/262144 rel/base=1.000 det=True fin=True | b: chain6: ulp=350.5 abs=0.0391 branch2: ulp=261.0 abs=0.0234 ungated: ulp=66.5 abs=0.00781 relfp64=0.00567 fin=True
+   proto  a: ulp=66.5 >1ulp=72/262144 rel/base=1.000 det=True fin=True | b: chain6: ulp=350.5 abs=0.0391 branch2: ulp=261.0 abs=0.0234 ungated: ulp=66.5 abs=0.00732 relfp64=0.00567 fin=True
+   ext    a: ulp=66.5 >1ulp=68/262144 rel/base=1.000 det=True fin=True | b: chain6: ulp=350.5 abs=0.0391 branch2: ulp=261.0 abs=0.0234 ungated: ulp=66.5 abs=0.00781 relfp64=0.00567 fin=True
+[exact B=32 p=70000 swa] base_relfp64=0.0058 badtab=0 gated=25 | base_s1: ulp=629.0 >1ulp=56360 rel/base=1.232
+   fixp   a: ulp=518.0 >1ulp=23897/262144 rel/base=0.992 det=True fin=True | b: chain6: ulp=414.5 abs=0.04 branch2: ulp=408.0 abs=0.043 ungated: ulp=277.5 abs=0.0312 relfp64=0.00576 fin=True
+   proto  a: ulp=522.0 >1ulp=23944/262144 rel/base=0.993 det=True fin=True | b: chain6: ulp=414.5 abs=0.04 branch2: ulp=4849.0 abs=0.685 ungated: ulp=277.5 abs=0.0312 relfp64=0.0199 fin=True
+   ext    a: ulp=518.0 >1ulp=23897/262144 rel/base=0.992 det=True fin=True | b: chain6: ulp=414.5 abs=0.04 branch2: ulp=408.0 abs=0.043 ungated: ulp=277.5 abs=0.0312 relfp64=0.00576 fin=True
+[exact B=32 p=100000 full] base_relfp64=0.00655 badtab=0 gated=23 | base_s1: ulp=374.0 >1ulp=77670 rel/base=1.233
+   fixp   a: ulp=29.0 >1ulp=53/262144 rel/base=1.000 det=True fin=True | b: chain6: ulp=271.5 abs=0.0469 branch2: ulp=302.5 abs=0.0391 ungated: ulp=2.0 abs=0.00391 relfp64=0.00655 fin=True
+   proto  a: ulp=28.0 >1ulp=52/262144 rel/base=1.000 det=True fin=True | b: chain6: ulp=271.5 abs=0.0469 branch2: ulp=302.5 abs=0.0391 ungated: ulp=2.0 abs=0.00781 relfp64=0.00655 fin=True
+   ext    a: ulp=29.0 >1ulp=53/262144 rel/base=1.000 det=True fin=True | b: chain6: ulp=271.5 abs=0.0469 branch2: ulp=302.5 abs=0.0391 ungated: ulp=2.0 abs=0.00391 relfp64=0.00655 fin=True
+[exact B=32 p=100000 swa] base_relfp64=0.0054 badtab=0 gated=28 | base_s1: ulp=383.0 >1ulp=57041 rel/base=1.247
+   fixp   a: ulp=413.8 >1ulp=24771/262144 rel/base=1.018 det=True fin=True | b: chain6: ulp=438.6 abs=0.043 branch2: ulp=361.5 abs=0.0444 ungated: ulp=240.8 abs=0.0234 relfp64=0.00548 fin=True
+   proto  a: ulp=415.8 >1ulp=24877/262144 rel/base=1.020 det=True fin=True | b: chain6: ulp=438.6 abs=0.043 branch2: ulp=4170.0 abs=2.94 ungated: ulp=240.8 abs=0.0234 relfp64=0.00559 fin=True
+   ext    a: ulp=413.8 >1ulp=24771/262144 rel/base=1.018 det=True fin=True | b: chain6: ulp=438.6 abs=0.043 branch2: ulp=361.5 abs=0.0444 ungated: ulp=240.8 abs=0.0234 relfp64=0.00548 fin=True
+[exact B=32 p=mixed full] base_relfp64=0.00639 badtab=0 gated=25 | base_s1: ulp=312.0 >1ulp=19343 rel/base=1.000
+   fixp   a: ulp=568.0 >1ulp=34426/262144 rel/base=0.813 det=True fin=True | b: chain6: ulp=592.2 abs=0.0586 branch2: ulp=363.0 abs=0.0469 ungated: ulp=568.0 abs=0.0547 relfp64=0.0048 fin=True
+   proto  a: ulp=552.0 >1ulp=17115/262144 rel/base=0.587 det=True fin=True | b: chain6: ulp=592.2 abs=0.0547 branch2: ulp=364.0 abs=0.0547 ungated: ulp=552.0 abs=0.0547 relfp64=0.00376 fin=True
+   ext    a: ulp=568.0 >1ulp=34426/262144 rel/base=0.813 det=True fin=True | b: chain6: ulp=592.2 abs=0.0586 branch2: ulp=363.0 abs=0.0469 ungated: ulp=568.0 abs=0.0547 relfp64=0.0048 fin=True
+[exact B=32 p=mixed swa] base_relfp64=0.00579 badtab=0 gated=22 | base_s1: ulp=419.6 >1ulp=33035 rel/base=1.047
+   fixp   a: ulp=498.7 >1ulp=27763/262144 rel/base=0.885 det=True fin=True | b: chain6: ulp=455.0 abs=0.0469 branch2: ulp=522.0 abs=0.043 ungated: ulp=409.5 abs=0.0469 relfp64=0.00506 fin=True
+   proto  a: ulp=628.0 >1ulp=43128/262144 rel/base=0.672 det=True fin=True | b: chain6: ulp=443.2 abs=0.0469 branch2: ulp=1279.0 abs=0.525 ungated: ulp=628.0 abs=0.0469 relfp64=0.00391 fin=True
+   ext    a: ulp=498.7 >1ulp=27763/262144 rel/base=0.885 det=True fin=True | b: chain6: ulp=455.0 abs=0.0469 branch2: ulp=522.0 abs=0.043 ungated: ulp=409.5 abs=0.0469 relfp64=0.00506 fin=True
+EXACT_WORST {"base_s1:full:a": {"max_ulp": 559.0, "max_abs": 0.0654296875}, "base_s1:full:rel_over_base_max": {"v": 3.7160829417714445}, "fixp:full:a": {"max_ulp": 1160.0625, "max_abs": 0.09375}, "fixp:full:chain6": {"max_ulp": 592.234375, "max_abs": 0.078125}, "fixp:full:branch2": {"max_ulp": 497.5, "max_abs": 0.0625}, "fixp:full:rel_over_base_max": {"v": 1.00080925752595}, "proto:full:a": {"max_ulp": 584.0625, "max_abs": 0.07421875}, "proto:full:chain6": {"max_ulp": 592.234375, "max_abs": 0.0625}, "proto:full:branch2": {"max_ulp": 558.6953125, "max_abs": 0.0546875}, "proto:full:rel_over_base_max": {"v": 1.0093734766358191}, "ext:full:a": {"max_ulp": 1160.0625, "max_abs": 0.09375}, "ext:full:chain6": {"max_ulp": 592.234375, "max_abs": 0.078125}, "ext:full:branch2": {"max_ulp": 497.5, "max_abs": 0.0625}, "ext:full:rel_over_base_max": {"v": 1.00080925752595}, "base_s1:swa:a": {"max_ulp": 645.25, "max_abs": 0.06640625}, "base_s1:swa:rel_over_base_max": {"v": 1.9773414482711313}, "fixp:swa:a": {"max_ulp": 1112.0, "max_abs": 0.09375}, "fixp:swa:chain6": {"max_ulp": 703.5, "max_abs": 0.09375}, "fixp:swa:branch2": {"max_ulp": 549.0, "max_abs": 0.0546875}, "fixp:swa:rel_over_base_max": {"v": 1.113776708062572}, "proto:swa:a": {"max_ulp": 795.921875, "max_abs": 0.064453125}, "proto:swa:chain6": {"max_ulp": 784.5, "max_abs": 0.0703125}, "proto:swa:branch2": {"max_ulp": 17451.75, "max_abs": 2.94140625}, "proto:swa:rel_over_base_max": {"v": 1.0200302961777377}, "ext:swa:a": {"max_ulp": 1112.0, "max_abs": 0.09375}, "ext:swa:chain6": {"max_ulp": 703.5, "max_abs": 0.09375}, "ext:swa:branch2": {"max_ulp": 549.0, "max_abs": 0.0546875}, "ext:swa:rel_over_base_max": {"v": 1.0184264541393606}, "fixp:full:ungated": {"max_ulp": 1160.0625, "max_abs": 0.09375}, "proto:full:ungated": {"max_ulp": 584.0625, "max_abs": 0.07421875}, "ext:full:ungated": {"max_ulp": 1160.0625, "max_abs": 0.09375}, "fixp:swa:ungated": {"max_ulp": 484.5, "max_abs": 0.0859375}, "proto:swa:ungated": {"max_ulp": 633.0, "max_abs": 0.0625}, "ext:swa:ungated": {"max_ulp": 484.5, "max_abs": 0.0859375}}
+== part exact done in 12s
+[time B=1 rows=8] base=0.891 ms | fixp: +0.461 graph (p10 0.455 p90 0.467) +0.010 meta = ADDED 0.471 | proto: +0.194 graph (p10 0.191 p90 0.198) -0.107 meta = ADDED 0.087 | ext: +0.500 graph (p10 0.495 p90 0.504) +0.000 meta = ADDED 0.500 | meta {'base': 0.10702400282025337, 'kmask': 0.12407999858260155, 'fixp': 0.11721599847078323} splits {'base': [64, 9], 'kmask': [64, 6], 'fixp': [64, 6]} replay_eq {'fixp': True, 'proto': True, 'ext': True} (1s)
+USDT:2026-11-19 07:58:51 35:35 SyncActivityProfilerHandler.cpp:39] profiler_start
+USDT:2026-11-19 07:58:51 35:35 SyncActivityProfilerHandler.cpp:46] profiler_stop
+USDT:2026-11-19 07:58:51 35:35 SyncActivityProfilerHandler.cpp:39] profiler_start
+USDT:2026-11-19 07:58:51 35:35 SyncActivityProfilerHandler.cpp:46] profiler_stop
+USDT:2026-11-19 07:58:51 35:35 SyncActivityProfilerHandler.cpp:39] profiler_start
+USDT:2026-11-19 07:58:51 35:35 SyncActivityProfilerHandler.cpp:46] profiler_stop
+USDT:2026-11-19 07:58:51 35:35 SyncActivityProfilerHandler.cpp:39] profiler_start
+USDT:2026-11-19 07:58:52 35:35 SyncActivityProfilerHandler.cpp:46] profiler_stop
+   base: void cutlass::device_kernel<flash::enabl=5.9us/layer  void cutlass::device_kernel<flash::enabl=5.0us/layer  void cutlass::device_kernel<flash::Flash=2.5us/layer  void cutlass::device_kernel<flash::Flash=1.8us/layer
+   fixp: void sglang::muse_spark_verify_tree::cor=7.1us/layer  void cutlass::device_kernel<flash::enabl=6.6us/layer  void cutlass::device_kernel<flash::enabl=5.0us/layer  void cutlass::device_kernel<flash::Flash=2.4us/layer  void cutlass::device_kernel<flash::Flash=1.9us/layer
+   proto: void cutlass::device_kernel<flash::enabl=5.9us/layer  void cutlass::device_kernel<flash::enabl=5.3us/layer  void cutlass::device_kernel<flash::Flash=2.3us/layer  _suffix_merge_fp8=2.0us/layer  void cutlass::device_kernel<flash::Flash=1.7us/layer
+   ext: void sglang::muse_spark_verify_tree::cor=7.1us/layer  void cutlass::device_kernel<flash::enabl=6.1us/layer  void cutlass::device_kernel<flash::enabl=5.1us/layer  void cutlass::device_kernel<flash::Flash=2.6us/layer  void cutlass::device_kernel<flash::Flash=1.9us/layer
+[time B=4 rows=32] base=1.582 ms | fixp: +0.463 graph (p10 0.452 p90 0.472) +0.018 meta = ADDED 0.481 | proto: +0.225 graph (p10 0.213 p90 0.236) -0.128 meta = ADDED 0.097 | ext: +0.506 graph (p10 0.498 p90 0.516) +0.000 meta = ADDED 0.506 | meta {'base': 0.12787200510501862, 'kmask': 0.1523360013961792, 'fixp': 0.14609599858522415} splits {'base': [16, 9], 'kmask': [16, 6], 'fixp': [16, 6]} replay_eq {'fixp': True, 'proto': True, 'ext': True} (2s)
+USDT:2026-11-19 07:58:53 35:35 SyncActivityProfilerHandler.cpp:39] profiler_start
+USDT:2026-11-19 07:58:53 35:35 SyncActivityProfilerHandler.cpp:46] profiler_stop
+USDT:2026-11-19 07:58:53 35:35 SyncActivityProfilerHandler.cpp:39] profiler_start
+USDT:2026-11-19 07:58:53 35:35 SyncActivityProfilerHandler.cpp:46] profiler_stop
+USDT:2026-11-19 07:58:53 35:35 SyncActivityProfilerHandler.cpp:39] profiler_start
+USDT:2026-11-19 07:58:53 35:35 SyncActivityProfilerHandler.cpp:46] profiler_stop
+USDT:2026-11-19 07:58:53 35:35 SyncActivityProfilerHandler.cpp:39] profiler_start
+USDT:2026-11-19 07:58:53 35:35 SyncActivityProfilerHandler.cpp:46] profiler_stop
+   base: void cutlass::device_kernel<flash::enabl=17.7us/layer  void cutlass::device_kernel<flash::enabl=7.1us/layer  void cutlass::device_kernel<flash::Flash=3.8us/layer
+   fixp: void cutlass::device_kernel<flash::enabl=16.4us/layer  void cutlass::device_kernel<flash::enabl=7.0us/layer  void sglang::muse_spark_verify_tree::cor=6.8us/layer  void cutlass::device_kernel<flash::Flash=3.5us/layer  sglang::muse_spark_verify_tree::build_ta=0.0us/layer
+   proto: void cutlass::device_kernel<flash::enabl=17.1us/layer  void cutlass::device_kernel<flash::enabl=6.5us/layer  void cutlass::device_kernel<flash::Flash=3.4us/layer  _suffix_merge_fp8=2.3us/layer  void flash::prepare_varlen_num_blocks_ke=1.5us/layer
+   ext: void cutlass::device_kernel<flash::enabl=16.3us/layer  void sglang::muse_spark_verify_tree::cor=7.0us/layer  void cutlass::device_kernel<flash::enabl=6.8us/layer  void cutlass::device_kernel<flash::Flash=3.7us/layer  void at::native::vectorized_elementwise_=0.9us/layer
+[time B=16 rows=128] base=4.261 ms | fixp: +0.475 graph (p10 0.468 p90 0.482) +0.018 meta = ADDED 0.493 | proto: +0.248 graph (p10 0.240 p90 0.255) -0.130 meta = ADDED 0.118 | ext: +0.543 graph (p10 0.536 p90 0.551) +0.000 meta = ADDED 0.543 | meta {'base': 0.13038399815559387, 'kmask': 0.1544640064239502, 'fixp': 0.14847999811172485} splits {'base': [4, 4], 'kmask': [4, 4], 'fixp': [4, 4]} replay_eq {'fixp': True, 'proto': True, 'ext': True} (4s)
+USDT:2026-11-19 07:58:58 35:35 SyncActivityProfilerHandler.cpp:39] profiler_start
+USDT:2026-11-19 07:58:58 35:35 SyncActivityProfilerHandler.cpp:46] profiler_stop
+USDT:2026-11-19 07:58:58 35:35 SyncActivityProfilerHandler.cpp:39] profiler_start
+USDT:2026-11-19 07:58:58 35:35 SyncActivityProfilerHandler.cpp:46] profiler_stop
+USDT:2026-11-19 07:58:58 35:35 SyncActivityProfilerHandler.cpp:39] profiler_start
+USDT:2026-11-19 07:58:58 35:35 SyncActivityProfilerHandler.cpp:46] profiler_stop
+USDT:2026-11-19 07:58:58 35:35 SyncActivityProfilerHandler.cpp:39] profiler_start
+USDT:2026-11-19 07:58:58 35:35 SyncActivityProfilerHandler.cpp:46] profiler_stop
+   base: void cutlass::device_kernel<flash::enabl=57.7us/layer  void cutlass::device_kernel<flash::enabl=8.6us/layer  void cutlass::device_kernel<flash::Flash=3.3us/layer
+   fixp: void cutlass::device_kernel<flash::enabl=56.0us/layer  void cutlass::device_kernel<flash::enabl=8.0us/layer  void sglang::muse_spark_verify_tree::cor=6.4us/layer  void cutlass::device_kernel<flash::Flash=3.6us/layer  sglang::muse_spark_verify_tree::build_ta=0.0us/layer
+   proto: void cutlass::device_kernel<flash::enabl=60.4us/layer  void cutlass::device_kernel<flash::enabl=8.6us/layer  void cutlass::device_kernel<flash::Flash=3.3us/layer  _suffix_merge_fp8=3.3us/layer  void flash::prepare_varlen_num_blocks_ke=1.6us/layer
+   ext: void cutlass::device_kernel<flash::enabl=58.0us/layer  void cutlass::device_kernel<flash::enabl=8.2us/layer  void sglang::muse_spark_verify_tree::cor=6.6us/layer  void cutlass::device_kernel<flash::Flash=3.9us/layer  void at::native::vectorized_elementwise_=0.9us/layer
+[time B=32 rows=256] base=7.949 ms | fixp: +0.424 graph (p10 0.408 p90 0.442) +0.015 meta = ADDED 0.439 | proto: +0.326 graph (p10 0.310 p90 0.341) -0.128 meta = ADDED 0.197 | ext: +0.515 graph (p10 0.495 p90 0.531) +0.000 meta = ADDED 0.515 | meta {'base': 0.12836799770593643, 'kmask': 0.15169600397348404, 'fixp': 0.14323200285434723} splits {'base': [2, 2], 'kmask': [2, 2], 'fixp': [2, 2]} replay_eq {'fixp': True, 'proto': True, 'ext': True} (7s)
+USDT:2026-11-19 07:59:05 35:35 SyncActivityProfilerHandler.cpp:39] profiler_start
+USDT:2026-11-19 07:59:05 35:35 SyncActivityProfilerHandler.cpp:46] profiler_stop
+USDT:2026-11-19 07:59:05 35:35 SyncActivityProfilerHandler.cpp:39] profiler_start
+USDT:2026-11-19 07:59:05 35:35 SyncActivityProfilerHandler.cpp:46] profiler_stop
+USDT:2026-11-19 07:59:05 35:35 SyncActivityProfilerHandler.cpp:39] profiler_start
+USDT:2026-11-19 07:59:05 35:35 SyncActivityProfilerHandler.cpp:46] profiler_stop
+USDT:2026-11-19 07:59:06 35:35 SyncActivityProfilerHandler.cpp:39] profiler_start
+USDT:2026-11-19 07:59:06 35:35 SyncActivityProfilerHandler.cpp:46] profiler_stop
+   base: void cutlass::device_kernel<flash::enabl=113.6us/layer  void cutlass::device_kernel<flash::enabl=12.0us/layer  void cutlass::device_kernel<flash::Flash=3.6us/layer
+   fixp: void cutlass::device_kernel<flash::enabl=113.8us/layer  void cutlass::device_kernel<flash::enabl=11.4us/layer  void sglang::muse_spark_verify_tree::cor=6.7us/layer  void cutlass::device_kernel<flash::Flash=3.9us/layer  sglang::muse_spark_verify_tree::build_ta=0.0us/layer
+   proto: void cutlass::device_kernel<flash::enabl=114.1us/layer  void cutlass::device_kernel<flash::enabl=11.4us/layer  _suffix_merge_fp8=4.4us/layer  void cutlass::device_kernel<flash::Flash=3.4us/layer  void flash::prepare_varlen_num_blocks_ke=1.5us/layer
+   ext: void cutlass::device_kernel<flash::enabl=114.3us/layer  void cutlass::device_kernel<flash::enabl=11.3us/layer  void sglang::muse_spark_verify_tree::cor=6.7us/layer  void cutlass::device_kernel<flash::Flash=3.9us/layer  void at::native::vectorized_elementwise_=0.8us/layer
+== part time done in 15s
+wrote /vol/out/kmask/20261119T075812Z/kmask.json
+===== rc=0 (56s)
+Stopping app - local entrypoint completed.
+results: /vol/out/kmask/20261119T075812Z
+✓ App completed. View run at 
+https://modal.com/apps/<workspace>/main/ap-FOsPZSLOk6egu4B5J9yHOv

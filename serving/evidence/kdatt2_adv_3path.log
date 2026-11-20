@@ -1,0 +1,419 @@
+✓ Initialized. View run at 
+https://modal.com/apps/<workspace>/main/ap-c5dAHqjk25IoF84tULWaw8
+✓ Created objects.
+├── ✓ Uploaded 
+│   <repo>/serving/h
+│   arness/modal_kmask_ubench.py
+├── ✓ Uploaded 
+│   <repo>/serving/l
+│   anes/kpatt3_tools
+├── ✓ Uploaded 
+│   <repo>/serving/l
+│   anes/kwide2_tools
+├── ✓ Uploaded 
+│   <repo>/serving/l
+│   anes/kmask_tools
+├── ✓ Uploaded 
+│   <repo>/serving/l
+│   anes/kdatt2/test
+├── ✓ Uploaded 
+│   <repo>/serving/l
+│   anes/kdatt2/python/sglang
+├── ✓ Created Function cpu_compile.
+├── ✓ Created Function cputests.
+├── ✓ Created Function run.
+├── ✓ Created Function diag.
+├── ✓ Created Function adv.
+├── ✓ Created Function gputests.
+├── ✓ Created Function sweep.
+├── ✓ Created Function abtime.
+└── ✓ Created Function pfab.
+
+==========
+== CUDA ==
+==========
+
+CUDA Version 13.0.3
+
+Container image Copyright (c) 2016-2023, NVIDIA CORPORATION & AFFILIATES. All rights reserved.
+
+This container image and its contents are governed by the NVIDIA Deep Learning Container License.
+By pulling and using the container, you accept the terms and conditions of this license:
+https://developer.nvidia.com/ngc/nvidia-deep-learning-container-license
+
+A copy of this license is made available in this container at /NGC-DL-CONTAINER-LICENSE for your convenience.
+
+===== /opt/sglang/bin/python kdatt_adv.py 2047  (limit 560s)
+  seed 0 B=1 rand_80k: kdatt 1.0000 fa3tree 1.0000 fa3_s1 1.1000
+  seed 1 B=1 rand_80k: kdatt 1.0000 fa3tree 1.0000 fa3_s1 2.7985
+  seed 2 B=1 rand_80k: kdatt 0.7192 fa3tree 1.0000 fa3_s1 3.0031
+  seed 3 B=1 rand_80k: kdatt 0.8781 fa3tree 1.0000 fa3_s1 2.1197
+  seed 4 B=1 rand_80k: kdatt 0.7933 fa3tree 1.0000 fa3_s1 1.1663
+[seeds W=2047 B=1 rand_80k n=5] kdatt/stock min=0.7192 mean=0.8781 max=1.0000 fa3tree/stock min=1.0000 mean=1.0000 max=1.0000 fa3_s1/stock min=1.1000 mean=2.0375 max=3.0031 fa3_s16/stock min=1.0000 mean=1.0000 max=1.0000
+  seed 0 B=1 sink_30k: kdatt 1.0000 fa3tree 1.0000 fa3_s1 1.2374
+  seed 1 B=1 sink_30k: kdatt 1.1543 fa3tree 1.0000 fa3_s1 3.2438
+  seed 2 B=1 sink_30k: kdatt 1.0000 fa3tree 1.0000 fa3_s1 1.1154
+  seed 3 B=1 sink_30k: kdatt 0.7283 fa3tree 1.0094 fa3_s1 2.4143
+  seed 4 B=1 sink_30k: kdatt 0.7030 fa3tree 1.0000 fa3_s1 1.6734
+[seeds W=2047 B=1 sink_30k n=5] kdatt/stock min=0.7030 mean=0.9171 max=1.1543 fa3tree/stock min=1.0000 mean=1.0019 max=1.0094 fa3_s1/stock min=1.1154 mean=1.9369 max=3.2438 fa3_s16/stock min=1.0000 mean=1.0000 max=1.0000
+  seed 0 B=1 peaked_8k: kdatt 1.0000 fa3tree 1.0000 fa3_s1 1.3699
+  seed 1 B=1 peaked_8k: kdatt 1.0000 fa3tree 1.0000 fa3_s1 1.8207
+  seed 2 B=1 peaked_8k: kdatt 0.9839 fa3tree 1.0000 fa3_s1 1.7504
+  seed 3 B=1 peaked_8k: kdatt 1.0000 fa3tree 1.0000 fa3_s1 1.1030
+  seed 4 B=1 peaked_8k: kdatt 1.0000 fa3tree 1.0000 fa3_s1 1.0000
+[seeds W=2047 B=1 peaked_8k n=5] kdatt/stock min=0.9839 mean=0.9968 max=1.0000 fa3tree/stock min=1.0000 mean=1.0000 max=1.0000 fa3_s1/stock min=1.0000 mean=1.4088 max=1.8207 fa3_s16/stock min=1.0000 mean=1.0000 max=1.0000
+  seed 0 B=1 flat_8k: kdatt 0.9312 fa3tree 1.0167 fa3_s1 0.9434
+  seed 1 B=1 flat_8k: kdatt 1.0519 fa3tree 0.9747 fa3_s1 1.2783
+  seed 2 B=1 flat_8k: kdatt 0.9145 fa3tree 1.0000 fa3_s1 1.1117
+  seed 3 B=1 flat_8k: kdatt 1.0506 fa3tree 1.0000 fa3_s1 1.2182
+  seed 4 B=1 flat_8k: kdatt 0.9579 fa3tree 1.0000 fa3_s1 0.8858
+[seeds W=2047 B=1 flat_8k n=5] kdatt/stock min=0.9145 mean=0.9812 max=1.0519 fa3tree/stock min=0.9747 mean=0.9983 max=1.0167 fa3_s1/stock min=0.8858 mean=1.0875 max=1.2783 fa3_s16/stock min=1.0000 mean=1.0000 max=1.0000
+  seed 0 B=1 growing_16k: kdatt 0.8718 fa3tree 1.0000 fa3_s1 1.4116
+  seed 1 B=1 growing_16k: kdatt 1.0077 fa3tree 1.0000 fa3_s1 1.4559
+  seed 2 B=1 growing_16k: kdatt 1.0000 fa3tree 1.0000 fa3_s1 2.1938
+  seed 3 B=1 growing_16k: kdatt 1.1145 fa3tree 1.0000 fa3_s1 1.1479
+  seed 4 B=1 growing_16k: kdatt 1.0000 fa3tree 1.0000 fa3_s1 1.2726
+[seeds W=2047 B=1 growing_16k n=5] kdatt/stock min=0.8718 mean=0.9988 max=1.1145 fa3tree/stock min=1.0000 mean=1.0000 max=1.0000 fa3_s1/stock min=1.1479 mean=1.4963 max=2.1938 fa3_s16/stock min=1.0000 mean=1.0000 max=1.0000
+  seed 0 B=1 tail_g15.8_64k: kdatt 0.9961 fa3tree 1.0000 fa3_s1 1.1483
+  seed 1 B=1 tail_g15.8_64k: kdatt 1.0436 fa3tree 1.0000 fa3_s1 0.7730
+  seed 2 B=1 tail_g15.8_64k: kdatt 0.8478 fa3tree 0.9894 fa3_s1 0.9224
+  seed 3 B=1 tail_g15.8_64k: kdatt 1.1883 fa3tree 1.0000 fa3_s1 0.9131
+  seed 4 B=1 tail_g15.8_64k: kdatt 0.9620 fa3tree 1.0000 fa3_s1 1.0299
+  seed 5 B=1 tail_g15.8_64k: kdatt 1.3116 fa3tree 1.0000 fa3_s1 1.3812
+  seed 6 B=1 tail_g15.8_64k: kdatt 0.9467 fa3tree 0.9843 fa3_s1 1.0218
+  seed 7 B=1 tail_g15.8_64k: kdatt 0.9215 fa3tree 1.0000 fa3_s1 1.0192
+  seed 8 B=1 tail_g15.8_64k: kdatt 1.2121 fa3tree 1.0000 fa3_s1 1.1567
+  seed 9 B=1 tail_g15.8_64k: kdatt 1.1445 fa3tree 1.0000 fa3_s1 1.0745
+  seed 10 B=1 tail_g15.8_64k: kdatt 1.2010 fa3tree 1.0238 fa3_s1 1.2607
+  seed 11 B=1 tail_g15.8_64k: kdatt 1.0833 fa3tree 1.0000 fa3_s1 1.2017
+  seed 12 B=1 tail_g15.8_64k: kdatt 0.9679 fa3tree 1.0000 fa3_s1 0.9685
+  seed 13 B=1 tail_g15.8_64k: kdatt 1.0718 fa3tree 1.0000 fa3_s1 1.6793
+  seed 14 B=1 tail_g15.8_64k: kdatt 0.9562 fa3tree 0.9931 fa3_s1 0.9359
+  seed 15 B=1 tail_g15.8_64k: kdatt 0.9219 fa3tree 1.0000 fa3_s1 1.2748
+  seed 16 B=1 tail_g15.8_64k: kdatt 0.9871 fa3tree 1.0000 fa3_s1 1.1888
+  seed 17 B=1 tail_g15.8_64k: kdatt 1.0000 fa3tree 1.0000 fa3_s1 0.9183
+  seed 18 B=1 tail_g15.8_64k: kdatt 1.2815 fa3tree 1.0359 fa3_s1 1.3112
+  seed 19 B=1 tail_g15.8_64k: kdatt 1.1999 fa3tree 1.0133 fa3_s1 1.2876
+[seeds W=2047 B=1 tail_g15.8_64k n=20] kdatt/stock min=0.8478 mean=1.0622 max=1.3116 fa3tree/stock min=0.9843 mean=1.0020 max=1.0359 fa3_s1/stock min=0.7730 mean=1.1234 max=1.6793 fa3_s16/stock min=1.0000 mean=1.0000 max=1.0000
+  seed 0 B=1 tail_g17.8_64k: kdatt 0.9961 fa3tree 1.0000 fa3_s1 1.1483
+  seed 1 B=1 tail_g17.8_64k: kdatt 1.0436 fa3tree 1.0000 fa3_s1 0.7730
+  seed 2 B=1 tail_g17.8_64k: kdatt 0.8478 fa3tree 0.9894 fa3_s1 0.9224
+  seed 3 B=1 tail_g17.8_64k: kdatt 1.1883 fa3tree 1.0000 fa3_s1 0.9131
+  seed 4 B=1 tail_g17.8_64k: kdatt 0.9620 fa3tree 1.0000 fa3_s1 1.0299
+  seed 5 B=1 tail_g17.8_64k: kdatt 1.3116 fa3tree 1.0000 fa3_s1 1.3812
+  seed 6 B=1 tail_g17.8_64k: kdatt 0.9467 fa3tree 0.9843 fa3_s1 1.0218
+  seed 7 B=1 tail_g17.8_64k: kdatt 0.9215 fa3tree 1.0000 fa3_s1 1.0192
+  seed 8 B=1 tail_g17.8_64k: kdatt 1.2121 fa3tree 1.0000 fa3_s1 1.1567
+  seed 9 B=1 tail_g17.8_64k: kdatt 1.1445 fa3tree 1.0000 fa3_s1 1.0745
+  seed 10 B=1 tail_g17.8_64k: kdatt 1.2010 fa3tree 1.0238 fa3_s1 1.2607
+  seed 11 B=1 tail_g17.8_64k: kdatt 1.0833 fa3tree 1.0000 fa3_s1 1.2017
+  seed 12 B=1 tail_g17.8_64k: kdatt 0.9679 fa3tree 1.0000 fa3_s1 0.9685
+  seed 13 B=1 tail_g17.8_64k: kdatt 1.0718 fa3tree 1.0000 fa3_s1 1.6793
+  seed 14 B=1 tail_g17.8_64k: kdatt 0.9562 fa3tree 0.9931 fa3_s1 0.9359
+  seed 15 B=1 tail_g17.8_64k: kdatt 0.9219 fa3tree 1.0000 fa3_s1 1.2748
+  seed 16 B=1 tail_g17.8_64k: kdatt 0.9871 fa3tree 1.0000 fa3_s1 1.1888
+  seed 17 B=1 tail_g17.8_64k: kdatt 1.0000 fa3tree 1.0000 fa3_s1 0.9183
+  seed 18 B=1 tail_g17.8_64k: kdatt 1.2815 fa3tree 1.0359 fa3_s1 1.3112
+  seed 19 B=1 tail_g17.8_64k: kdatt 1.1999 fa3tree 1.0133 fa3_s1 1.2876
+[seeds W=2047 B=1 tail_g17.8_64k n=20] kdatt/stock min=0.8478 mean=1.0622 max=1.3116 fa3tree/stock min=0.9843 mean=1.0020 max=1.0359 fa3_s1/stock min=0.7730 mean=1.1234 max=1.6793 fa3_s16/stock min=1.0000 mean=1.0000 max=1.0000
+  seed 0 B=1 tail_g19.8_64k: kdatt 0.9961 fa3tree 1.0000 fa3_s1 1.1483
+  seed 1 B=1 tail_g19.8_64k: kdatt 1.0436 fa3tree 1.0000 fa3_s1 0.7730
+  seed 2 B=1 tail_g19.8_64k: kdatt 0.8478 fa3tree 0.9894 fa3_s1 0.9224
+  seed 3 B=1 tail_g19.8_64k: kdatt 1.1883 fa3tree 1.0000 fa3_s1 0.9131
+  seed 4 B=1 tail_g19.8_64k: kdatt 0.9620 fa3tree 1.0000 fa3_s1 1.0299
+  seed 5 B=1 tail_g19.8_64k: kdatt 1.3116 fa3tree 1.0000 fa3_s1 1.3812
+  seed 6 B=1 tail_g19.8_64k: kdatt 0.9467 fa3tree 0.9843 fa3_s1 1.0218
+  seed 7 B=1 tail_g19.8_64k: kdatt 0.9215 fa3tree 1.0000 fa3_s1 1.0192
+  seed 8 B=1 tail_g19.8_64k: kdatt 1.2121 fa3tree 1.0000 fa3_s1 1.1567
+  seed 9 B=1 tail_g19.8_64k: kdatt 1.1445 fa3tree 1.0000 fa3_s1 1.0745
+  seed 10 B=1 tail_g19.8_64k: kdatt 1.2010 fa3tree 1.0238 fa3_s1 1.2607
+  seed 11 B=1 tail_g19.8_64k: kdatt 1.0833 fa3tree 1.0000 fa3_s1 1.2017
+  seed 12 B=1 tail_g19.8_64k: kdatt 0.9679 fa3tree 1.0000 fa3_s1 0.9685
+  seed 13 B=1 tail_g19.8_64k: kdatt 1.0718 fa3tree 1.0000 fa3_s1 1.6793
+  seed 14 B=1 tail_g19.8_64k: kdatt 0.9562 fa3tree 0.9931 fa3_s1 0.9359
+  seed 15 B=1 tail_g19.8_64k: kdatt 0.9219 fa3tree 1.0000 fa3_s1 1.2748
+  seed 16 B=1 tail_g19.8_64k: kdatt 0.9871 fa3tree 1.0000 fa3_s1 1.1888
+  seed 17 B=1 tail_g19.8_64k: kdatt 1.0000 fa3tree 1.0000 fa3_s1 0.9183
+  seed 18 B=1 tail_g19.8_64k: kdatt 1.2815 fa3tree 1.0359 fa3_s1 1.3112
+  seed 19 B=1 tail_g19.8_64k: kdatt 1.1999 fa3tree 1.0133 fa3_s1 1.2876
+[seeds W=2047 B=1 tail_g19.8_64k n=20] kdatt/stock min=0.8478 mean=1.0622 max=1.3116 fa3tree/stock min=0.9843 mean=1.0020 max=1.0359 fa3_s1/stock min=0.7730 mean=1.1234 max=1.6793 fa3_s16/stock min=1.0000 mean=1.0000 max=1.0000
+  seed 0 B=1 short_5: kdatt 1.0000 fa3tree 1.0000 fa3_s1 1.0000
+  seed 1 B=1 short_5: kdatt 0.9212 fa3tree 0.9212 fa3_s1 1.0000
+  seed 2 B=1 short_5: kdatt 0.9458 fa3tree 0.9458 fa3_s1 1.0000
+  seed 3 B=1 short_5: kdatt 1.0000 fa3tree 1.0000 fa3_s1 1.0000
+  seed 4 B=1 short_5: kdatt 0.9293 fa3tree 0.9293 fa3_s1 1.0000
+[seeds W=2047 B=1 short_5 n=5] kdatt/stock min=0.9212 mean=0.9593 max=1.0000 fa3tree/stock min=0.9212 mean=0.9593 max=1.0000 fa3_s1/stock min=1.0000 mean=1.0000 max=1.0000 fa3_s16/stock min=1.0000 mean=1.0000 max=1.0000
+  seed 0 B=1 zero: kdatt 1.2202 fa3tree 1.2202 fa3_s1 1.0000
+  seed 1 B=1 zero: kdatt 1.0000 fa3tree 1.0000 fa3_s1 1.0000
+  seed 2 B=1 zero: kdatt 1.0000 fa3tree 1.0000 fa3_s1 1.0000
+  seed 3 B=1 zero: kdatt 1.0000 fa3tree 1.0000 fa3_s1 1.0000
+  seed 4 B=1 zero: kdatt 1.0000 fa3tree 1.0000 fa3_s1 1.0000
+[seeds W=2047 B=1 zero n=5] kdatt/stock min=1.0000 mean=1.0440 max=1.2202 fa3tree/stock min=1.0000 mean=1.0440 max=1.2202 fa3_s1/stock min=1.0000 mean=1.0000 max=1.0000 fa3_s16/stock min=1.0000 mean=1.0000 max=1.0000
+  seed 0 B=1 swa_edge_2040: kdatt 1.0000 fa3tree 1.0000 fa3_s1 1.3730
+  seed 1 B=1 swa_edge_2040: kdatt 0.5018 fa3tree 1.0000 fa3_s1 1.1598
+  seed 2 B=1 swa_edge_2040: kdatt 1.0000 fa3tree 1.0000 fa3_s1 1.2752
+  seed 3 B=1 swa_edge_2040: kdatt 0.6380 fa3tree 1.0000 fa3_s1 1.3609
+  seed 4 B=1 swa_edge_2040: kdatt 0.6034 fa3tree 1.0000 fa3_s1 1.0877
+[seeds W=2047 B=1 swa_edge_2040 n=5] kdatt/stock min=0.5018 mean=0.7486 max=1.0000 fa3tree/stock min=1.0000 mean=1.0000 max=1.0000 fa3_s1/stock min=1.0877 mean=1.2513 max=1.3730 fa3_s16/stock min=0.5018 mean=0.7486 max=1.0000
+  seed 0 B=1 swa_edge_2048: kdatt 0.7906 fa3tree 1.0000 fa3_s1 1.2523
+  seed 1 B=1 swa_edge_2048: kdatt 0.5106 fa3tree 1.0000 fa3_s1 1.1410
+  seed 2 B=1 swa_edge_2048: kdatt 1.0000 fa3tree 1.0000 fa3_s1 1.1916
+  seed 3 B=1 swa_edge_2048: kdatt 0.6552 fa3tree 1.0000 fa3_s1 1.3986
+  seed 4 B=1 swa_edge_2048: kdatt 0.5949 fa3tree 1.0000 fa3_s1 1.1524
+[seeds W=2047 B=1 swa_edge_2048 n=5] kdatt/stock min=0.5106 mean=0.7103 max=1.0000 fa3tree/stock min=1.0000 mean=1.0000 max=1.0000 fa3_s1/stock min=1.1410 mean=1.2272 max=1.3986 fa3_s16/stock min=1.0000 mean=1.0000 max=1.0000
+  seed 0 B=1 swa_edge_2100: kdatt 0.9142 fa3tree 1.0000 fa3_s1 1.2791
+  seed 1 B=1 swa_edge_2100: kdatt 0.4422 fa3tree 1.0000 fa3_s1 1.2329
+  seed 2 B=1 swa_edge_2100: kdatt 1.0000 fa3tree 1.0000 fa3_s1 1.3068
+  seed 3 B=1 swa_edge_2100: kdatt 0.6739 fa3tree 1.0000 fa3_s1 1.3919
+  seed 4 B=1 swa_edge_2100: kdatt 0.5267 fa3tree 1.0000 fa3_s1 1.0212
+[seeds W=2047 B=1 swa_edge_2100 n=5] kdatt/stock min=0.4422 mean=0.7114 max=1.0000 fa3tree/stock min=1.0000 mean=1.0000 max=1.0000 fa3_s1/stock min=1.0212 mean=1.2464 max=1.3919 fa3_s16/stock min=1.0000 mean=1.0000 max=1.0000
+  seed 0 B=12 rand_80k: kdatt 1.0000 fa3tree 1.0000 fa3_s1 1.1747
+  seed 1 B=12 rand_80k: kdatt 0.6205 fa3tree 1.0000 fa3_s1 1.6627
+  seed 2 B=12 rand_80k: kdatt 0.7188 fa3tree 1.0000 fa3_s1 1.6294
+  seed 3 B=12 rand_80k: kdatt 1.0000 fa3tree 1.0000 fa3_s1 1.4017
+  seed 4 B=12 rand_80k: kdatt 0.6836 fa3tree 1.0000 fa3_s1 1.6733
+[seeds W=2047 B=12 rand_80k n=5] kdatt/stock min=0.6205 mean=0.8046 max=1.0000 fa3tree/stock min=1.0000 mean=1.0000 max=1.0000 fa3_s1/stock min=1.1747 mean=1.5084 max=1.6733 fa3_s16/stock min=1.0000 mean=1.0000 max=1.0000
+  seed 0 B=12 sink_30k: kdatt 0.7569 fa3tree 1.0000 fa3_s1 1.3430
+  seed 1 B=12 sink_30k: kdatt 1.0000 fa3tree 1.0000 fa3_s1 1.3133
+  seed 2 B=12 sink_30k: kdatt 0.7162 fa3tree 1.0000 fa3_s1 1.0941
+  seed 3 B=12 sink_30k: kdatt 0.8127 fa3tree 1.0000 fa3_s1 1.0000
+  seed 4 B=12 sink_30k: kdatt 0.8265 fa3tree 1.0000 fa3_s1 1.4566
+[seeds W=2047 B=12 sink_30k n=5] kdatt/stock min=0.7162 mean=0.8225 max=1.0000 fa3tree/stock min=1.0000 mean=1.0000 max=1.0000 fa3_s1/stock min=1.0000 mean=1.2414 max=1.4566 fa3_s16/stock min=1.0000 mean=1.0000 max=1.0000
+  seed 0 B=12 peaked_8k: kdatt 1.0000 fa3tree 1.0000 fa3_s1 1.0000
+  seed 1 B=12 peaked_8k: kdatt 1.0160 fa3tree 1.0000 fa3_s1 1.6314
+  seed 2 B=12 peaked_8k: kdatt 0.9318 fa3tree 1.0000 fa3_s1 1.0290
+  seed 3 B=12 peaked_8k: kdatt 0.6306 fa3tree 1.0000 fa3_s1 1.3980
+  seed 4 B=12 peaked_8k: kdatt 1.0000 fa3tree 1.0000 fa3_s1 1.4003
+[seeds W=2047 B=12 peaked_8k n=5] kdatt/stock min=0.6306 mean=0.9157 max=1.0160 fa3tree/stock min=1.0000 mean=1.0000 max=1.0000 fa3_s1/stock min=1.0000 mean=1.2917 max=1.6314 fa3_s16/stock min=1.0000 mean=1.0000 max=1.0000
+  seed 0 B=12 flat_8k: kdatt 0.8904 fa3tree 1.0000 fa3_s1 0.8596
+  seed 1 B=12 flat_8k: kdatt 1.0157 fa3tree 0.9963 fa3_s1 1.0249
+  seed 2 B=12 flat_8k: kdatt 1.0213 fa3tree 1.0000 fa3_s1 1.0034
+  seed 3 B=12 flat_8k: kdatt 0.8474 fa3tree 1.0000 fa3_s1 0.9431
+  seed 4 B=12 flat_8k: kdatt 1.0000 fa3tree 1.0000 fa3_s1 0.9645
+[seeds W=2047 B=12 flat_8k n=5] kdatt/stock min=0.8474 mean=0.9550 max=1.0213 fa3tree/stock min=0.9963 mean=0.9993 max=1.0000 fa3_s1/stock min=0.8596 mean=0.9591 max=1.0249 fa3_s16/stock min=1.0000 mean=1.0000 max=1.0000
+  seed 0 B=12 growing_16k: kdatt 1.0480 fa3tree 1.0000 fa3_s1 1.0000
+  seed 1 B=12 growing_16k: kdatt 1.0000 fa3tree 1.0000 fa3_s1 1.0000
+  seed 2 B=12 growing_16k: kdatt 1.0000 fa3tree 1.0000 fa3_s1 1.0000
+  seed 3 B=12 growing_16k: kdatt 0.7710 fa3tree 1.0000 fa3_s1 1.0051
+  seed 4 B=12 growing_16k: kdatt 0.7227 fa3tree 1.0000 fa3_s1 1.0000
+[seeds W=2047 B=12 growing_16k n=5] kdatt/stock min=0.7227 mean=0.9083 max=1.0480 fa3tree/stock min=1.0000 mean=1.0000 max=1.0000 fa3_s1/stock min=1.0000 mean=1.0010 max=1.0051 fa3_s16/stock min=1.0000 mean=1.0000 max=1.0000
+  seed 0 B=12 tail_g15.8_64k: kdatt 0.8471 fa3tree 0.9952 fa3_s1 1.1596
+  seed 1 B=12 tail_g15.8_64k: kdatt 1.1183 fa3tree 1.0000 fa3_s1 1.0055
+  seed 2 B=12 tail_g15.8_64k: kdatt 0.9302 fa3tree 1.0000 fa3_s1 0.9718
+  seed 3 B=12 tail_g15.8_64k: kdatt 1.0098 fa3tree 1.0082 fa3_s1 0.8862
+  seed 4 B=12 tail_g15.8_64k: kdatt 0.9062 fa3tree 1.0000 fa3_s1 1.0376
+  seed 5 B=12 tail_g15.8_64k: kdatt 1.0573 fa3tree 1.0018 fa3_s1 0.9431
+  seed 6 B=12 tail_g15.8_64k: kdatt 1.0074 fa3tree 0.9974 fa3_s1 1.0840
+  seed 7 B=12 tail_g15.8_64k: kdatt 0.9035 fa3tree 0.9906 fa3_s1 1.1844
+  seed 8 B=12 tail_g15.8_64k: kdatt 1.0644 fa3tree 1.0000 fa3_s1 1.1133
+  seed 9 B=12 tail_g15.8_64k: kdatt 1.0005 fa3tree 1.0103 fa3_s1 1.0387
+  seed 10 B=12 tail_g15.8_64k: kdatt 0.9427 fa3tree 1.0000 fa3_s1 0.9294
+  seed 11 B=12 tail_g15.8_64k: kdatt 0.9504 fa3tree 1.0000 fa3_s1 0.9497
+  seed 12 B=12 tail_g15.8_64k: kdatt 1.1458 fa3tree 1.0000 fa3_s1 1.1070
+  seed 13 B=12 tail_g15.8_64k: kdatt 0.8679 fa3tree 1.0193 fa3_s1 0.8699
+  seed 14 B=12 tail_g15.8_64k: kdatt 0.8103 fa3tree 1.0000 fa3_s1 0.9624
+  seed 15 B=12 tail_g15.8_64k: kdatt 0.9790 fa3tree 1.0000 fa3_s1 1.3255
+  seed 16 B=12 tail_g15.8_64k: kdatt 0.9094 fa3tree 0.9747 fa3_s1 1.3102
+  seed 17 B=12 tail_g15.8_64k: kdatt 1.2904 fa3tree 1.0000 fa3_s1 1.2204
+  seed 18 B=12 tail_g15.8_64k: kdatt 0.8527 fa3tree 1.0000 fa3_s1 0.7884
+  seed 19 B=12 tail_g15.8_64k: kdatt 1.1088 fa3tree 0.9828 fa3_s1 0.9670
+[seeds W=2047 B=12 tail_g15.8_64k n=20] kdatt/stock min=0.8103 mean=0.9851 max=1.2904 fa3tree/stock min=0.9747 mean=0.9990 max=1.0193 fa3_s1/stock min=0.7884 mean=1.0427 max=1.3255 fa3_s16/stock min=1.0000 mean=1.0000 max=1.0000
+  seed 0 B=12 tail_g17.8_64k: kdatt 0.8471 fa3tree 0.9952 fa3_s1 1.1596
+  seed 1 B=12 tail_g17.8_64k: kdatt 1.1183 fa3tree 1.0000 fa3_s1 1.0055
+  seed 2 B=12 tail_g17.8_64k: kdatt 0.9302 fa3tree 1.0000 fa3_s1 0.9718
+  seed 3 B=12 tail_g17.8_64k: kdatt 1.0098 fa3tree 1.0082 fa3_s1 0.8862
+  seed 4 B=12 tail_g17.8_64k: kdatt 0.9062 fa3tree 1.0000 fa3_s1 1.0376
+  seed 5 B=12 tail_g17.8_64k: kdatt 1.0573 fa3tree 1.0018 fa3_s1 0.9431
+  seed 6 B=12 tail_g17.8_64k: kdatt 1.0074 fa3tree 0.9974 fa3_s1 1.0840
+  seed 7 B=12 tail_g17.8_64k: kdatt 0.9035 fa3tree 0.9906 fa3_s1 1.1844
+  seed 8 B=12 tail_g17.8_64k: kdatt 1.0644 fa3tree 1.0000 fa3_s1 1.1133
+  seed 9 B=12 tail_g17.8_64k: kdatt 1.0005 fa3tree 1.0103 fa3_s1 1.0387
+  seed 10 B=12 tail_g17.8_64k: kdatt 0.9427 fa3tree 1.0000 fa3_s1 0.9294
+  seed 11 B=12 tail_g17.8_64k: kdatt 0.9504 fa3tree 1.0000 fa3_s1 0.9497
+  seed 12 B=12 tail_g17.8_64k: kdatt 1.1458 fa3tree 1.0000 fa3_s1 1.1070
+  seed 13 B=12 tail_g17.8_64k: kdatt 0.8679 fa3tree 1.0193 fa3_s1 0.8699
+  seed 14 B=12 tail_g17.8_64k: kdatt 0.8103 fa3tree 1.0000 fa3_s1 0.9624
+  seed 15 B=12 tail_g17.8_64k: kdatt 0.9790 fa3tree 1.0000 fa3_s1 1.3255
+  seed 16 B=12 tail_g17.8_64k: kdatt 0.9094 fa3tree 0.9747 fa3_s1 1.3102
+  seed 17 B=12 tail_g17.8_64k: kdatt 1.2904 fa3tree 1.0000 fa3_s1 1.2204
+  seed 18 B=12 tail_g17.8_64k: kdatt 0.8527 fa3tree 1.0000 fa3_s1 0.7884
+  seed 19 B=12 tail_g17.8_64k: kdatt 1.1088 fa3tree 0.9828 fa3_s1 0.9670
+[seeds W=2047 B=12 tail_g17.8_64k n=20] kdatt/stock min=0.8103 mean=0.9851 max=1.2904 fa3tree/stock min=0.9747 mean=0.9990 max=1.0193 fa3_s1/stock min=0.7884 mean=1.0427 max=1.3255 fa3_s16/stock min=1.0000 mean=1.0000 max=1.0000
+  seed 0 B=12 tail_g19.8_64k: kdatt 0.8471 fa3tree 0.9952 fa3_s1 1.1596
+  seed 1 B=12 tail_g19.8_64k: kdatt 1.1183 fa3tree 1.0000 fa3_s1 1.0055
+  seed 2 B=12 tail_g19.8_64k: kdatt 0.9302 fa3tree 1.0000 fa3_s1 0.9718
+  seed 3 B=12 tail_g19.8_64k: kdatt 1.0098 fa3tree 1.0082 fa3_s1 0.8862
+  seed 4 B=12 tail_g19.8_64k: kdatt 0.9062 fa3tree 1.0000 fa3_s1 1.0376
+  seed 5 B=12 tail_g19.8_64k: kdatt 1.0573 fa3tree 1.0018 fa3_s1 0.9431
+  seed 6 B=12 tail_g19.8_64k: kdatt 1.0074 fa3tree 0.9974 fa3_s1 1.0840
+  seed 7 B=12 tail_g19.8_64k: kdatt 0.9035 fa3tree 0.9906 fa3_s1 1.1844
+  seed 8 B=12 tail_g19.8_64k: kdatt 1.0644 fa3tree 1.0000 fa3_s1 1.1133
+  seed 9 B=12 tail_g19.8_64k: kdatt 1.0005 fa3tree 1.0103 fa3_s1 1.0387
+  seed 10 B=12 tail_g19.8_64k: kdatt 0.9427 fa3tree 1.0000 fa3_s1 0.9294
+  seed 11 B=12 tail_g19.8_64k: kdatt 0.9504 fa3tree 1.0000 fa3_s1 0.9497
+  seed 12 B=12 tail_g19.8_64k: kdatt 1.1458 fa3tree 1.0000 fa3_s1 1.1070
+  seed 13 B=12 tail_g19.8_64k: kdatt 0.8679 fa3tree 1.0193 fa3_s1 0.8699
+  seed 14 B=12 tail_g19.8_64k: kdatt 0.8103 fa3tree 1.0000 fa3_s1 0.9624
+  seed 15 B=12 tail_g19.8_64k: kdatt 0.9790 fa3tree 1.0000 fa3_s1 1.3255
+  seed 16 B=12 tail_g19.8_64k: kdatt 0.9094 fa3tree 0.9747 fa3_s1 1.3102
+  seed 17 B=12 tail_g19.8_64k: kdatt 1.2904 fa3tree 1.0000 fa3_s1 1.2204
+  seed 18 B=12 tail_g19.8_64k: kdatt 0.8527 fa3tree 1.0000 fa3_s1 0.7884
+  seed 19 B=12 tail_g19.8_64k: kdatt 1.1088 fa3tree 0.9828 fa3_s1 0.9670
+[seeds W=2047 B=12 tail_g19.8_64k n=20] kdatt/stock min=0.8103 mean=0.9851 max=1.2904 fa3tree/stock min=0.9747 mean=0.9990 max=1.0193 fa3_s1/stock min=0.7884 mean=1.0427 max=1.3255 fa3_s16/stock min=1.0000 mean=1.0000 max=1.0000
+  seed 0 B=12 short_5: kdatt 1.0000 fa3tree 1.0000 fa3_s1 1.0000
+  seed 1 B=12 short_5: kdatt 0.7832 fa3tree 0.7832 fa3_s1 1.0000
+  seed 2 B=12 short_5: kdatt 1.0000 fa3tree 1.0000 fa3_s1 1.0000
+  seed 3 B=12 short_5: kdatt 1.0000 fa3tree 1.0000 fa3_s1 1.0000
+  seed 4 B=12 short_5: kdatt 0.8854 fa3tree 0.8854 fa3_s1 1.0000
+[seeds W=2047 B=12 short_5 n=5] kdatt/stock min=0.7832 mean=0.9337 max=1.0000 fa3tree/stock min=0.7832 mean=0.9337 max=1.0000 fa3_s1/stock min=1.0000 mean=1.0000 max=1.0000 fa3_s16/stock min=1.0000 mean=1.0000 max=1.0000
+  seed 0 B=12 zero: kdatt 1.2202 fa3tree 1.2202 fa3_s1 1.0000
+  seed 1 B=12 zero: kdatt 1.0000 fa3tree 1.0000 fa3_s1 1.0000
+  seed 2 B=12 zero: kdatt 1.0000 fa3tree 1.0000 fa3_s1 1.0000
+  seed 3 B=12 zero: kdatt 1.0000 fa3tree 1.0000 fa3_s1 1.0000
+  seed 4 B=12 zero: kdatt 1.0000 fa3tree 1.0000 fa3_s1 1.0000
+[seeds W=2047 B=12 zero n=5] kdatt/stock min=1.0000 mean=1.0440 max=1.2202 fa3tree/stock min=1.0000 mean=1.0440 max=1.2202 fa3_s1/stock min=1.0000 mean=1.0000 max=1.0000 fa3_s16/stock min=1.0000 mean=1.0000 max=1.0000
+  seed 0 B=12 swa_edge_2040: kdatt 1.0000 fa3tree 1.0000 fa3_s1 1.1196
+  seed 1 B=12 swa_edge_2040: kdatt 0.8154 fa3tree 1.0000 fa3_s1 1.1237
+  seed 2 B=12 swa_edge_2040: kdatt 0.8156 fa3tree 1.0000 fa3_s1 1.0000
+  seed 3 B=12 swa_edge_2040: kdatt 0.7803 fa3tree 1.0000 fa3_s1 1.4475
+  seed 4 B=12 swa_edge_2040: kdatt 1.0000 fa3tree 1.0000 fa3_s1 1.0000
+[seeds W=2047 B=12 swa_edge_2040 n=5] kdatt/stock min=0.7803 mean=0.8823 max=1.0000 fa3tree/stock min=1.0000 mean=1.0000 max=1.0000 fa3_s1/stock min=1.0000 mean=1.1382 max=1.4475 fa3_s16/stock min=1.0000 mean=1.0000 max=1.0000
+  seed 0 B=12 swa_edge_2048: kdatt 0.9160 fa3tree 1.0000 fa3_s1 1.1911
+  seed 1 B=12 swa_edge_2048: kdatt 0.8071 fa3tree 1.0000 fa3_s1 1.0000
+  seed 2 B=12 swa_edge_2048: kdatt 0.7090 fa3tree 1.0000 fa3_s1 1.0036
+  seed 3 B=12 swa_edge_2048: kdatt 0.8118 fa3tree 1.0000 fa3_s1 1.4076
+  seed 4 B=12 swa_edge_2048: kdatt 1.0000 fa3tree 1.0000 fa3_s1 1.0000
+[seeds W=2047 B=12 swa_edge_2048 n=5] kdatt/stock min=0.7090 mean=0.8488 max=1.0000 fa3tree/stock min=1.0000 mean=1.0000 max=1.0000 fa3_s1/stock min=1.0000 mean=1.1205 max=1.4076 fa3_s16/stock min=1.0000 mean=1.0000 max=1.0000
+  seed 0 B=12 swa_edge_2100: kdatt 0.6896 fa3tree 1.0000 fa3_s1 1.1703
+  seed 1 B=12 swa_edge_2100: kdatt 1.0000 fa3tree 1.0000 fa3_s1 1.0000
+  seed 2 B=12 swa_edge_2100: kdatt 0.6442 fa3tree 1.0000 fa3_s1 1.0000
+  seed 3 B=12 swa_edge_2100: kdatt 0.6252 fa3tree 1.0000 fa3_s1 1.0000
+  seed 4 B=12 swa_edge_2100: kdatt 1.0000 fa3tree 1.0000 fa3_s1 1.0000
+[seeds W=2047 B=12 swa_edge_2100 n=5] kdatt/stock min=0.6252 mean=0.7918 max=1.0000 fa3tree/stock min=1.0000 mean=1.0000 max=1.0000 fa3_s1/stock min=1.0000 mean=1.0341 max=1.1703 fa3_s16/stock min=1.0000 mean=1.0000 max=1.0000
+  seed 0 B=32 rand_80k: kdatt 0.8651 fa3tree 0.8662 fa3_s1 1.0331
+  seed 1 B=32 rand_80k: kdatt 0.6579 fa3tree 0.6579 fa3_s1 1.0000
+  seed 2 B=32 rand_80k: kdatt 0.7963 fa3tree 0.7963 fa3_s1 1.0511
+  seed 3 B=32 rand_80k: kdatt 0.8147 fa3tree 1.0000 fa3_s1 1.0953
+  seed 4 B=32 rand_80k: kdatt 0.6523 fa3tree 0.6523 fa3_s1 1.0000
+[seeds W=2047 B=32 rand_80k n=5] kdatt/stock min=0.6523 mean=0.7573 max=0.8651 fa3tree/stock min=0.6523 mean=0.7945 max=1.0000 fa3_s1/stock min=1.0000 mean=1.0359 max=1.0953 fa3_s16/stock min=1.0000 mean=1.0000 max=1.0000
+  seed 0 B=32 sink_30k: kdatt 0.8549 fa3tree 1.0000 fa3_s1 1.0000
+  seed 1 B=32 sink_30k: kdatt 0.7585 fa3tree 1.0000 fa3_s1 1.0000
+  seed 2 B=32 sink_30k: kdatt 0.5129 fa3tree 1.0000 fa3_s1 1.0000
+  seed 3 B=32 sink_30k: kdatt 1.0000 fa3tree 1.0000 fa3_s1 1.0000
+  seed 4 B=32 sink_30k: kdatt 0.7619 fa3tree 1.0000 fa3_s1 1.2099
+[seeds W=2047 B=32 sink_30k n=5] kdatt/stock min=0.5129 mean=0.7776 max=1.0000 fa3tree/stock min=1.0000 mean=1.0000 max=1.0000 fa3_s1/stock min=1.0000 mean=1.0420 max=1.2099 fa3_s16/stock min=1.0000 mean=1.0000 max=1.0000
+  seed 0 B=32 peaked_8k: kdatt 1.0000 fa3tree 1.0000 fa3_s1 1.0000
+  seed 1 B=32 peaked_8k: kdatt 0.5392 fa3tree 1.0000 fa3_s1 1.0000
+  seed 2 B=32 peaked_8k: kdatt 0.9670 fa3tree 1.0000 fa3_s1 1.0000
+  seed 3 B=32 peaked_8k: kdatt 1.0000 fa3tree 1.0779 fa3_s1 1.0779
+  seed 4 B=32 peaked_8k: kdatt 0.9621 fa3tree 1.0000 fa3_s1 1.0127
+[seeds W=2047 B=32 peaked_8k n=5] kdatt/stock min=0.5392 mean=0.8937 max=1.0000 fa3tree/stock min=1.0000 mean=1.0156 max=1.0779 fa3_s1/stock min=1.0000 mean=1.0181 max=1.0779 fa3_s16/stock min=1.0000 mean=1.0000 max=1.0000
+  seed 0 B=32 flat_8k: kdatt 0.9618 fa3tree 1.0264 fa3_s1 0.9630
+  seed 1 B=32 flat_8k: kdatt 0.8898 fa3tree 0.9330 fa3_s1 0.9268
+  seed 2 B=32 flat_8k: kdatt 1.0509 fa3tree 1.0189 fa3_s1 1.0472
+  seed 3 B=32 flat_8k: kdatt 1.0613 fa3tree 1.0683 fa3_s1 1.0123
+  seed 4 B=32 flat_8k: kdatt 1.0346 fa3tree 0.9152 fa3_s1 1.0169
+[seeds W=2047 B=32 flat_8k n=5] kdatt/stock min=0.8898 mean=0.9997 max=1.0613 fa3tree/stock min=0.9152 mean=0.9923 max=1.0683 fa3_s1/stock min=0.9268 mean=0.9932 max=1.0472 fa3_s16/stock min=1.0000 mean=1.0000 max=1.0000
+  seed 0 B=32 growing_16k: kdatt 1.0036 fa3tree 1.0036 fa3_s1 1.0036
+  seed 1 B=32 growing_16k: kdatt 0.9825 fa3tree 1.7855 fa3_s1 1.7855
+  seed 2 B=32 growing_16k: kdatt 1.0000 fa3tree 1.0000 fa3_s1 1.0000
+  seed 3 B=32 growing_16k: kdatt 1.0000 fa3tree 1.0000 fa3_s1 1.3336
+  seed 4 B=32 growing_16k: kdatt 1.0000 fa3tree 1.0000 fa3_s1 1.0000
+[seeds W=2047 B=32 growing_16k n=5] kdatt/stock min=0.9825 mean=0.9972 max=1.0036 fa3tree/stock min=1.0000 mean=1.1578 max=1.7855 fa3_s1/stock min=1.0000 mean=1.2245 max=1.7855 fa3_s16/stock min=1.0000 mean=1.0000 max=1.0000
+  seed 0 B=32 tail_g15.8_64k: kdatt 1.0663 fa3tree 1.1211 fa3_s1 1.1211
+  seed 1 B=32 tail_g15.8_64k: kdatt 1.1949 fa3tree 0.9938 fa3_s1 1.1132
+  seed 2 B=32 tail_g15.8_64k: kdatt 0.8783 fa3tree 0.7604 fa3_s1 0.9686
+  seed 3 B=32 tail_g15.8_64k: kdatt 0.9749 fa3tree 1.1861 fa3_s1 1.0931
+  seed 4 B=32 tail_g15.8_64k: kdatt 0.8585 fa3tree 0.9490 fa3_s1 0.8518
+  seed 5 B=32 tail_g15.8_64k: kdatt 1.0961 fa3tree 0.9180 fa3_s1 1.0720
+  seed 6 B=32 tail_g15.8_64k: kdatt 0.7198 fa3tree 0.7962 fa3_s1 0.8079
+  seed 7 B=32 tail_g15.8_64k: kdatt 1.0325 fa3tree 0.8729 fa3_s1 1.1358
+  seed 8 B=32 tail_g15.8_64k: kdatt 0.9646 fa3tree 0.8811 fa3_s1 1.0829
+  seed 9 B=32 tail_g15.8_64k: kdatt 0.9864 fa3tree 1.1163 fa3_s1 1.0152
+  seed 10 B=32 tail_g15.8_64k: kdatt 0.7398 fa3tree 0.8843 fa3_s1 0.9846
+  seed 11 B=32 tail_g15.8_64k: kdatt 0.9031 fa3tree 0.9833 fa3_s1 0.8505
+  seed 12 B=32 tail_g15.8_64k: kdatt 1.0150 fa3tree 1.0929 fa3_s1 1.0177
+  seed 13 B=32 tail_g15.8_64k: kdatt 1.1297 fa3tree 1.3215 fa3_s1 1.2103
+  seed 14 B=32 tail_g15.8_64k: kdatt 0.9480 fa3tree 1.1541 fa3_s1 1.0435
+  seed 15 B=32 tail_g15.8_64k: kdatt 0.8593 fa3tree 0.9510 fa3_s1 1.0418
+  seed 16 B=32 tail_g15.8_64k: kdatt 0.9801 fa3tree 0.9564 fa3_s1 0.9600
+  seed 17 B=32 tail_g15.8_64k: kdatt 0.9696 fa3tree 1.0604 fa3_s1 1.1539
+  seed 18 B=32 tail_g15.8_64k: kdatt 1.0150 fa3tree 1.0983 fa3_s1 1.0872
+  seed 19 B=32 tail_g15.8_64k: kdatt 1.0346 fa3tree 1.1196 fa3_s1 1.0993
+[seeds W=2047 B=32 tail_g15.8_64k n=20] kdatt/stock min=0.7198 mean=0.9683 max=1.1949 fa3tree/stock min=0.7604 mean=1.0108 max=1.3215 fa3_s1/stock min=0.8079 mean=1.0355 max=1.2103 fa3_s16/stock min=1.0000 mean=1.0000 max=1.0000
+  seed 0 B=32 tail_g17.8_64k: kdatt 1.0663 fa3tree 1.1211 fa3_s1 1.1211
+  seed 1 B=32 tail_g17.8_64k: kdatt 1.1949 fa3tree 0.9938 fa3_s1 1.1132
+  seed 2 B=32 tail_g17.8_64k: kdatt 0.8783 fa3tree 0.7604 fa3_s1 0.9686
+  seed 3 B=32 tail_g17.8_64k: kdatt 0.9749 fa3tree 1.1861 fa3_s1 1.0931
+  seed 4 B=32 tail_g17.8_64k: kdatt 0.8585 fa3tree 0.9490 fa3_s1 0.8518
+  seed 5 B=32 tail_g17.8_64k: kdatt 1.0961 fa3tree 0.9180 fa3_s1 1.0720
+  seed 6 B=32 tail_g17.8_64k: kdatt 0.7198 fa3tree 0.7962 fa3_s1 0.8079
+  seed 7 B=32 tail_g17.8_64k: kdatt 1.0325 fa3tree 0.8729 fa3_s1 1.1358
+  seed 8 B=32 tail_g17.8_64k: kdatt 0.9646 fa3tree 0.8811 fa3_s1 1.0829
+  seed 9 B=32 tail_g17.8_64k: kdatt 0.9864 fa3tree 1.1163 fa3_s1 1.0152
+  seed 10 B=32 tail_g17.8_64k: kdatt 0.7398 fa3tree 0.8843 fa3_s1 0.9846
+  seed 11 B=32 tail_g17.8_64k: kdatt 0.9031 fa3tree 0.9833 fa3_s1 0.8505
+  seed 12 B=32 tail_g17.8_64k: kdatt 1.0150 fa3tree 1.0929 fa3_s1 1.0177
+  seed 13 B=32 tail_g17.8_64k: kdatt 1.1297 fa3tree 1.3215 fa3_s1 1.2103
+  seed 14 B=32 tail_g17.8_64k: kdatt 0.9480 fa3tree 1.1541 fa3_s1 1.0435
+  seed 15 B=32 tail_g17.8_64k: kdatt 0.8593 fa3tree 0.9510 fa3_s1 1.0418
+  seed 16 B=32 tail_g17.8_64k: kdatt 0.9801 fa3tree 0.9564 fa3_s1 0.9600
+  seed 17 B=32 tail_g17.8_64k: kdatt 0.9696 fa3tree 1.0604 fa3_s1 1.1539
+  seed 18 B=32 tail_g17.8_64k: kdatt 1.0150 fa3tree 1.0983 fa3_s1 1.0872
+  seed 19 B=32 tail_g17.8_64k: kdatt 1.0346 fa3tree 1.1196 fa3_s1 1.0993
+[seeds W=2047 B=32 tail_g17.8_64k n=20] kdatt/stock min=0.7198 mean=0.9683 max=1.1949 fa3tree/stock min=0.7604 mean=1.0108 max=1.3215 fa3_s1/stock min=0.8079 mean=1.0355 max=1.2103 fa3_s16/stock min=1.0000 mean=1.0000 max=1.0000
+  seed 0 B=32 tail_g19.8_64k: kdatt 1.0663 fa3tree 1.1211 fa3_s1 1.1211
+  seed 1 B=32 tail_g19.8_64k: kdatt 1.1949 fa3tree 0.9938 fa3_s1 1.1132
+  seed 2 B=32 tail_g19.8_64k: kdatt 0.8783 fa3tree 0.7604 fa3_s1 0.9686
+  seed 3 B=32 tail_g19.8_64k: kdatt 0.9749 fa3tree 1.1861 fa3_s1 1.0931
+  seed 4 B=32 tail_g19.8_64k: kdatt 0.8585 fa3tree 0.9490 fa3_s1 0.8518
+  seed 5 B=32 tail_g19.8_64k: kdatt 1.0961 fa3tree 0.9180 fa3_s1 1.0720
+  seed 6 B=32 tail_g19.8_64k: kdatt 0.7198 fa3tree 0.7962 fa3_s1 0.8079
+  seed 7 B=32 tail_g19.8_64k: kdatt 1.0325 fa3tree 0.8729 fa3_s1 1.1358
+  seed 8 B=32 tail_g19.8_64k: kdatt 0.9646 fa3tree 0.8811 fa3_s1 1.0829
+  seed 9 B=32 tail_g19.8_64k: kdatt 0.9864 fa3tree 1.1163 fa3_s1 1.0152
+  seed 10 B=32 tail_g19.8_64k: kdatt 0.7398 fa3tree 0.8843 fa3_s1 0.9846
+  seed 11 B=32 tail_g19.8_64k: kdatt 0.9031 fa3tree 0.9833 fa3_s1 0.8505
+  seed 12 B=32 tail_g19.8_64k: kdatt 1.0150 fa3tree 1.0929 fa3_s1 1.0177
+  seed 13 B=32 tail_g19.8_64k: kdatt 1.1297 fa3tree 1.3215 fa3_s1 1.2103
+  seed 14 B=32 tail_g19.8_64k: kdatt 0.9480 fa3tree 1.1541 fa3_s1 1.0435
+  seed 15 B=32 tail_g19.8_64k: kdatt 0.8593 fa3tree 0.9510 fa3_s1 1.0418
+  seed 16 B=32 tail_g19.8_64k: kdatt 0.9801 fa3tree 0.9564 fa3_s1 0.9600
+  seed 17 B=32 tail_g19.8_64k: kdatt 0.9696 fa3tree 1.0604 fa3_s1 1.1539
+  seed 18 B=32 tail_g19.8_64k: kdatt 1.0150 fa3tree 1.0983 fa3_s1 1.0872
+  seed 19 B=32 tail_g19.8_64k: kdatt 1.0346 fa3tree 1.1196 fa3_s1 1.0993
+[seeds W=2047 B=32 tail_g19.8_64k n=20] kdatt/stock min=0.7198 mean=0.9683 max=1.1949 fa3tree/stock min=0.7604 mean=1.0108 max=1.3215 fa3_s1/stock min=0.8079 mean=1.0355 max=1.2103 fa3_s16/stock min=1.0000 mean=1.0000 max=1.0000
+  seed 0 B=32 short_5: kdatt 1.0000 fa3tree 1.0000 fa3_s1 1.0000
+  seed 1 B=32 short_5: kdatt 0.7832 fa3tree 0.7832 fa3_s1 1.0000
+  seed 2 B=32 short_5: kdatt 1.0000 fa3tree 1.0000 fa3_s1 1.0000
+  seed 3 B=32 short_5: kdatt 1.0000 fa3tree 1.0000 fa3_s1 1.0000
+  seed 4 B=32 short_5: kdatt 0.8854 fa3tree 0.8854 fa3_s1 1.0000
+[seeds W=2047 B=32 short_5 n=5] kdatt/stock min=0.7832 mean=0.9337 max=1.0000 fa3tree/stock min=0.7832 mean=0.9337 max=1.0000 fa3_s1/stock min=1.0000 mean=1.0000 max=1.0000 fa3_s16/stock min=1.0000 mean=1.0000 max=1.0000
+  seed 0 B=32 zero: kdatt 1.2202 fa3tree 1.2202 fa3_s1 1.0000
+  seed 1 B=32 zero: kdatt 1.0000 fa3tree 1.0000 fa3_s1 1.0000
+  seed 2 B=32 zero: kdatt 1.0000 fa3tree 1.0000 fa3_s1 1.0000
+  seed 3 B=32 zero: kdatt 1.0000 fa3tree 1.0000 fa3_s1 1.0000
+  seed 4 B=32 zero: kdatt 1.0000 fa3tree 1.0000 fa3_s1 1.0000
+[seeds W=2047 B=32 zero n=5] kdatt/stock min=1.0000 mean=1.0440 max=1.2202 fa3tree/stock min=1.0000 mean=1.0440 max=1.2202 fa3_s1/stock min=1.0000 mean=1.0000 max=1.0000 fa3_s16/stock min=1.0000 mean=1.0000 max=1.0000
+  seed 0 B=32 swa_edge_2040: kdatt 1.0000 fa3tree 1.0000 fa3_s1 1.2389
+  seed 1 B=32 swa_edge_2040: kdatt 1.0000 fa3tree 1.0000 fa3_s1 1.0000
+  seed 2 B=32 swa_edge_2040: kdatt 0.6740 fa3tree 1.0000 fa3_s1 1.0020
+  seed 3 B=32 swa_edge_2040: kdatt 0.8857 fa3tree 1.0000 fa3_s1 1.0000
+  seed 4 B=32 swa_edge_2040: kdatt 1.0000 fa3tree 1.0000 fa3_s1 1.5006
+[seeds W=2047 B=32 swa_edge_2040 n=5] kdatt/stock min=0.6740 mean=0.9119 max=1.0000 fa3tree/stock min=1.0000 mean=1.0000 max=1.0000 fa3_s1/stock min=1.0000 mean=1.1483 max=1.5006 fa3_s16/stock min=1.0000 mean=1.0000 max=1.0000
+  seed 0 B=32 swa_edge_2048: kdatt 1.1806 fa3tree 1.1806 fa3_s1 1.5413
+  seed 1 B=32 swa_edge_2048: kdatt 1.0000 fa3tree 1.0000 fa3_s1 1.0000
+  seed 2 B=32 swa_edge_2048: kdatt 0.7236 fa3tree 1.0000 fa3_s1 1.0000
+  seed 3 B=32 swa_edge_2048: kdatt 0.8849 fa3tree 1.0000 fa3_s1 1.0000
+  seed 4 B=32 swa_edge_2048: kdatt 0.9377 fa3tree 0.9282 fa3_s1 1.3962
+[seeds W=2047 B=32 swa_edge_2048 n=5] kdatt/stock min=0.7236 mean=0.9454 max=1.1806 fa3tree/stock min=0.9282 mean=1.0218 max=1.1806 fa3_s1/stock min=1.0000 mean=1.1875 max=1.5413 fa3_s16/stock min=1.0000 mean=1.0000 max=1.0000
+  seed 0 B=32 swa_edge_2100: kdatt 0.6372 fa3tree 0.6372 fa3_s1 1.0000
+  seed 1 B=32 swa_edge_2100: kdatt 1.0000 fa3tree 1.0000 fa3_s1 1.0000
+  seed 2 B=32 swa_edge_2100: kdatt 0.7590 fa3tree 1.0000 fa3_s1 1.0072
+  seed 3 B=32 swa_edge_2100: kdatt 0.5415 fa3tree 1.0000 fa3_s1 1.0000
+  seed 4 B=32 swa_edge_2100: kdatt 0.7937 fa3tree 0.8628 fa3_s1 1.0000
+[seeds W=2047 B=32 swa_edge_2100 n=5] kdatt/stock min=0.5415 mean=0.7463 max=1.0000 fa3tree/stock min=0.6372 mean=0.9000 max=1.0000 fa3_s1/stock min=1.0000 mean=1.0014 max=1.0072 fa3_s16/stock min=1.0000 mean=1.0000 max=1.0000
+===== rc=0 (54s)
+Stopping app - local entrypoint completed.
+✓ App completed. View run at 
+https://modal.com/apps/<workspace>/main/ap-c5dAHqjk25IoF84tULWaw8

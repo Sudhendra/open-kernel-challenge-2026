@@ -1,0 +1,25 @@
+Open Kernel Challenge work: Muse Spark Open on H200
+Copyright 2026 Sudhendra
+
+Licensed under the Apache License, Version 2.0 (see LICENSE). The Open Kernel
+Challenge licenses every submission under Apache-2.0, and this repository
+follows that for all of its contents.
+
+This repository contains or derives from the following third-party work, each
+licensed under the Apache License 2.0. The attribution headers of the original
+authors are retained inside the files.
+
+serving/patches/kfinal6ct/okc_patch_kfinal6ct_u1.diff
+  - A patch against SGLang (https://github.com/sgl-project/sglang, commit
+    297e54fd, Apache-2.0, Copyright SGLang Team).
+  - python/sglang/kernels/jit/csrc/moe/muse_spark_fp4_grouped.cuh and
+    python/sglang/kernels/jit/csrc/muse_spark/prefill_attention.cuh are derived
+    from public kernel-track submissions of the challenge: vjeux's okc-2026
+    (https://github.com/vjeux/okc-2026), the expert kernel through alygg77's
+    submission of it (alygg77/okc-muse-spark-kernels).
+
+kernels/*.py
+  - Built on public kernel-track submissions by vjeux (okc-2026), alygg77
+    (okc-muse-spark-kernels), team keell0renz (muse-open-kernel-challenge),
+    ZhimaoL (sglang okc branches), chenwainuo (okc), zhebrak, Madhavan113 and
+    Matsvei (agents.kernarc.com). The header of each file lists its lineage.

@@ -1,0 +1,26 @@
+# Workspace output that is never published. The working copy this repo was cut
+# from holds ~50 GB of experiment trees, logs and third-party checkouts.
+.DS_Store
+__pycache__/
+*.pyc
+.venv/
+.ruff_cache/
+.claude/
+*.sqlite
+*.sqlite3
+tmp/
+output/
+_archive/
+
+# SGLang checkouts and per-experiment worktrees (recreate from the patch)
+serving/sglang/
+serving/sglang_stock/
+serving/lanes/
+serving/out/
+
+# okloop run state
+okloop/attempts/
+okloop/logs/
+okloop/state/
+okloop/best/
+okloop/config.env

@@ -1,0 +1,1 @@
+rows 768; slot agree 1.00000; gated 0.717; tokens agree on gated rows 1.00000

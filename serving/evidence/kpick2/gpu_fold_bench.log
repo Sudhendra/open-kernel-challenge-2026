@@ -1,0 +1,57 @@
+✓ Initialized. View run at 
+https://modal.com/apps/<workspace>/main/ap-6nYTBSh7CECrTj5HHusypT
+✓ Created objects.
+├── ✓ Uploaded 
+│   <repo>/serving/h
+│   arness/modal_kpick2_bench.py
+├── ✓ Uploaded 
+│   <repo>/serving/l
+│   anes/kwide2_tools/kpick2_fold_bench.py
+├── ✓ Uploaded 
+│   <repo>/serving/l
+│   anes/kpick/python/sglang/srt/layers/muse_spark/muse_spark_sp_overlap.py
+├── ✓ Uploaded 
+│   <repo>/serving/l
+│   anes/kpick2/python/sglang/srt/layers/muse_spark/muse_spark_sp_overlap.py
+└── ✓ Created Function bench.
+
+==========
+== CUDA ==
+==========
+
+CUDA Version 13.0.3
+
+Container image Copyright (c) 2016-2023, NVIDIA CORPORATION & AFFILIATES. All rights reserved.
+
+This container image and its contents are governed by the NVIDIA Deep Learning Container License.
+By pulling and using the container, you accept the terms and conditions of this license:
+https://developer.nvidia.com/ngc/nvidia-deep-learning-container-license
+
+A copy of this license is made available in this container at /NGC-DL-CONTAINER-LICENSE for your convenience.
+
+device NVIDIA H200 (9, 0) torch 2.14.1+cu130
+pair 128 False {"old": {"mismatch": 11, "of": 524288, "max_ulps_vs_cpu": 8.0, "max_err_vs_fp64": 0.07674206989057097, "mean_err_vs_fp64": 0.003846915287777593}, "new": {"mismatch": 43, "of": 524288, "max_ulps_vs_cpu": 6.0, "max_err_vs_fp64": 0.03113723115901479, "mean_err_vs_fp64": 0.0017573583778180322}}
+pair 128 True {"old": {"mismatch": 10, "of": 524288, "max_ulps_vs_cpu": 4.0, "max_err_vs_fp64": 0.0828431643418952, "mean_err_vs_fp64": 0.0037296932342669037}, "new": {"mismatch": 46, "of": 524288, "max_ulps_vs_cpu": 14.0, "max_err_vs_fp64": 0.03056590025072481, "mean_err_vs_fp64": 0.0017005362805922138}}
+ring 128 {"old": {"mismatch": 0, "of": 1048576, "max_ulps_vs_cpu": 0.0, "max_err_vs_fp64": 3.752105712890625, "mean_err_vs_fp64": 0.23578623879205274}, "new": {"mismatch": 0, "of": 1048576, "max_ulps_vs_cpu": 0.0, "max_err_vs_fp64": 0.999908447265625, "mean_err_vs_fp64": 0.1167706502069511}}
+routed 128 {"old": {"mismatch": 0, "of": 524288, "max_ulps_vs_cpu": 0.0, "max_err_vs_fp64": 3.063232421875, "mean_err_vs_fp64": 0.13753537883828637}, "new": {"mismatch": 0, "of": 524288, "max_ulps_vs_cpu": 0.0, "max_err_vs_fp64": 1.0, "mean_err_vs_fp64": 0.08624551426209803}}
+pair 256 False {"old": {"mismatch": 14, "of": 1048576, "max_ulps_vs_cpu": 16.0, "max_err_vs_fp64": 0.11057409163663223, "mean_err_vs_fp64": 0.003943750256721091}, "new": {"mismatch": 97, "of": 1048576, "max_ulps_vs_cpu": 3.0, "max_err_vs_fp64": 0.031219044212695835, "mean_err_vs_fp64": 0.0018203764572902199}}
+pair 256 True {"old": {"mismatch": 26, "of": 1048576, "max_ulps_vs_cpu": 16.0, "max_err_vs_fp64": 0.09219176510239713, "mean_err_vs_fp64": 0.003774655161966029}, "new": {"mismatch": 99, "of": 1048576, "max_ulps_vs_cpu": 47.0, "max_err_vs_fp64": 0.03084625539789876, "mean_err_vs_fp64": 0.0017380831217553836}}
+ring 256 {"old": {"mismatch": 0, "of": 2097152, "max_ulps_vs_cpu": 0.0, "max_err_vs_fp64": 3.809356689453125, "mean_err_vs_fp64": 0.23581139946814644}, "new": {"mismatch": 0, "of": 2097152, "max_ulps_vs_cpu": 0.0, "max_err_vs_fp64": 1.3632354736328125, "mean_err_vs_fp64": 0.11656552034369799}}
+routed 256 {"old": {"mismatch": 0, "of": 1048576, "max_ulps_vs_cpu": 0.0, "max_err_vs_fp64": 3.314208984375, "mean_err_vs_fp64": 0.13306718558598502}, "new": {"mismatch": 0, "of": 1048576, "max_ulps_vs_cpu": 0.0, "max_err_vs_fp64": 0.9998779296875, "mean_err_vs_fp64": 0.08334357490425981}}
+pair 2048 False {"old": {"mismatch": 136, "of": 8388608, "max_ulps_vs_cpu": 128.0, "max_err_vs_fp64": 0.09146476286497496, "mean_err_vs_fp64": 0.003887288234403699}, "new": {"mismatch": 817, "of": 8388608, "max_ulps_vs_cpu": 58.0, "max_err_vs_fp64": 0.031224607812898597, "mean_err_vs_fp64": 0.001780295752971946}}
+pair 2048 True {"old": {"mismatch": 160, "of": 8388608, "max_ulps_vs_cpu": 8.507059173023462e+37, "max_err_vs_fp64": 0.09270105154786457, "mean_err_vs_fp64": 0.0037381949687467627}, "new": {"mismatch": 759, "of": 8388608, "max_ulps_vs_cpu": 1000.0, "max_err_vs_fp64": 0.03122377006973487, "mean_err_vs_fp64": 0.0017119801635157353}}
+ring 2048 {"old": {"mismatch": 0, "of": 16777216, "max_ulps_vs_cpu": 0.0, "max_err_vs_fp64": 4.63409423828125, "mean_err_vs_fp64": 0.23578185829017864}, "new": {"mismatch": 0, "of": 16777216, "max_ulps_vs_cpu": 0.0, "max_err_vs_fp64": 1.599884033203125, "mean_err_vs_fp64": 0.11655542919413599}}
+routed 2048 {"old": {"mismatch": 0, "of": 8388608, "max_ulps_vs_cpu": 0.0, "max_err_vs_fp64": 3.4468612670898438, "mean_err_vs_fp64": 0.12660398829198963}, "new": {"mismatch": 0, "of": 8388608, "max_ulps_vs_cpu": 0.0, "max_err_vs_fp64": 1.854736328125, "mean_err_vs_fp64": 0.08136312999028897}}
+time pair_fold 128 False {"old": {"graph_us": 8.113, "eager_us": 21.141}, "new": {"graph_us": 5.496, "eager_us": 18.259}}
+time pair_fold 128 True {"old": {"graph_us": 7.966, "eager_us": 19.525}, "new": {"graph_us": 5.466, "eager_us": 19.091}}
+time pair_fold 256 False {"old": {"graph_us": 9.825, "eager_us": 18.909}, "new": {"graph_us": 6.29, "eager_us": 18.919}}
+time pair_fold 256 True {"old": {"graph_us": 9.635, "eager_us": 19.068}, "new": {"graph_us": 6.329, "eager_us": 19.119}}
+time pair_fold 2048 False {"old": {"graph_us": 72.521, "eager_us": 74.423}, "new": {"graph_us": 46.477, "eager_us": 48.138}}
+time pair_fold 2048 True {"old": {"graph_us": 71.379, "eager_us": 73.205}, "new": {"graph_us": 46.22, "eager_us": 47.876}}
+RESULT_JSON {"correctness": {"pair_fold rows=128 weight_first=False": {"old": {"mismatch": 11, "of": 524288, "max_ulps_vs_cpu": 8.0, "max_err_vs_fp64": 0.07674206989057097, "mean_err_vs_fp64": 0.003846915287777593}, "new": {"mismatch": 43, "of": 524288, "max_ulps_vs_cpu": 6.0, "max_err_vs_fp64": 0.03113723115901479, "mean_err_vs_fp64": 0.0017573583778180322}}, "pair_fold rows=128 weight_first=True": {"old": {"mismatch": 10, "of": 524288, "max_ulps_vs_cpu": 4.0, "max_err_vs_fp64": 0.0828431643418952, "mean_err_vs_fp64": 0.0037296932342669037}, "new": {"mismatch": 46, "of": 524288, "max_ulps_vs_cpu": 14.0, "max_err_vs_fp64": 0.03056590025072481, "mean_err_vs_fp64": 0.0017005362805922138}}, "ring_fold rows=128 H=8192": {"old": {"mismatch": 0, "of": 1048576, "max_ulps_vs_cpu": 0.0, "max_err_vs_fp64": 3.752105712890625, "mean_err_vs_fp64": 0.23578623879205274}, "new": {"mismatch": 0, "of": 1048576, "max_ulps_vs_cpu": 0.0, "max_err_vs_fp64": 0.999908447265625, "mean_err_vs_fp64": 0.1167706502069511}}, "routed_ring_fold rows=128 H=4096": {"old": {"mismatch": 0, "of": 524288, "max_ulps_vs_cpu": 0.0, "max_err_vs_fp64": 3.063232421875, "mean_err_vs_fp64": 0.13753537883828637}, "new": {"mismatch": 0, "of": 524288, "max_ulps_vs_cpu": 0.0, "max_err_vs_fp64": 1.0, "mean_err_vs_fp64": 0.08624551426209803}}, "pair_fold rows=256 weight_first=False": {"old": {"mismatch": 14, "of": 1048576, "max_ulps_vs_cpu": 16.0, "max_err_vs_fp64": 0.11057409163663223, "mean_err_vs_fp64": 0.003943750256721091}, "new": {"mismatch": 97, "of": 1048576, "max_ulps_vs_cpu": 3.0, "max_err_vs_fp64": 0.031219044212695835, "mean_err_vs_fp64": 0.0018203764572902199}}, "pair_fold rows=256 weight_first=True": {"old": {"mismatch": 26, "of": 1048576, "max_ulps_vs_cpu": 16.0, "max_err_vs_fp64": 0.09219176510239713, "mean_err_vs_fp64": 0.003774655161966029}, "new": {"mismatch": 99, "of": 1048576, "max_ulps_vs_cpu": 47.0, "max_err_vs_fp64": 0.03084625539789876, "mean_err_vs_fp64": 0.0017380831217553836}}, "ring_fold rows=256 H=8192": {"old": {"mismatch": 0, "of": 2097152, "max_ulps_vs_cpu": 0.0, "max_err_vs_fp64": 3.809356689453125, "mean_err_vs_fp64": 0.23581139946814644}, "new": {"mismatch": 0, "of": 2097152, "max_ulps_vs_cpu": 0.0, "max_err_vs_fp64": 1.3632354736328125, "mean_err_vs_fp64": 0.11656552034369799}}, "routed_ring_fold rows=256 H=4096": {"old": {"mismatch": 0, "of": 1048576, "max_ulps_vs_cpu": 0.0, "max_err_vs_fp64": 3.314208984375, "mean_err_vs_fp64": 0.13306718558598502}, "new": {"mismatch": 0, "of": 1048576, "max_ulps_vs_cpu": 0.0, "max_err_vs_fp64": 0.9998779296875, "mean_err_vs_fp64": 0.08334357490425981}}, "pair_fold rows=2048 weight_first=False": {"old": {"mismatch": 136, "of": 8388608, "max_ulps_vs_cpu": 128.0, "max_err_vs_fp64": 0.09146476286497496, "mean_err_vs_fp64": 0.003887288234403699}, "new": {"mismatch": 817, "of": 8388608, "max_ulps_vs_cpu": 58.0, "max_err_vs_fp64": 0.031224607812898597, "mean_err_vs_fp64": 0.001780295752971946}}, "pair_fold rows=2048 weight_first=True": {"old": {"mismatch": 160, "of": 8388608, "max_ulps_vs_cpu": 8.507059173023462e+37, "max_err_vs_fp64": 0.09270105154786457, "mean_err_vs_fp64": 0.0037381949687467627}, "new": {"mismatch": 759, "of": 8388608, "max_ulps_vs_cpu": 1000.0, "max_err_vs_fp64": 0.03122377006973487, "mean_err_vs_fp64": 0.0017119801635157353}}, "ring_fold rows=2048 H=8192": {"old": {"mismatch": 0, "of": 16777216, "max_ulps_vs_cpu": 0.0, "max_err_vs_fp64": 4.63409423828125, "mean_err_vs_fp64": 0.23578185829017864}, "new": {"mismatch": 0, "of": 16777216, "max_ulps_vs_cpu": 0.0, "max_err_vs_fp64": 1.599884033203125, "mean_err_vs_fp64": 0.11655542919413599}}, "routed_ring_fold rows=2048 H=4096": {"old": {"mismatch": 0, "of": 8388608, "max_ulps_vs_cpu": 0.0, "max_err_vs_fp64": 3.4468612670898438, "mean_err_vs_fp64": 0.12660398829198963}, "new": {"mismatch": 0, "of": 8388608, "max_ulps_vs_cpu": 0.0, "max_err_vs_fp64": 1.854736328125, "mean_err_vs_fp64": 0.08136312999028897}}}, "timing_pair_fold": {"rows=128 weight_first=False": {"old": {"graph_us": 8.113, "eager_us": 21.141}, "new": {"graph_us": 5.496, "eager_us": 18.259}}, "rows=128 weight_first=True": {"old": {"graph_us": 7.966, "eager_us": 19.525}, "new": {"graph_us": 5.466, "eager_us": 19.091}}, "rows=256 weight_first=False": {"old": {"graph_us": 9.825, "eager_us": 18.909}, "new": {"graph_us": 6.29, "eager_us": 18.919}}, "rows=256 weight_first=True": {"old": {"graph_us": 9.635, "eager_us": 19.068}, "new": {"graph_us": 6.329, "eager_us": 19.119}}, "rows=2048 weight_first=False": {"old": {"graph_us": 72.521, "eager_us": 74.423}, "new": {"graph_us": 46.477, "eager_us": 48.138}}, "rows=2048 weight_first=True": {"old": {"graph_us": 71.379, "eager_us": 73.205}, "new": {"graph_us": 46.22, "eager_us": 47.876}}}}
+rc 0
+Stopping app - local entrypoint completed.
+[modal-client] 2026-11-19T15:00:16-0600 Timed out waiting for final app logs.
+✓ App completed. View run at 
+https://modal.com/apps/<workspace>/main/ap-6nYTBSh7CECrTj5HHusypT
+EXIT 0

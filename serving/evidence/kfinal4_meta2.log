@@ -1,0 +1,55 @@
+✓ Initialized. View run at 
+https://modal.com/apps/<workspace>/main/ap-0meipJPFjJpqwRTUxdV4W8
+✓ Created objects.
+├── ✓ Uploaded 
+│   <repo>/serving/h
+│   arness/modal_kmask_ubench.py
+├── ✓ Uploaded 
+│   <repo>/serving/l
+│   anes/kpatt3_tools
+├── ✓ Uploaded 
+│   <repo>/serving/l
+│   anes/kwide2_tools
+├── ✓ Uploaded 
+│   <repo>/serving/l
+│   anes/kmask_tools
+├── ✓ Uploaded 
+│   <repo>/serving/l
+│   anes/kfinal4/test
+├── ✓ Uploaded 
+│   <repo>/serving/l
+│   anes/kfinal4/python/sglang
+├── ✓ Created Function cpu_compile.
+├── ✓ Created Function cputests.
+├── ✓ Created Function run.
+├── ✓ Created Function diag.
+├── ✓ Created Function adv.
+├── ✓ Created Function gputests.
+├── ✓ Created Function sweep.
+├── ✓ Created Function abtime.
+├── ✓ Created Function pfab.
+└── ✓ Created Function tool.
+
+==========
+== CUDA ==
+==========
+
+CUDA Version 13.0.3
+
+Container image Copyright (c) 2016-2023, NVIDIA CORPORATION & AFFILIATES. All rights reserved.
+
+This container image and its contents are governed by the NVIDIA Deep Learning Container License.
+By pulling and using the container, you accept the terms and conditions of this license:
+https://developer.nvidia.com/ngc/nvidia-deep-learning-container-license
+
+A copy of this license is made available in this container at /NGC-DL-CONTAINER-LICENSE for your convenience.
+
+===== /opt/sglang/bin/python kdatt_meta.py  (limit 540s)
+[meta B=1] | with_schedules: host 0.1042 ms, gpu span 0.0973 ms | tables_only: host 0.1023 ms, gpu span 0.0953 ms
+[meta B=4] | with_schedules: host 0.1025 ms, gpu span 0.0957 ms | tables_only: host 0.1003 ms, gpu span 0.0935 ms
+[meta B=16] | with_schedules: host 0.1020 ms, gpu span 0.0954 ms | tables_only: host 0.1009 ms, gpu span 0.0942 ms
+[meta B=32] | with_schedules: host 0.1021 ms, gpu span 0.0955 ms | tables_only: host 0.1010 ms, gpu span 0.0942 ms
+===== rc=0 (28s)
+Stopping app - local entrypoint completed.
+✓ App completed. View run at 
+https://modal.com/apps/<workspace>/main/ap-0meipJPFjJpqwRTUxdV4W8

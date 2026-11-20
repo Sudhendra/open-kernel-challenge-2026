@@ -1,0 +1,185 @@
+✓ Initialized. View run at 
+https://modal.com/apps/<workspace>/main/ap-bzMRBvLKk5lDl5KuhAZAnd
+✓ Created objects.
+├── ✓ Uploaded 
+│   <repo>/serving/l
+│   anes/stack_k_tools/modal_cpu_stub.py
+├── ✓ Uploaded 
+│   <repo>/serving/l
+│   anes/kfinal4b/test
+├── ✓ Uploaded 
+│   <repo>/serving/l
+│   anes/kfinal4b/python/sglang
+└── ✓ Created Function tests.
+
+==========
+== CUDA ==
+==========
+
+CUDA Version 13.0.3
+
+Container image Copyright (c) 2016-2023, NVIDIA CORPORATION & AFFILIATES. All rights reserved.
+
+This container image and its contents are governed by the NVIDIA Deep Learning Container License.
+By pulling and using the container, you accept the terms and conditions of this license:
+https://developer.nvidia.com/ngc/nvidia-deep-learning-container-license
+
+A copy of this license is made available in this container at /NGC-DL-CONTAINER-LICENSE for your convenience.
+
+WARNING: The NVIDIA Driver was not detected.  GPU functionality will not be available.
+   Use the NVIDIA Container Toolkit to start this container with GPU support; see
+   https://docs.nvidia.com/datacenter/cloud-native/ .
+
+torch 2.14.1+cu130 triton 3.8.0
+ssssssssssssssss........................................................ [  9%]
+........................................................................ [ 18%]
+............................................... [ 24%]
+.......................................... [ 30%]
+........................................................................ [ 39%]
+............................................................................... [ 49%]
+..........................sss..............................s..................................................s............. [ 65%]
+............s.............................. [ 71%]
+............................................... [ 77%]
+......................................s........................ [ 85%]
+..............................s..................... [ 92%]
+................................................ [ 98%]
+...........                                                              [100%]
+=============================== warnings summary ===============================
+../../opt/sglang/lib/python3.12/site-packages/_pytest/config/__init__.py:1636
+  /opt/sglang/lib/python3.12/site-packages/_pytest/config/__init__.py:1636: PytestConfigWarning: Unknown config option: asyncio_mode
+  
+    self._warn_or_fail_if_strict(f"Unknown config option: {key}\n")
+
+../../opt/sglang/lib/python3.12/site-packages/torch/cuda/__init__.py:228
+  /opt/sglang/lib/python3.12/site-packages/torch/cuda/__init__.py:228: UserWarning: CUDA initialization: Unexpected error from cudaGetDeviceCount(). Did you run some cuda functions before calling NumCudaDevices() that might have already set an error? Error 34: CUDA driver is a stub library (Triggered internally at /__w/pytorch/pytorch/c10/cuda/CUDAFunctions.cpp:119.)
+    return torch._C._cuda_getDeviceCount() > 0
+
+<frozen importlib._bootstrap>:488
+  <frozen importlib._bootstrap>:488: DeprecationWarning: builtin type SwigPyPacked has no __module__ attribute
+
+<frozen importlib._bootstrap>:488
+  <frozen importlib._bootstrap>:488: DeprecationWarning: builtin type SwigPyObject has no __module__ attribute
+
+../../opt/sglang/lib/python3.12/site-packages/flashinfer/fused_moe/cute_dsl/blackwell/blockscaled_contiguous_gather_grouped_gemm_act_fusion.py:3459
+  /opt/sglang/lib/python3.12/site-packages/flashinfer/fused_moe/cute_dsl/blackwell/blockscaled_contiguous_gather_grouped_gemm_act_fusion.py:3459: DeprecationWarning: cutlass.utils.LayoutEnum is deprecated; use cutlass.tensor_utils.LayoutEnum instead. It will be removed in a future release.
+    c_layout: utils.LayoutEnum,
+
+../../opt/sglang/lib/python3.12/site-packages/flashinfer/fused_moe/cute_dsl/blackwell/moe_w4a16_kernel.py:2386
+  /opt/sglang/lib/python3.12/site-packages/flashinfer/fused_moe/cute_dsl/blackwell/moe_w4a16_kernel.py:2386: DeprecationWarning: cutlass.utils.LayoutEnum is deprecated; use cutlass.tensor_utils.LayoutEnum instead. It will be removed in a future release.
+    c_layout: utils.LayoutEnum,
+
+../../opt/sglang/lib/python3.12/site-packages/flashinfer/fused_moe/cute_dsl/hopper/utils.py:29
+  /opt/sglang/lib/python3.12/site-packages/flashinfer/fused_moe/cute_dsl/hopper/utils.py:29: DeprecationWarning: cutlass.utils.LayoutEnum is deprecated; use cutlass.tensor_utils.LayoutEnum instead. It will be removed in a future release.
+    a_layout: utils.LayoutEnum,
+
+../../opt/sglang/lib/python3.12/site-packages/flashinfer/fused_moe/cute_dsl/hopper/utils.py:31
+  /opt/sglang/lib/python3.12/site-packages/flashinfer/fused_moe/cute_dsl/hopper/utils.py:31: DeprecationWarning: cutlass.utils.LayoutEnum is deprecated; use cutlass.tensor_utils.LayoutEnum instead. It will be removed in a future release.
+    b_layout: utils.LayoutEnum,
+
+../../opt/sglang/lib/python3.12/site-packages/flashinfer/fused_moe/cute_dsl/hopper/utils.py:34
+  /opt/sglang/lib/python3.12/site-packages/flashinfer/fused_moe/cute_dsl/hopper/utils.py:34: DeprecationWarning: cutlass.utils.LayoutEnum is deprecated; use cutlass.tensor_utils.LayoutEnum instead. It will be removed in a future release.
+    c_layout: utils.LayoutEnum,
+
+../../opt/sglang/lib/python3.12/site-packages/flashinfer/fused_moe/cute_dsl/hopper/contiguous_grouped_gemm_finalize_fusion.py:968
+  /opt/sglang/lib/python3.12/site-packages/flashinfer/fused_moe/cute_dsl/hopper/contiguous_grouped_gemm_finalize_fusion.py:968: DeprecationWarning: cutlass.utils.LayoutEnum is deprecated; use cutlass.tensor_utils.LayoutEnum instead. It will be removed in a future release.
+    a_layout: utils.LayoutEnum,
+
+../../opt/sglang/lib/python3.12/site-packages/flashinfer/fused_moe/cute_dsl/hopper/contiguous_grouped_gemm_finalize_fusion.py:970
+  /opt/sglang/lib/python3.12/site-packages/flashinfer/fused_moe/cute_dsl/hopper/contiguous_grouped_gemm_finalize_fusion.py:970: DeprecationWarning: cutlass.utils.LayoutEnum is deprecated; use cutlass.tensor_utils.LayoutEnum instead. It will be removed in a future release.
+    b_layout: utils.LayoutEnum,
+
+../../opt/sglang/lib/python3.12/site-packages/flashinfer/gemm/kernels/grouped_gemm_masked_blackwell.py:427
+  /opt/sglang/lib/python3.12/site-packages/flashinfer/gemm/kernels/grouped_gemm_masked_blackwell.py:427: DeprecationWarning: cutlass.utils.LayoutEnum is deprecated; use cutlass.tensor_utils.LayoutEnum instead. It will be removed in a future release.
+    epi_layout: utils.LayoutEnum,
+
+../../opt/sglang/lib/python3.12/site-packages/flashinfer/gemm/kernels/grouped_gemm_masked_blackwell.py:2391
+  /opt/sglang/lib/python3.12/site-packages/flashinfer/gemm/kernels/grouped_gemm_masked_blackwell.py:2391: DeprecationWarning: cutlass.utils.LayoutEnum is deprecated; use cutlass.tensor_utils.LayoutEnum instead. It will be removed in a future release.
+    c_layout: utils.LayoutEnum,
+
+../../opt/sglang/lib/python3.12/site-packages/flashinfer/gemm/kernels/cute_dsl/low_latency_blockscaled_gemm.py:102
+  /opt/sglang/lib/python3.12/site-packages/flashinfer/gemm/kernels/cute_dsl/low_latency_blockscaled_gemm.py:102: DeprecationWarning: cutlass.utils.smem_allocator.get_smem_capacity_in_bytes is deprecated; use cutlass.memory.get_smem_capacity_in_bytes instead. It will be removed in a future release.
+    _SMEM_CAPACITY_BYTES = cutlass.utils.get_smem_capacity_in_bytes("sm_100")
+
+../../opt/sglang/lib/python3.12/site-packages/flashinfer/gemm/kernels/grouped_gemm_masked_rubin.py:218
+  /opt/sglang/lib/python3.12/site-packages/flashinfer/gemm/kernels/grouped_gemm_masked_rubin.py:218: DeprecationWarning: cutlass.utils.LayoutEnum is deprecated; use cutlass.tensor_utils.LayoutEnum instead. It will be removed in a future release.
+    c_layout: utils.LayoutEnum,
+
+../../opt/sglang/lib/python3.12/site-packages/flashinfer/gdn_kernels/blackwell/gated_delta_net_chunked.py:95
+../../opt/sglang/lib/python3.12/site-packages/flashinfer/gdn_kernels/blackwell/gated_delta_net_chunked.py:95
+  /opt/sglang/lib/python3.12/site-packages/flashinfer/gdn_kernels/blackwell/gated_delta_net_chunked.py:95: DeprecationWarning: cutlass.utils.TensorMapUpdateMode is deprecated; use cutlass.tensor_utils.TensorMapUpdateMode instead. It will be removed in a future release.
+    from cutlass.utils import TensorMapManager, TensorMapUpdateMode
+
+../../opt/sglang/lib/python3.12/site-packages/flashinfer/gdn_kernels/delta_rule_dsl/collective_store_tma.py:6
+  /opt/sglang/lib/python3.12/site-packages/flashinfer/gdn_kernels/delta_rule_dsl/collective_store_tma.py:6: DeprecationWarning: cutlass.utils.tensormap_manager.TensorMapUpdateMode is deprecated; use cutlass.tensor_utils.TensorMapUpdateMode instead. It will be removed in a future release.
+    from cutlass.utils.tensormap_manager import TensorMapManager, TensorMapUpdateMode
+
+../../opt/sglang/lib/python3.12/site-packages/flashinfer/gdn_kernels/blackwell/gated_delta_net_cp_prefill.py:55
+../../opt/sglang/lib/python3.12/site-packages/flashinfer/gdn_kernels/blackwell/gated_delta_net_cp_prefill.py:55
+  /opt/sglang/lib/python3.12/site-packages/flashinfer/gdn_kernels/blackwell/gated_delta_net_cp_prefill.py:55: DeprecationWarning: cutlass.utils.TensorMapUpdateMode is deprecated; use cutlass.tensor_utils.TensorMapUpdateMode instead. It will be removed in a future release.
+    from cutlass.utils import TensorMapManager, TensorMapUpdateMode
+
+python/sglang/srt/layers/quantization/awq/awq.py:53
+  /root/lane/python/sglang/srt/layers/quantization/awq/awq.py:53: UserWarning: Only CUDA, HIP and XPU support AWQ currently.
+    warnings.warn(f"Only CUDA, HIP and XPU support AWQ currently.")
+
+python/sglang/srt/layers/quantization/gguf.py:76
+  /root/lane/python/sglang/srt/layers/quantization/gguf.py:76: UserWarning: Only CUDA, MUSA and NPU support GGUF quantization currently.
+    warnings.warn(f"Only CUDA, MUSA and NPU support GGUF quantization currently.")
+
+python/sglang/kernels/ops/attention/fla/utils.py:223
+  /root/lane/python/sglang/kernels/ops/attention/fla/utils.py:223: UserWarning: Triton is not supported on current platform, roll back to CPU.
+    warnings.warn(
+
+registered/unit/distributed/test_custom_all_reduce_v2_capability.py::test_sm90_world8_crossovers[131072-AllReduceAlgo.ONE_SHOT_PUSH-False-True]
+registered/unit/distributed/test_custom_all_reduce_v2_capability.py::test_sm90_world8_crossovers[131072-AllReduceAlgo.ONE_SHOT_PUSH-False-False]
+registered/unit/distributed/test_custom_all_reduce_v2_capability.py::test_sm90_world8_crossovers[131088-AllReduceAlgo.TWO_SHOT_PUSH-False-True]
+registered/unit/distributed/test_custom_all_reduce_v2_capability.py::test_sm90_world8_crossovers[131088-AllReduceAlgo.TWO_SHOT_PUSH-False-False]
+registered/unit/distributed/test_custom_all_reduce_v2_capability.py::test_sm90_world8_crossovers[2621440-AllReduceAlgo.TWO_SHOT_PUSH-False-True]
+registered/unit/distributed/test_custom_all_reduce_v2_capability.py::test_sm90_world8_crossovers[2621440-AllReduceAlgo.TWO_SHOT_PUSH-False-False]
+registered/unit/distributed/test_custom_all_reduce_v2_capability.py::test_sm90_world8_crossovers[2621456-AllReduceAlgo.TWO_SHOT_PULL-True-True]
+registered/unit/distributed/test_custom_all_reduce_v2_capability.py::test_sm90_world8_crossovers[2621456-AllReduceAlgo.TWO_SHOT_PULL-True-False]
+  /opt/sglang/lib/python3.12/site-packages/_pytest/unraisableexception.py:63: PytestUnraisableExceptionWarning: Exception ignored in: <function CustomAllReduceV2.__del__ at 0x2b7fb1891080>
+  
+  Traceback (most recent call last):
+    File "/root/lane/python/sglang/srt/distributed/device_communicators/custom_all_reduce_v2.py", line 574, in __del__
+      self.close()
+    File "/root/lane/python/sglang/srt/distributed/device_communicators/custom_all_reduce_v2.py", line 566, in close
+      if not self.disabled and hasattr(self, "obj"):
+             ^^^^^^^^^^^^^
+  AttributeError: 'CustomAllReduceV2' object has no attribute 'disabled'
+  
+  Enable tracemalloc to get traceback where the object was allocated.
+  See https://docs.pytest.org/en/stable/how-to/capture-warnings.html#resource-warnings for more info.
+    warnings.warn(pytest.PytestUnraisableExceptionWarning(msg))
+
+registered/unit/mem_cache/test_physical_write_loc.py::TestEveryPoolDoorTakesAWriteLoc::test_every_pool_write_door_unwraps_or_forwards_its_loc
+  <unknown>:321: SyntaxWarning: invalid escape sequence '\('
+
+registered/unit/model_executor/test_prefill_cuda_graph_runner_helpers.py::TestPrefillCudaGraphRunnerHelpers::test_dspark_proxy_width_respects_deferred_k3_boundary_capture
+  <frozen abc>:106: DeprecationWarning: MultiPlatformOp is deprecated; subclass sglang.kernels.fused_op.BaseFusedOp instead (RFC #29630).
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+SKIPPED [6] test/registered/kernels/ops/attention/test_muse_spark_prefill_attention_kernel.py:50: sm_90 kernel
+SKIPPED [2] test/registered/kernels/ops/attention/test_muse_spark_prefill_attention_kernel.py:87: sm_90 kernel
+SKIPPED [3] test/registered/kernels/ops/attention/test_muse_spark_prefill_attention_kernel.py:122: sm_90 kernel
+SKIPPED [1] test/registered/kernels/ops/gemm/test_muse_spark_router_mma.py:83: router_mma is SM90-only
+SKIPPED [1] test/registered/kernels/ops/gemm/test_muse_spark_router_mma.py:68: router_mma is SM90-only
+SKIPPED [1] test/registered/kernels/ops/gemm/test_muse_spark_router_mma.py:56: router_mma is SM90-only
+SKIPPED [1] test/registered/kernels/ops/gemm/test_small_m_pdl_gemm.py:25: the small-M PDL GEMM is SM90-only
+SKIPPED [1] test/registered/kernels/ops/gemm/test_small_m_pdl_gemm.py:51: the small-M PDL GEMM is SM90-only
+SKIPPED [1] test/registered/unit/mem_cache/test_hicache_load_back_timing.py:101: CUDA required
+SKIPPED [1] test/registered/unit/mem_cache/test_hicache_load_back_timing.py:78: CUDA required
+SKIPPED [1] test/registered/unit/mem_cache/test_hicache_load_back_timing.py:38: CUDA required
+SKIPPED [1] test/registered/unit/mem_cache/test_hicache_nixl_storage.py:528: minio binary or boto3 not available
+SKIPPED [1] test/registered/unit/mem_cache/test_hicache_staged_write_back_dispatch.py:855: TODO: Mamba pool is currently incompatible with write-back staging kernel; re-enable once the staging bug is fixed.
+SKIPPED [1] test/registered/unit/mem_cache/test_hicache_write_back_ordering.py:40: CUDA required
+SKIPPED [1] test/registered/unit/spec/test_dflash_overlap_hostsync.py:184: triton kernel requires CUDA
+SKIPPED [1] ../../opt/sglang/lib/python3.12/site-packages/_pytest/unittest.py:521: CUDA not available
+748 passed, 24 skipped, 33 warnings, 3343 subtests passed in 595.65s (0:09:55)
+sys:1: DeprecationWarning: builtin type swigvarlink has no __module__ attribute
+tests rc 0
+Stopping app - local entrypoint completed.
+Runner terminated.
+✓ App completed. View run at 
+https://modal.com/apps/<workspace>/main/ap-bzMRBvLKk5lDl5KuhAZAnd

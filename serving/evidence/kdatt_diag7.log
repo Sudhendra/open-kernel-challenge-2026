@@ -1,0 +1,46 @@
+✓ Initialized. View run at 
+https://modal.com/apps/<workspace>/main/ap-OhzIa00GoOdkxPBMX8Yu0P
+✓ Created objects.
+├── ✓ Uploaded 
+│   <repo>/serving/h
+│   arness/modal_kmask_ubench.py
+├── ✓ Uploaded 
+│   <repo>/serving/l
+│   anes/kwide2_tools
+├── ✓ Uploaded 
+│   <repo>/serving/l
+│   anes/kmask_tools
+├── ✓ Uploaded 
+│   <repo>/serving/l
+│   anes/kdatt/test
+├── ✓ Uploaded 
+│   <repo>/serving/l
+│   anes/kdatt/python/sglang
+├── ✓ Created Function cpu_compile.
+├── ✓ Created Function cputests.
+├── ✓ Created Function run.
+└── ✓ Created Function diag.
+
+==========
+== CUDA ==
+==========
+
+CUDA Version 13.0.3
+
+Container image Copyright (c) 2016-2023, NVIDIA CORPORATION & AFFILIATES. All rights reserved.
+
+This container image and its contents are governed by the NVIDIA Deep Learning Container License.
+By pulling and using the container, you accept the terms and conditions of this license:
+https://developer.nvidia.com/ngc/nvidia-deep-learning-container-license
+
+A copy of this license is made available in this container at /NGC-DL-CONTAINER-LICENSE for your convenience.
+
+===== /opt/sglang/bin/python kdatt_diag.py  (limit 480s)
+[diag B=1 contig=0] S128/m0=13.0 S128/m1=7.7 S128/m2=9.5 S128/m10=12.7 S128/m11=7.4 fa3_s16=41.6 fa3_s64=20.7
+[diag B=4 contig=0] S33/m0=36.3 S33/m1=26.6 S33/m2=23.7 S33/m10=34.1 S33/m11=26.2 fa3_s16=54.0 fa3_s64=54.1
+[diag B=16 contig=0] S8/m0=118.4 S8/m1=93.4 S8/m2=81.3 S8/m10=111.9 S8/m11=92.7 fa3_s2=346.9 fa3_s4=184.6
+[diag B=32 contig=0] S4/m0=236.9 S4/m1=181.6 S4/m2=154.0 S4/m10=226.7 S4/m11=182.6 fa3_s2=361.1 fa3_s4=360.6
+===== rc=0 (36s)
+Stopping app - local entrypoint completed.
+✓ App completed. View run at 
+https://modal.com/apps/<workspace>/main/ap-OhzIa00GoOdkxPBMX8Yu0P

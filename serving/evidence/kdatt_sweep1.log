@@ -1,0 +1,88 @@
+✓ Initialized. View run at 
+https://modal.com/apps/<workspace>/main/ap-Wfx94FKK7dUoYTgCKSo4vI
+✓ Created objects.
+├── ✓ Uploaded 
+│   <repo>/serving/h
+│   arness/modal_kmask_ubench.py
+├── ✓ Uploaded 
+│   <repo>/serving/l
+│   anes/kwide2_tools
+├── ✓ Uploaded 
+│   <repo>/serving/l
+│   anes/kmask_tools
+├── ✓ Uploaded 
+│   <repo>/serving/l
+│   anes/kdatt/test
+├── ✓ Uploaded 
+│   <repo>/serving/l
+│   anes/kdatt/python/sglang
+├── ✓ Created Function cpu_compile.
+├── ✓ Created Function cputests.
+├── ✓ Created Function run.
+├── ✓ Created Function diag.
+├── ✓ Created Function adv.
+├── ✓ Created Function gputests.
+└── ✓ Created Function sweep.
+
+==========
+== CUDA ==
+==========
+
+CUDA Version 13.0.3
+
+Container image Copyright (c) 2016-2023, NVIDIA CORPORATION & AFFILIATES. All rights reserved.
+
+This container image and its contents are governed by the NVIDIA Deep Learning Container License.
+By pulling and using the container, you accept the terms and conditions of this license:
+https://developer.nvidia.com/ngc/nvidia-deep-learning-container-license
+
+A copy of this license is made available in this container at /NGC-DL-CONTAINER-LICENSE for your convenience.
+
+===== /opt/sglang/bin/python kdatt_bs_sweep.py  (limit 480s)
+[bs=1] max|kdatt-fa3tree|=0.0000 replay==eager True finite True
+[bs=2] max|kdatt-fa3tree|=0.0000 replay==eager True finite True
+[bs=3] max|kdatt-fa3tree|=0.0000 replay==eager True finite True
+[bs=4] max|kdatt-fa3tree|=0.0117 replay==eager True finite True
+[bs=5] max|kdatt-fa3tree|=0.0195 replay==eager True finite True
+[bs=6] max|kdatt-fa3tree|=0.0117 replay==eager True finite True
+[bs=7] max|kdatt-fa3tree|=0.0078 replay==eager True finite True
+[bs=8] max|kdatt-fa3tree|=0.0156 replay==eager True finite True
+[bs=9] max|kdatt-fa3tree|=0.0156 replay==eager True finite True
+[bs=10] max|kdatt-fa3tree|=0.0312 replay==eager True finite True
+[bs=11] max|kdatt-fa3tree|=0.0215 replay==eager True finite True
+[bs=12] max|kdatt-fa3tree|=0.0195 replay==eager True finite True
+[bs=13] max|kdatt-fa3tree|=0.0254 replay==eager True finite True
+[bs=14] max|kdatt-fa3tree|=0.0254 replay==eager True finite True
+[bs=15] max|kdatt-fa3tree|=0.0273 replay==eager True finite True
+[bs=16] max|kdatt-fa3tree|=0.0391 replay==eager True finite True
+[bs=17] max|kdatt-fa3tree|=0.0273 replay==eager True finite True
+[bs=18] max|kdatt-fa3tree|=0.0273 replay==eager True finite True
+[bs=19] max|kdatt-fa3tree|=0.0156 replay==eager True finite True
+[bs=20] max|kdatt-fa3tree|=0.0254 replay==eager True finite True
+[bs=21] max|kdatt-fa3tree|=0.0430 replay==eager True finite True
+[bs=22] max|kdatt-fa3tree|=0.0312 replay==eager True finite True
+[bs=23] max|kdatt-fa3tree|=0.0352 replay==eager True finite True
+[bs=24] max|kdatt-fa3tree|=0.0391 replay==eager True finite True
+[bs=25] max|kdatt-fa3tree|=0.0249 replay==eager True finite True
+[bs=26] max|kdatt-fa3tree|=0.0391 replay==eager True finite True
+[bs=27] max|kdatt-fa3tree|=0.0352 replay==eager True finite True
+[bs=28] max|kdatt-fa3tree|=0.0312 replay==eager True finite True
+[bs=29] max|kdatt-fa3tree|=0.0352 replay==eager True finite True
+[bs=30] max|kdatt-fa3tree|=0.0312 replay==eager True finite True
+[bs=31] max|kdatt-fa3tree|=0.0312 replay==eager True finite True
+[bs=32] max|kdatt-fa3tree|=0.0352 replay==eager True finite True
+[bs=33] max|kdatt-fa3tree|=0.0312 replay==eager True finite True
+[bs=34] max|kdatt-fa3tree|=0.0312 replay==eager True finite True
+[bs=35] max|kdatt-fa3tree|=0.0352 replay==eager True finite True
+[bs=36] max|kdatt-fa3tree|=0.0312 replay==eager True finite True
+[bs=37] max|kdatt-fa3tree|=0.0352 replay==eager True finite True
+[bs=38] max|kdatt-fa3tree|=0.0312 replay==eager True finite True
+[bs=39] max|kdatt-fa3tree|=0.0391 replay==eager True finite True
+[bs=40] max|kdatt-fa3tree|=0.0371 replay==eager True finite True
+[bs=48] max|kdatt-fa3tree|=0.0195 replay==eager True finite True
+[bs=64] max|kdatt-fa3tree|=0.0391 replay==eager True finite True
+WORST 0.0430
+===== rc=0 (39s)
+Stopping app - local entrypoint completed.
+✓ App completed. View run at 
+https://modal.com/apps/<workspace>/main/ap-Wfx94FKK7dUoYTgCKSo4vI

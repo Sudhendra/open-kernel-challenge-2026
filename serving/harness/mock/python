@@ -1,0 +1,94 @@
+#!/usr/bin/env python3
+"""Mock `python` for harness/dryrun_session.sh: stands in for the server, the ladder, agree.py, tests and the GPU tools so
+profile_session.sh can run end to end on a laptop. Anything not recognised runs under the real python3."""
+import json, os, sys, time, http.server, socketserver, subprocess
+a = sys.argv[1:]
+def arg(flag, default=None):
+    return a[a.index(flag) + 1] if flag in a and a.index(flag) + 1 < len(a) else default
+# MOCK_ARGV_LOG (set by dryrun_session.sh): every invocation's argv (+ the SGLANG_*/PYTHONPATH env of a server launch), so
+# two dry runs can be diffed command line by command line.
+if os.environ.get("MOCK_ARGV_LOG") and a[:1] != ["-c"]:
+    _rec = {"argv": a}
+    if a[:2] == ["-m", "sglang.launch_server"]: _rec["env"] = {k: v for k, v in sorted(os.environ.items()) if k.startswith("SGLANG_") or k == "PYTHONPATH"}
+    with open(os.environ["MOCK_ARGV_LOG"], "a") as _f: _f.write(json.dumps(_rec) + "\n")
+if a[:2] == ["-m", "sglang.launch_server"]:
+    port = int(arg("--port", "30000")); print("[mock server] args:", " ".join(a[2:])[:300], flush=True)
+    time.sleep(float(os.environ.get("MOCK_BOOT_S", "2")))
+    # a stand-in rank-0 scheduler process (the real one is titled sglang::scheduler_TP0_EP0); exits when this server dies
+    subprocess.Popen([sys.executable, "-c", "import os,sys,time\np=int(sys.argv[1])\nwhile os.getppid()==p: time.sleep(0.5)", str(os.getpid()), "sglang::scheduler_TP0_EP0"])
+    PROF = os.environ.get("SGLANG_TORCH_PROFILER_DIR", "")
+    class H(http.server.BaseHTTPRequestHandler):
+        def log_message(self, *x): pass
+        def _ok(self, body, ct="application/json"):
+            self.send_response(200); self.send_header("Content-Type", ct); self.end_headers(); self.wfile.write(body.encode())
+        def do_GET(self):
+            if self.path == "/health": self._ok("ok", "text/plain")
+            elif self.path == "/metrics": self._ok("# mock metrics\nsglang:num_running_reqs 0\n", "text/plain")
+            elif self.path == "/get_server_info": self._ok(json.dumps({"mock": True, "max_total_num_tokens": 3000000}))
+            else: self._ok("{}")
+        def do_POST(self):
+            n = int(self.headers.get("Content-Length") or 0); body = self.rfile.read(n).decode(errors="replace") if n else ""
+            if self.path == "/generate":   # ladder.py --client ids: log the request shape, stream 220 ids in 3 incremental chunks
+                b = json.loads(body or "{}"); ids = b.get("input_ids") or []; sp = b.get("sampling_params") or {}
+                if PROF:
+                    with open(os.path.join(os.path.dirname(PROF), "mock_posts.txt"), "a") as f:
+                        f.write(f"/generate client=ids input_ids={len(ids)} head={ids[:3]} stream={b.get('stream')} sampling_params={json.dumps(sp, sort_keys=True)}\n")
+                self.send_response(200); self.send_header("Content-Type", "text/event-stream"); self.end_headers()
+                m = int(sp.get("max_new_tokens") or 220); done = 0
+                for k in (m // 3, m // 3, m - 2 * (m // 3)):
+                    out = [7 + (len(ids) + done + i) % 97 for i in range(k)]; done += k
+                    ev = {"text": "w " * k, "output_ids": out, "meta_info": {"prompt_tokens": len(ids), "completion_tokens": done, "cached_tokens": max(0, len(ids) - 1000)}}
+                    self.wfile.write(b"data: " + json.dumps(ev).encode() + b"\n\n"); self.wfile.flush()
+                self.wfile.write(b"data: [DONE]\n\n"); return
+            if PROF:   # request log next to prof/ (not server.log: the dry run appends fake batch lines there)
+                with open(os.path.join(os.path.dirname(PROF), "mock_posts.txt"), "a") as f: f.write(f"{self.path} {body}\n")
+                if self.path == "/start_profile":   # fake per-rank trace files, named as the real profiler names them
+                    try: b = json.loads(body or "{}")
+                    except ValueError: b = {}
+                    os.makedirs(PROF, exist_ok=True); pid = "%.6f" % time.time(); sfx = "-EXTEND" if b.get("profile_by_stage") else ""
+                    for r in range(8): open(os.path.join(PROF, f"{b.get('profile_prefix') or 'trace'}-{pid}-TP-{r}-EP-{r}{sfx}.trace.json.gz"), "w").close()
+            self._ok(json.dumps({"ok": True, "path": self.path}))
+    socketserver.TCPServer.allow_reuse_address = True
+    # listen backlog: socketserver's default 5 resets connects past it (macOS ECONNRESET), and a 32-user rung of the real
+    # ladder.py (PROXY_CLIENT=ids) opens 32 at once
+    class Srv(socketserver.ThreadingTCPServer): request_queue_size = int(os.environ.get("MOCK_BACKLOG", "256")); daemon_threads = True   # MOCK_BACKLOG=1 reproduces the Nov 17 reset
+    with Srv(("127.0.0.1", port), H) as s: s.serve_forever()
+elif a and a[0].endswith("ladder.py") and "--client" in a and arg("--client") == "ids":
+    # PROXY_CLIENT=ids: run the REAL ladder.py (its ids builder and /generate client) against the mock server, with the
+    # stand-in tokenizer (no model files on a laptop)
+    print("[mock ladder] client=ids: real ladder.py, --tokenizer fake", file=sys.stderr, flush=True)
+    os.execv(sys.executable, [sys.executable] + a + ["--tokenizer", "fake"])
+elif a and a[0].endswith("ladder.py"):
+    out = arg("--out", "ladder.json"); rungs = arg("--rungs", "1x1x1"); replay = arg("--replay")
+    # PROF=warm load: append a real c16 server.log excerpt (cold storm, then warm turns) to the server's log, a line at a
+    # time, so harness/warm_trigger.py arms and stops on real lines.
+    if os.path.basename(out).startswith("prof_load_warm"):
+        src = os.environ.get("MOCK_WARM_LOG") or os.path.join(os.path.dirname(os.path.abspath(__file__)), "warm_server_log.txt")
+        with open(src, newline="") as f, open(os.path.join(os.path.dirname(out), "server.log"), "a") as g:
+            for ln in f: g.write(ln); g.flush(); time.sleep(float(os.environ.get("MOCK_WARM_LINE_S", "0.02")))
+    recs = [{"completion_tokens": 7, "text": "mock"} for _ in range(4)]
+    shape = arg("--shape") or ("short" if "--proxy-short" in a else "judge" if "--proxy" in a else "legacy")
+    json.dump({"records": recs, "mock": True, "replay": replay, "args": {"shape": shape, "turns": {"judge": 13, "short": 4}.get(shape, 6)}}, open(out, "w"))
+    for r in rungs.split(","):
+        c = int(r.split("x")[0]); print(json.dumps({"concurrency": c, "requests": 8 * c, "failed": 0, "wall_s": 10.0, "throughput_tok_s": 100.0 * c, "interactivity_tok_s_median": 200.0, "ttft_s_median": 0.3, "ttft_s_p90": 1.0, "wrong_length": 0, "rep": 0}))
+    time.sleep(0.5)
+elif a and a[0].endswith("logprob_probe.py"):
+    print("mock logprob_probe: gpu0 before 120000 peak 121000 after 120500 MiB")
+    print("[probe] gpu0: 120000 / 121000 / 120500 | +1000 / +500")
+elif a and a[0].endswith("agree.py"):
+    print("conc  thr stock   thr cand      x  inter x  ttft x  gates\n   1      100.0      101.0  1.010    1.000    1.00  ok\nagreement cand vs stock : {\"n\": 8, \"exact\": 1.0}")
+elif a and (a[0].endswith("nccl_test.py") or a[0].endswith("ar_bench.py")):
+    print("mock", a[0]); sys.exit(0)
+elif a[:2] in (["-m", "pytest"], ["-m", "unittest"]):
+    print("mock tests: 1 passed"); sys.exit(0)
+elif a[:1] == ["-c"]:
+    code = a[1]
+    if "import sglang" in code: print("mock sglang 0.5.23 /mock/sglang")
+    else: subprocess.run([sys.executable, "-c", code] + a[2:])
+elif a[:1] == ["-"]:
+    script = sys.stdin.read()
+    if len(a) > 1 and a[1].endswith("warmup.json"): subprocess.run([sys.executable, "-c", script, a[1]])
+    elif "hf_hub_download" in script: print("{}")
+    else: subprocess.run([sys.executable, "-c", script] + a[1:])
+else:
+    os.execv(sys.executable, [sys.executable] + a)

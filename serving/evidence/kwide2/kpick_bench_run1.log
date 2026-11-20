@@ -1,0 +1,45 @@
+✓ Initialized. View run at 
+https://modal.com/apps/<workspace>/main/ap-Dq4XoML5BT5i0rcBOKH8Sp
+✓ Created objects.
+├── ✓ Uploaded 
+│   <repo>/serving/h
+│   arness/modal_kpick_bench.py
+├── ✓ Uploaded 
+│   <repo>/serving/l
+│   anes/kbranch2w/python/sglang/srt/speculative/dflash_branch.py
+├── ✓ Uploaded 
+│   <repo>/serving/l
+│   anes/kpick/test/registered/unit/speculative/test_dflash_branch.py
+├── ✓ Uploaded 
+│   <repo>/serving/l
+│   anes/kwide2_tools
+├── ✓ Uploaded 
+│   <repo>/serving/l
+│   anes/kpick/python/sglang
+└── ✓ Created Function bench.
+
+==========
+== CUDA ==
+==========
+
+CUDA Version 13.0.3
+
+Container image Copyright (c) 2016-2023, NVIDIA CORPORATION & AFFILIATES. All rights reserved.
+
+This container image and its contents are governed by the NVIDIA Deep Learning Container License.
+By pulling and using the container, you accept the terms and conditions of this license:
+https://developer.nvidia.com/ngc/nvidia-deep-learning-container-license
+
+A copy of this license is made available in this container at /NGC-DL-CONTAINER-LICENSE for your convenience.
+
+device NVIDIA H200 torch 2.14.1+cu130
+CHECK "PICK rows 1696 skipped 6 gated 965 mismatched 0\nBAD 0 [] | rc 0 "
+graph 1 {"torch": {"wall_ms": 0.14509, "gpu_ms": 0.14496}, "kernel": {"wall_ms": 0.00378, "gpu_ms": 0.00374}, "slot_equal": true, "tokens_equal": true, "gated": 1}
+graph 4 {"torch": {"wall_ms": 0.1552, "gpu_ms": 0.15512}, "kernel": {"wall_ms": 0.00387, "gpu_ms": 0.00383}, "slot_equal": true, "tokens_equal": true, "gated": 4}
+graph 16 {"torch": {"wall_ms": 0.16752, "gpu_ms": 0.1674}, "kernel": {"wall_ms": 0.00391, "gpu_ms": 0.00387}, "slot_equal": true, "tokens_equal": true, "gated": 12}
+graph 32 {"torch": {"wall_ms": 0.18663, "gpu_ms": 0.18654}, "kernel": {"wall_ms": 0.004, "gpu_ms": 0.00396}, "slot_equal": true, "tokens_equal": true, "gated": 22}
+VERDICT {"kernel_sm90a": "PICK rows 1696 skipped 6 gated 965 mismatched 0\nBAD 0 [] | rc 0 ", "graph_bs1": {"torch": {"wall_ms": 0.14509, "gpu_ms": 0.14496}, "kernel": {"wall_ms": 0.00378, "gpu_ms": 0.00374}, "slot_equal": true, "tokens_equal": true, "gated": 1}, "graph_bs4": {"torch": {"wall_ms": 0.1552, "gpu_ms": 0.15512}, "kernel": {"wall_ms": 0.00387, "gpu_ms": 0.00383}, "slot_equal": true, "tokens_equal": true, "gated": 4}, "graph_bs16": {"torch": {"wall_ms": 0.16752, "gpu_ms": 0.1674}, "kernel": {"wall_ms": 0.00391, "gpu_ms": 0.00387}, "slot_equal": true, "tokens_equal": true, "gated": 12}, "graph_bs32": {"torch": {"wall_ms": 0.18663, "gpu_ms": 0.18654}, "kernel": {"wall_ms": 0.004, "gpu_ms": 0.00396}, "slot_equal": true, "tokens_equal": true, "gated": 22}}
+rc 0
+Stopping app - local entrypoint completed.
+✓ App completed. View run at 
+https://modal.com/apps/<workspace>/main/ap-Dq4XoML5BT5i0rcBOKH8Sp

@@ -1,0 +1,91 @@
+✓ Initialized. View run at 
+https://modal.com/apps/<workspace>/main/ap-cxrEQBWzmGiqRfh9IkywNf
+✓ Created objects.
+├── ✓ Uploaded 
+│   <repo>/serving/h
+│   arness/modal_kmask_ubench.py
+├── ✓ Uploaded 
+│   <repo>/serving/l
+│   anes/kpatt3_tools
+├── ✓ Uploaded 
+│   <repo>/serving/l
+│   anes/kwide2_tools
+├── ✓ Uploaded 
+│   <repo>/serving/l
+│   anes/kmask_tools
+├── ✓ Uploaded 
+│   <repo>/serving/l
+│   anes/kdatt/test
+├── ✓ Uploaded 
+│   <repo>/serving/l
+│   anes/kdatt2/python/sglang
+├── ✓ Uploaded 
+│   <repo>/serving/l
+│   anes/kdatt/python/sglang
+├── ✓ Created Function cpu_compile.
+├── ✓ Created Function cputests.
+├── ✓ Created Function run.
+├── ✓ Created Function diag.
+├── ✓ Created Function adv.
+├── ✓ Created Function gputests.
+├── ✓ Created Function sweep.
+├── ✓ Created Function abtime.
+└── ✓ Created Function pfab.
+
+==========
+== CUDA ==
+==========
+
+CUDA Version 13.0.3
+
+Container image Copyright (c) 2016-2023, NVIDIA CORPORATION & AFFILIATES. All rights reserved.
+
+This container image and its contents are governed by the NVIDIA Deep Learning Container License.
+By pulling and using the container, you accept the terms and conditions of this license:
+https://developer.nvidia.com/ngc/nvidia-deep-learning-container-license
+
+A copy of this license is made available in this container at /NGC-DL-CONTAINER-LICENSE for your convenience.
+
+===== AB A rep 0
+===== /opt/sglang/bin/python kmask_ubench.py --parts time --out /tmp/ab_A0.json --impls ext --tbatches 12,16,24,32 --profile 0 --reps 100 --ctx-lo 75000 --ctx-hi 86000  (limit 140s)
+2.14.1+cu130 NVIDIA H200 SMs 132
+[time B=12 rows=96] base=2.868 ms | ext: +-0.461 graph (p10 -0.469 p90 -0.452) +0.000 meta = ADDED -0.461 | meta {'base': 0.09108800068497658, 'kmask': 0.10631999745965004, 'fixp': 0.10140799731016159} splits {'base': [11, 5], 'kmask': [11, 5], 'fixp': [11, 5]} replay_eq {'ext': True} (11s)
+[time B=16 rows=128] base=3.617 ms | ext: +-0.669 graph (p10 -0.679 p90 -0.660) +0.000 meta = ADDED -0.669 | meta {'base': 0.10075199976563454, 'kmask': 0.11727999895811081, 'fixp': 0.11272000148892403} splits {'base': [4, 4], 'kmask': [4, 4], 'fixp': [4, 4]} replay_eq {'ext': True} (2s)
+[time B=24 rows=192] base=5.259 ms | ext: +-1.207 graph (p10 -1.219 p90 -1.193) +0.000 meta = ADDED -1.207 | meta {'base': 0.09425600245594978, 'kmask': 0.11143999919295311, 'fixp': 0.10729599744081497} splits {'base': [8, 2], 'kmask': [8, 2], 'fixp': [8, 2]} replay_eq {'ext': True} (2s)
+[time B=32 rows=256] base=6.643 ms | ext: +-1.835 graph (p10 -1.852 p90 -1.820) +0.000 meta = ADDED -1.835 | meta {'base': 0.1003200002014637, 'kmask': 0.11716799810528755, 'fixp': 0.11241599917411804} splits {'base': [2, 2], 'kmask': [2, 2], 'fixp': [2, 2]} replay_eq {'ext': True} (2s)
+== part time done in 17s
+wrote /tmp/ab_A0.json
+===== rc=0 (43s)
+===== AB B rep 0
+===== /opt/sglang/bin/python kmask_ubench.py --parts time --out /tmp/ab_B0.json --impls ext --tbatches 12,16,24,32 --profile 0 --reps 100 --ctx-lo 75000 --ctx-hi 86000  (limit 140s)
+2.14.1+cu130 NVIDIA H200 SMs 132
+[time B=12 rows=96] base=2.862 ms | ext: +-0.616 graph (p10 -0.628 p90 -0.606) +0.000 meta = ADDED -0.616 | meta {'base': 0.09750399738550186, 'kmask': 0.12375999987125397, 'fixp': 0.10763199999928474} splits {'base': [11, 5], 'kmask': [11, 5], 'fixp': [11, 5]} replay_eq {'ext': True} (11s)
+[time B=16 rows=128] base=3.606 ms | ext: +-0.830 graph (p10 -0.840 p90 -0.819) +0.000 meta = ADDED -0.830 | meta {'base': 0.09105600044131279, 'kmask': 0.10718399658799171, 'fixp': 0.10265599936246872} splits {'base': [4, 4], 'kmask': [4, 4], 'fixp': [4, 4]} replay_eq {'ext': True} (1s)
+[time B=24 rows=192] base=5.256 ms | ext: +-1.404 graph (p10 -1.415 p90 -1.392) +0.000 meta = ADDED -1.404 | meta {'base': 0.08958400040864944, 'kmask': 0.09913600236177444, 'fixp': 0.09704000130295753} splits {'base': [8, 2], 'kmask': [8, 2], 'fixp': [8, 2]} replay_eq {'ext': True} (1s)
+[time B=32 rows=256] base=6.647 ms | ext: +-2.026 graph (p10 -2.040 p90 -2.010) +0.000 meta = ADDED -2.026 | meta {'base': 0.0867999978363514, 'kmask': 0.10699200257658958, 'fixp': 0.10198400169610977} splits {'base': [2, 2], 'kmask': [2, 2], 'fixp': [2, 2]} replay_eq {'ext': True} (1s)
+== part time done in 14s
+wrote /tmp/ab_B0.json
+===== rc=0 (25s)
+===== AB A rep 1
+===== /opt/sglang/bin/python kmask_ubench.py --parts time --out /tmp/ab_A1.json --impls ext --tbatches 12,16,24,32 --profile 0 --reps 100 --ctx-lo 75000 --ctx-hi 86000  (limit 140s)
+2.14.1+cu130 NVIDIA H200 SMs 132
+[time B=12 rows=96] base=2.860 ms | ext: +-0.457 graph (p10 -0.466 p90 -0.447) +0.000 meta = ADDED -0.457 | meta {'base': 0.09201600030064583, 'kmask': 0.10998400300741196, 'fixp': 0.10366399958729744} splits {'base': [11, 5], 'kmask': [11, 5], 'fixp': [11, 5]} replay_eq {'ext': True} (2s)
+[time B=16 rows=128] base=3.605 ms | ext: +-0.663 graph (p10 -0.672 p90 -0.654) +0.000 meta = ADDED -0.663 | meta {'base': 0.09486399963498116, 'kmask': 0.10745599865913391, 'fixp': 0.10238399729132652} splits {'base': [4, 4], 'kmask': [4, 4], 'fixp': [4, 4]} replay_eq {'ext': True} (1s)
+[time B=24 rows=192] base=5.251 ms | ext: +-1.201 graph (p10 -1.215 p90 -1.185) +0.000 meta = ADDED -1.201 | meta {'base': 0.09087999910116196, 'kmask': 0.10708800330758095, 'fixp': 0.09603200107812881} splits {'base': [8, 2], 'kmask': [8, 2], 'fixp': [8, 2]} replay_eq {'ext': True} (1s)
+[time B=32 rows=256] base=6.639 ms | ext: +-1.824 graph (p10 -1.839 p90 -1.811) +0.000 meta = ADDED -1.824 | meta {'base': 0.08318400010466576, 'kmask': 0.09727999940514565, 'fixp': 0.09340800344944} splits {'base': [2, 2], 'kmask': [2, 2], 'fixp': [2, 2]} replay_eq {'ext': True} (1s)
+== part time done in 5s
+wrote /tmp/ab_A1.json
+===== rc=0 (15s)
+===== AB B rep 1
+===== /opt/sglang/bin/python kmask_ubench.py --parts time --out /tmp/ab_B1.json --impls ext --tbatches 12,16,24,32 --profile 0 --reps 100 --ctx-lo 75000 --ctx-hi 86000  (limit 140s)
+2.14.1+cu130 NVIDIA H200 SMs 132
+[time B=12 rows=96] base=2.869 ms | ext: +-0.620 graph (p10 -0.629 p90 -0.611) +0.000 meta = ADDED -0.620 | meta {'base': 0.09638400003314018, 'kmask': 0.11387200281023979, 'fixp': 0.11441599950194359} splits {'base': [11, 5], 'kmask': [11, 5], 'fixp': [11, 5]} replay_eq {'ext': True} (2s)
+[time B=16 rows=128] base=3.618 ms | ext: +-0.840 graph (p10 -0.850 p90 -0.827) +0.000 meta = ADDED -0.840 | meta {'base': 0.09054399654269218, 'kmask': 0.10732799768447876, 'fixp': 0.10099200159311295} splits {'base': [4, 4], 'kmask': [4, 4], 'fixp': [4, 4]} replay_eq {'ext': True} (1s)
+[time B=24 rows=192] base=5.256 ms | ext: +-1.406 graph (p10 -1.418 p90 -1.394) +0.000 meta = ADDED -1.406 | meta {'base': 0.10406400263309479, 'kmask': 0.11587200313806534, 'fixp': 0.10942399874329567} splits {'base': [8, 2], 'kmask': [8, 2], 'fixp': [8, 2]} replay_eq {'ext': True} (1s)
+[time B=32 rows=256] base=6.647 ms | ext: +-2.016 graph (p10 -2.031 p90 -1.998) +0.000 meta = ADDED -2.016 | meta {'base': 0.10705600306391716, 'kmask': 0.1255199983716011, 'fixp': 0.11582400277256966} splits {'base': [2, 2], 'kmask': [2, 2], 'fixp': [2, 2]} replay_eq {'ext': True} (1s)
+== part time done in 5s
+wrote /tmp/ab_B1.json
+===== rc=0 (15s)
+Stopping app - local entrypoint completed.
+✓ App completed. View run at 
+https://modal.com/apps/<workspace>/main/ap-cxrEQBWzmGiqRfh9IkywNf

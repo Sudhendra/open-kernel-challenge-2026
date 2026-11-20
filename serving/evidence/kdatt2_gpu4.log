@@ -1,0 +1,289 @@
+✓ Initialized. View run at 
+https://modal.com/apps/<workspace>/main/ap-bGZHvxApH12KlrJ1ZRPxRR
+✓ Created objects.
+├── ✓ Uploaded 
+│   <repo>/serving/h
+│   arness/modal_kmask_ubench.py
+├── ✓ Uploaded 
+│   <repo>/serving/l
+│   anes/kpatt3_tools
+├── ✓ Uploaded 
+│   <repo>/serving/l
+│   anes/kwide2_tools
+├── ✓ Uploaded 
+│   <repo>/serving/l
+│   anes/kmask_tools
+├── ✓ Uploaded 
+│   <repo>/serving/l
+│   anes/kdatt2/test
+├── ✓ Uploaded 
+│   <repo>/serving/l
+│   anes/kdatt2/python/sglang
+├── ✓ Created Function cpu_compile.
+├── ✓ Created Function cputests.
+├── ✓ Created Function run.
+├── ✓ Created Function diag.
+├── ✓ Created Function adv.
+├── ✓ Created Function gputests.
+├── ✓ Created Function sweep.
+├── ✓ Created Function abtime.
+└── ✓ Created Function pfab.
+
+==========
+== CUDA ==
+==========
+
+CUDA Version 13.0.3
+
+Container image Copyright (c) 2016-2023, NVIDIA CORPORATION & AFFILIATES. All rights reserved.
+
+This container image and its contents are governed by the NVIDIA Deep Learning Container License.
+By pulling and using the container, you accept the terms and conditions of this license:
+https://developer.nvidia.com/ngc/nvidia-deep-learning-container-license
+
+A copy of this license is made available in this container at /NGC-DL-CONTAINER-LICENSE for your convenience.
+
+GPU 0: NVIDIA H200 (UUID: GPU-9e60e120-f3a8-ec9f-96b4-ba7116ce71da)
+===== /opt/sglang/bin/python kmask_ubench.py --parts exact,time --out /vol/out/kmask/20261120T020714Z/kmask.json --impls fixp,ext --ctx-lo 75000 --ctx-hi 86000  (limit 560s)
+2.14.1+cu130 NVIDIA H200 SMs 132
+[exact B=1 p=0 full] base_relfp64=0.00314 badtab=0 gated=1 | base_s1: ulp=0.0 >1ulp=0 rel/base=1.000 | base_s3: ulp=0.0 >1ulp=0 rel/base=1.000 | base_s16: ulp=0.0 >1ulp=0 rel/base=1.000
+   fixp   a: ulp=1.0 >1ulp=0/8192 rel/base=0.999 det=True fin=True | b: chain6: ulp=1.0 abs=0.00391 branch2: ulp=1.0 abs=0.00781 relfp64=0.00357 fin=True
+   ext    a: ulp=1.0 >1ulp=0/8192 rel/base=0.999 det=True fin=True | b: chain6: ulp=1.0 abs=0.00391 branch2: ulp=1.0 abs=0.00781 relfp64=0.00357 fin=True
+[exact B=1 p=0 swa] base_relfp64=0.00314 badtab=0 gated=1 | base_s1: ulp=0.0 >1ulp=0 rel/base=1.000 | base_s3: ulp=0.0 >1ulp=0 rel/base=1.000 | base_s16: ulp=0.0 >1ulp=0 rel/base=1.000
+   fixp   a: ulp=1.0 >1ulp=0/8192 rel/base=0.999 det=True fin=True | b: chain6: ulp=1.0 abs=0.00391 branch2: ulp=1.0 abs=0.00781 relfp64=0.00357 fin=True
+   ext    a: ulp=1.0 >1ulp=0/8192 rel/base=0.999 det=True fin=True | b: chain6: ulp=1.0 abs=0.00391 branch2: ulp=1.0 abs=0.00781 relfp64=0.00357 fin=True
+[exact B=1 p=5 full] base_relfp64=0.00725 badtab=0 gated=1 | base_s1: ulp=0.0 >1ulp=0 rel/base=1.000 | base_s3: ulp=0.0 >1ulp=0 rel/base=1.000 | base_s16: ulp=0.0 >1ulp=0 rel/base=1.000
+   fixp   a: ulp=779.0 >1ulp=1523/8192 rel/base=0.706 det=True fin=True | b: chain6: ulp=239.6 abs=0.0469 branch2: ulp=183.1 abs=0.0469 relfp64=0.00384 fin=True
+   ext    a: ulp=779.0 >1ulp=1523/8192 rel/base=0.706 det=True fin=True | b: chain6: ulp=239.6 abs=0.0469 branch2: ulp=183.1 abs=0.0469 relfp64=0.00384 fin=True
+[exact B=1 p=5 swa] base_relfp64=0.00725 badtab=0 gated=1 | base_s1: ulp=0.0 >1ulp=0 rel/base=1.000 | base_s3: ulp=0.0 >1ulp=0 rel/base=1.000 | base_s16: ulp=0.0 >1ulp=0 rel/base=1.000
+   fixp   a: ulp=779.0 >1ulp=1523/8192 rel/base=0.706 det=True fin=True | b: chain6: ulp=239.6 abs=0.0469 branch2: ulp=183.1 abs=0.0469 relfp64=0.00384 fin=True
+   ext    a: ulp=779.0 >1ulp=1523/8192 rel/base=0.706 det=True fin=True | b: chain6: ulp=239.6 abs=0.0469 branch2: ulp=183.1 abs=0.0469 relfp64=0.00384 fin=True
+[exact B=1 p=2040 full] base_relfp64=0.0044 badtab=0 gated=1 | base_s1: ulp=289.0 >1ulp=2978 rel/base=1.743 | base_s3: ulp=264.0 >1ulp=1725 rel/base=1.319 | base_s16: ulp=129.0 >1ulp=959 rel/base=0.905
+   fixp   a: ulp=16.0 >1ulp=23/8192 rel/base=0.999 det=True fin=True | b: chain6: ulp=129.0 abs=0.0156 branch2: ulp=57.4 abs=0.0127 relfp64=0.00439 fin=True
+   ext    a: ulp=129.0 >1ulp=969/8192 rel/base=0.904 det=True fin=True | b: chain6: ulp=3.0 abs=0.00781 branch2: ulp=0.5 abs=3.05e-05 relfp64=0.00397 fin=True
+[exact B=1 p=2040 swa] base_relfp64=0.00386 badtab=0 gated=1 | base_s1: ulp=311.5 >1ulp=2922 rel/base=1.942 | base_s3: ulp=143.5 >1ulp=1755 rel/base=1.317 | base_s16: ulp=91.0 >1ulp=741 rel/base=0.935
+   fixp   a: ulp=70.0 >1ulp=1033/8192 rel/base=1.069 det=True fin=True | b: chain6: ulp=70.0 abs=0.0156 branch2: ulp=53.5 abs=0.00781 relfp64=0.00412 fin=True
+   ext    a: ulp=91.0 >1ulp=746/8192 rel/base=0.935 det=True fin=True | b: chain6: ulp=91.1 abs=0.0273 branch2: ulp=27.4 abs=0.00781 relfp64=0.00361 fin=True
+[exact B=1 p=2048 full] base_relfp64=0.00451 badtab=0 gated=1 | base_s1: ulp=336.0 >1ulp=2886 rel/base=1.679 | base_s3: ulp=216.5 >1ulp=1669 rel/base=1.321 | base_s16: ulp=0.0 >1ulp=0 rel/base=1.000
+   fixp   a: ulp=1.0 >1ulp=0/8192 rel/base=1.000 det=True fin=True | b: chain6: ulp=150.0 abs=0.0312 branch2: ulp=88.0 abs=0.00781 relfp64=0.00451 fin=True
+   ext    a: ulp=150.0 >1ulp=955/8192 rel/base=0.862 det=True fin=True | b: chain6: ulp=1.0 abs=0.000244 branch2: ulp=1.0 abs=0.000244 relfp64=0.00389 fin=True
+[exact B=1 p=2048 swa] base_relfp64=0.00469 badtab=0 gated=1 | base_s1: ulp=245.0 >1ulp=2970 rel/base=1.704 | base_s3: ulp=168.1 >1ulp=1702 rel/base=1.182 | base_s16: ulp=0.0 >1ulp=0 rel/base=1.000
+   fixp   a: ulp=150.5 >1ulp=1269/8192 rel/base=0.993 det=True fin=True | b: chain6: ulp=150.5 abs=0.0195 branch2: ulp=69.0 abs=0.00879 relfp64=0.00465 fin=True
+   ext    a: ulp=139.0 >1ulp=1002/8192 rel/base=0.832 det=True fin=True | b: chain6: ulp=139.0 abs=0.0215 branch2: ulp=46.0 abs=0.00879 relfp64=0.00391 fin=True
+[exact B=1 p=2100 full] base_relfp64=0.00449 badtab=0 gated=1 | base_s1: ulp=220.5 >1ulp=2890 rel/base=1.667 | base_s3: ulp=215.2 >1ulp=1661 rel/base=1.312 | base_s16: ulp=0.0 >1ulp=0 rel/base=1.000
+   fixp   a: ulp=21.2 >1ulp=10/8192 rel/base=0.999 det=True fin=True | b: chain6: ulp=150.0 abs=0.0312 branch2: ulp=88.0 abs=0.00781 relfp64=0.0045 fin=True
+   ext    a: ulp=150.0 >1ulp=943/8192 rel/base=0.863 det=True fin=True | b: chain6: ulp=2.0 abs=0.00195 branch2: ulp=1.0 abs=0.00195 relfp64=0.00387 fin=True
+[exact B=1 p=2100 swa] base_relfp64=0.00427 badtab=0 gated=1 | base_s1: ulp=494.0 >1ulp=2988 rel/base=1.849 | base_s3: ulp=194.2 >1ulp=1715 rel/base=1.259 | base_s16: ulp=0.0 >1ulp=0 rel/base=1.000
+   fixp   a: ulp=156.6 >1ulp=1208/8192 rel/base=1.057 det=True fin=True | b: chain6: ulp=156.6 abs=0.0215 branch2: ulp=72.0 abs=0.00781 relfp64=0.00451 fin=True
+   ext    a: ulp=200.8 >1ulp=1555/8192 rel/base=0.923 det=True fin=True | b: chain6: ulp=200.6 abs=0.0215 branch2: ulp=150.0 abs=0.0127 relfp64=0.00394 fin=True
+[exact B=1 p=70000 full] base_relfp64=0.00239 badtab=0 gated=1 | base_s1: ulp=288.5 >1ulp=3770 rel/base=3.632 | base_s3: ulp=202.0 >1ulp=2723 rel/base=2.274 | base_s16: ulp=104.5 >1ulp=1139 rel/base=1.207
+   fixp   a: ulp=1.0 >1ulp=0/8192 rel/base=1.000 det=True fin=True | b: chain6: ulp=1.0 abs=0.000977 branch2: ulp=0.0 abs=4.77e-07 relfp64=0.00239 fin=True
+   ext    a: ulp=68.0 >1ulp=598/8192 rel/base=0.838 det=True fin=True | b: chain6: ulp=68.0 abs=0.0156 branch2: ulp=47.0 abs=0.00781 relfp64=0.002 fin=True
+[exact B=1 p=70000 swa] base_relfp64=0.00428 badtab=0 gated=1 | base_s1: ulp=382.5 >1ulp=3039 rel/base=1.921 | base_s3: ulp=167.0 >1ulp=1600 rel/base=1.233 | base_s16: ulp=0.0 >1ulp=0 rel/base=1.000
+   fixp   a: ulp=145.0 >1ulp=1041/8192 rel/base=1.038 det=True fin=True | b: chain6: ulp=145.0 abs=0.0117 branch2: ulp=90.5 abs=0.00781 relfp64=0.00445 fin=True
+   ext    a: ulp=200.0 >1ulp=1187/8192 rel/base=0.878 det=True fin=True | b: chain6: ulp=137.0 abs=0.0156 branch2: ulp=200.8 abs=0.0234 relfp64=0.00376 fin=True
+[exact B=1 p=100000 full] base_relfp64=0.00205 badtab=0 gated=1 | base_s1: ulp=247.8 >1ulp=3547 rel/base=3.716 | base_s3: ulp=160.0 >1ulp=2499 rel/base=2.379 | base_s16: ulp=117.2 >1ulp=1239 rel/base=1.344
+   fixp   a: ulp=1.0 >1ulp=0/8192 rel/base=1.000 det=True fin=True | b: chain6: ulp=1.0 abs=0.000488 branch2: ulp=0.0 abs=0 relfp64=0.00205 fin=True
+   ext    a: ulp=65.1 >1ulp=412/8192 rel/base=0.951 det=True fin=True | b: chain6: ulp=65.1 abs=0.00781 branch2: ulp=13.0 abs=0.00781 relfp64=0.00195 fin=True
+[exact B=1 p=100000 swa] base_relfp64=0.00413 badtab=0 gated=1 | base_s1: ulp=340.7 >1ulp=3156 rel/base=1.813 | base_s3: ulp=284.7 >1ulp=1562 rel/base=1.231 | base_s16: ulp=0.0 >1ulp=0 rel/base=1.000
+   fixp   a: ulp=274.7 >1ulp=1182/8192 rel/base=1.071 det=True fin=True | b: chain6: ulp=258.0 abs=0.0312 branch2: ulp=265.5 abs=0.0234 relfp64=0.00441 fin=True
+   ext    a: ulp=169.0 >1ulp=1451/8192 rel/base=0.806 det=True fin=True | b: chain6: ulp=156.0 abs=0.0293 branch2: ulp=168.0 abs=0.0156 relfp64=0.00331 fin=True
+[exact B=1 p=mixed full] base_relfp64=0.00314 badtab=0 gated=1 | base_s1: ulp=0.0 >1ulp=0 rel/base=1.000 | base_s3: ulp=0.0 >1ulp=0 rel/base=1.000 | base_s16: ulp=0.0 >1ulp=0 rel/base=1.000
+   fixp   a: ulp=1.0 >1ulp=0/8192 rel/base=0.999 det=True fin=True | b: chain6: ulp=1.0 abs=0.00391 branch2: ulp=1.0 abs=0.00781 relfp64=0.00357 fin=True
+   ext    a: ulp=1.0 >1ulp=0/8192 rel/base=0.999 det=True fin=True | b: chain6: ulp=1.0 abs=0.00391 branch2: ulp=1.0 abs=0.00781 relfp64=0.00357 fin=True
+[exact B=1 p=mixed swa] base_relfp64=0.00314 badtab=0 gated=1 | base_s1: ulp=0.0 >1ulp=0 rel/base=1.000 | base_s3: ulp=0.0 >1ulp=0 rel/base=1.000 | base_s16: ulp=0.0 >1ulp=0 rel/base=1.000
+   fixp   a: ulp=1.0 >1ulp=0/8192 rel/base=0.999 det=True fin=True | b: chain6: ulp=1.0 abs=0.00391 branch2: ulp=1.0 abs=0.00781 relfp64=0.00357 fin=True
+   ext    a: ulp=1.0 >1ulp=0/8192 rel/base=0.999 det=True fin=True | b: chain6: ulp=1.0 abs=0.00391 branch2: ulp=1.0 abs=0.00781 relfp64=0.00357 fin=True
+[exact B=4 p=0 full] base_relfp64=0.00471 badtab=0 gated=2 | base_s1: ulp=0.0 >1ulp=0 rel/base=1.000 | base_s3: ulp=0.0 >1ulp=0 rel/base=1.000 | base_s16: ulp=0.0 >1ulp=0 rel/base=1.000
+   fixp   a: ulp=10.0 >1ulp=17/32768 rel/base=0.999 det=True fin=True | b: chain6: ulp=1.0 abs=0.0156 branch2: ulp=1.0 abs=0.0156 ungated: ulp=10.0 abs=0.0156 relfp64=0.00419 fin=True
+   ext    a: ulp=10.0 >1ulp=17/32768 rel/base=0.999 det=True fin=True | b: chain6: ulp=1.0 abs=0.0156 branch2: ulp=1.0 abs=0.0156 ungated: ulp=10.0 abs=0.0156 relfp64=0.00419 fin=True
+[exact B=4 p=0 swa] base_relfp64=0.00471 badtab=0 gated=2 | base_s1: ulp=0.0 >1ulp=0 rel/base=1.000 | base_s3: ulp=0.0 >1ulp=0 rel/base=1.000 | base_s16: ulp=0.0 >1ulp=0 rel/base=1.000
+   fixp   a: ulp=10.0 >1ulp=17/32768 rel/base=0.999 det=True fin=True | b: chain6: ulp=1.0 abs=0.00781 branch2: ulp=1.0 abs=0.0156 ungated: ulp=10.0 abs=0.0156 relfp64=0.00416 fin=True
+   ext    a: ulp=10.0 >1ulp=17/32768 rel/base=0.999 det=True fin=True | b: chain6: ulp=1.0 abs=0.00781 branch2: ulp=1.0 abs=0.0156 ungated: ulp=10.0 abs=0.0156 relfp64=0.00416 fin=True
+[exact B=4 p=5 full] base_relfp64=0.00682 badtab=0 gated=3 | base_s1: ulp=0.0 >1ulp=0 rel/base=1.000 | base_s3: ulp=0.0 >1ulp=0 rel/base=1.000 | base_s16: ulp=0.0 >1ulp=0 rel/base=1.000
+   fixp   a: ulp=417.0 >1ulp=4638/32768 rel/base=0.809 det=True fin=True | b: chain6: ulp=378.0 abs=0.0547 branch2: ulp=297.5 abs=0.0391 ungated: ulp=417.0 abs=0.0469 relfp64=0.00582 fin=True
+   ext    a: ulp=417.0 >1ulp=4638/32768 rel/base=0.809 det=True fin=True | b: chain6: ulp=378.0 abs=0.0547 branch2: ulp=297.5 abs=0.0391 ungated: ulp=417.0 abs=0.0469 relfp64=0.00582 fin=True
+[exact B=4 p=5 swa] base_relfp64=0.00682 badtab=0 gated=3 | base_s1: ulp=0.0 >1ulp=0 rel/base=1.000 | base_s3: ulp=0.0 >1ulp=0 rel/base=1.000 | base_s16: ulp=0.0 >1ulp=0 rel/base=1.000
+   fixp   a: ulp=417.0 >1ulp=4638/32768 rel/base=0.809 det=True fin=True | b: chain6: ulp=378.0 abs=0.0547 branch2: ulp=292.8 abs=0.0391 ungated: ulp=417.0 abs=0.0469 relfp64=0.00575 fin=True
+   ext    a: ulp=417.0 >1ulp=4638/32768 rel/base=0.809 det=True fin=True | b: chain6: ulp=378.0 abs=0.0547 branch2: ulp=292.8 abs=0.0391 ungated: ulp=417.0 abs=0.0469 relfp64=0.00575 fin=True
+[exact B=4 p=2040 full] base_relfp64=0.00333 badtab=0 gated=2 | base_s1: ulp=378.0 >1ulp=10752 rel/base=2.007 | base_s3: ulp=379.0 >1ulp=5974 rel/base=1.366 | base_s16: ulp=0.0 >1ulp=0 rel/base=1.000
+   fixp   a: ulp=20.0 >1ulp=31/32768 rel/base=1.000 det=True fin=True | b: chain6: ulp=183.5 abs=0.0156 branch2: ulp=197.0 abs=0.0312 ungated: ulp=8.2 abs=0.0156 relfp64=0.00333 fin=True
+   ext    a: ulp=220.5 >1ulp=3406/32768 rel/base=0.821 det=True fin=True | b: chain6: ulp=23.0 abs=0.00488 branch2: ulp=1.0 abs=0.00391 ungated: ulp=220.5 abs=0.0312 relfp64=0.00274 fin=True
+[exact B=4 p=2040 swa] base_relfp64=0.0038 badtab=0 gated=1 | base_s1: ulp=345.0 >1ulp=11349 rel/base=1.885 | base_s3: ulp=231.4 >1ulp=6284 rel/base=1.320 | base_s16: ulp=0.0 >1ulp=0 rel/base=1.000
+   fixp   a: ulp=175.6 >1ulp=4137/32768 rel/base=1.081 det=True fin=True | b: chain6: ulp=146.0 abs=0.0234 branch2: ulp=44.5 abs=0.0176 ungated: ulp=175.6 abs=0.0234 relfp64=0.00411 fin=True
+   ext    a: ulp=218.0 >1ulp=3151/32768 rel/base=0.840 det=True fin=True | b: chain6: ulp=140.0 abs=0.0156 branch2: ulp=41.0 abs=0.0117 ungated: ulp=218.0 abs=0.0312 relfp64=0.0032 fin=True
+[exact B=4 p=2048 full] base_relfp64=0.00335 badtab=0 gated=3 | base_s1: ulp=379.0 >1ulp=10933 rel/base=2.036 | base_s3: ulp=379.0 >1ulp=6064 rel/base=1.364 | base_s16: ulp=0.0 >1ulp=0 rel/base=1.000
+   fixp   a: ulp=1.0 >1ulp=0/32768 rel/base=1.000 det=True fin=True | b: chain6: ulp=172.0 abs=0.0312 branch2: ulp=195.0 abs=0.0312 ungated: ulp=1.0 abs=0.00391 relfp64=0.00334 fin=True
+   ext    a: ulp=160.0 >1ulp=3306/32768 rel/base=0.820 det=True fin=True | b: chain6: ulp=2.0 abs=0.00195 branch2: ulp=1.0 abs=0.00195 ungated: ulp=101.0 abs=0.0156 relfp64=0.00274 fin=True
+[exact B=4 p=2048 swa] base_relfp64=0.00396 badtab=0 gated=1 | base_s1: ulp=313.0 >1ulp=11253 rel/base=1.825 | base_s3: ulp=240.8 >1ulp=6170 rel/base=1.292 | base_s16: ulp=0.0 >1ulp=0 rel/base=1.000
+   fixp   a: ulp=198.8 >1ulp=4085/32768 rel/base=1.057 det=True fin=True | b: chain6: ulp=198.8 abs=0.0234 branch2: ulp=38.3 abs=0.0176 ungated: ulp=172.4 abs=0.0195 relfp64=0.0042 fin=True
+   ext    a: ulp=218.0 >1ulp=3822/32768 rel/base=0.806 det=True fin=True | b: chain6: ulp=139.0 abs=0.0156 branch2: ulp=40.0 abs=0.0117 ungated: ulp=218.0 abs=0.0312 relfp64=0.0032 fin=True
+[exact B=4 p=2100 full] base_relfp64=0.00345 badtab=0 gated=3 | base_s1: ulp=398.0 >1ulp=11135 rel/base=2.138 | base_s3: ulp=306.5 >1ulp=6487 rel/base=1.433 | base_s16: ulp=0.0 >1ulp=0 rel/base=1.000
+   fixp   a: ulp=3.0 >1ulp=7/32768 rel/base=1.000 det=True fin=True | b: chain6: ulp=106.9 abs=0.0156 branch2: ulp=211.5 abs=0.0195 ungated: ulp=1.6 abs=0.00391 relfp64=0.00345 fin=True
+   ext    a: ulp=211.5 >1ulp=2712/32768 rel/base=0.922 det=True fin=True | b: chain6: ulp=1.0 abs=0.00195 branch2: ulp=2.4 abs=0.00391 ungated: ulp=97.0 abs=0.0117 relfp64=0.00319 fin=True
+[exact B=4 p=2100 swa] base_relfp64=0.00381 badtab=0 gated=2 | base_s1: ulp=308.8 >1ulp=10900 rel/base=1.977 | base_s3: ulp=280.0 >1ulp=5834 rel/base=1.441 | base_s16: ulp=0.0 >1ulp=0 rel/base=1.000
+   fixp   a: ulp=181.0 >1ulp=3898/32768 rel/base=1.064 det=True fin=True | b: chain6: ulp=181.0 abs=0.0254 branch2: ulp=72.0 abs=0.0156 ungated: ulp=121.0 abs=0.0312 relfp64=0.00406 fin=True
+   ext    a: ulp=266.0 >1ulp=5606/32768 rel/base=0.826 det=True fin=True | b: chain6: ulp=266.0 abs=0.0239 branch2: ulp=226.8 abs=0.0195 ungated: ulp=170.0 abs=0.0312 relfp64=0.00315 fin=True
+[exact B=4 p=70000 full] base_relfp64=0.00345 badtab=0 gated=3 | base_s1: ulp=275.5 >1ulp=14706 rel/base=2.303 | base_s3: ulp=201.0 >1ulp=10267 rel/base=1.615 | base_s16: ulp=0.0 >1ulp=0 rel/base=1.000
+   fixp   a: ulp=1.0 >1ulp=0/32768 rel/base=1.000 det=True fin=True | b: chain6: ulp=124.0 abs=0.0195 branch2: ulp=184.0 abs=0.0156 ungated: ulp=1.0 abs=0.00391 relfp64=0.00345 fin=True
+   ext    a: ulp=205.0 >1ulp=5155/32768 rel/base=0.825 det=True fin=True | b: chain6: ulp=211.5 abs=0.0195 branch2: ulp=179.5 abs=0.011 ungated: ulp=85.4 abs=0.0166 relfp64=0.00284 fin=True
+[exact B=4 p=70000 swa] base_relfp64=0.00369 badtab=0 gated=2 | base_s1: ulp=523.3 >1ulp=11052 rel/base=1.856 | base_s3: ulp=241.0 >1ulp=6006 rel/base=1.310 | base_s16: ulp=0.0 >1ulp=0 rel/base=1.000
+   fixp   a: ulp=186.0 >1ulp=3905/32768 rel/base=1.093 det=True fin=True | b: chain6: ulp=149.0 abs=0.0273 branch2: ulp=100.5 abs=0.0117 ungated: ulp=186.0 abs=0.0273 relfp64=0.00403 fin=True
+   ext    a: ulp=242.9 >1ulp=3752/32768 rel/base=0.915 det=True fin=True | b: chain6: ulp=163.0 abs=0.0273 branch2: ulp=90.5 abs=0.0195 ungated: ulp=242.9 abs=0.0391 relfp64=0.00337 fin=True
+[exact B=4 p=100000 full] base_relfp64=0.00317 badtab=0 gated=3 | base_s1: ulp=257.5 >1ulp=14212 rel/base=2.332 | base_s3: ulp=151.5 >1ulp=9947 rel/base=1.512 | base_s16: ulp=0.0 >1ulp=0 rel/base=1.000
+   fixp   a: ulp=1.0 >1ulp=0/32768 rel/base=1.000 det=True fin=True | b: chain6: ulp=101.6 abs=0.0117 branch2: ulp=61.2 abs=0.0195 ungated: ulp=0.2 abs=1.53e-05 relfp64=0.00317 fin=True
+   ext    a: ulp=171.0 >1ulp=5203/32768 rel/base=0.819 det=True fin=True | b: chain6: ulp=171.0 abs=0.0156 branch2: ulp=64.5 abs=0.0195 ungated: ulp=92.5 abs=0.0127 relfp64=0.00259 fin=True
+[exact B=4 p=100000 swa] base_relfp64=0.0038 badtab=0 gated=2 | base_s1: ulp=433.0 >1ulp=10920 rel/base=1.821 | base_s3: ulp=200.0 >1ulp=5899 rel/base=1.329 | base_s16: ulp=0.0 >1ulp=0 rel/base=1.000
+   fixp   a: ulp=150.5 >1ulp=3750/32768 rel/base=1.114 det=True fin=True | b: chain6: ulp=150.5 abs=0.0234 branch2: ulp=87.5 abs=0.0156 ungated: ulp=77.2 abs=0.0332 relfp64=0.00423 fin=True
+   ext    a: ulp=198.5 >1ulp=5433/32768 rel/base=0.879 det=True fin=True | b: chain6: ulp=197.8 abs=0.0547 branch2: ulp=198.5 abs=0.0234 ungated: ulp=152.5 abs=0.0195 relfp64=0.00334 fin=True
+[exact B=4 p=mixed full] base_relfp64=0.00513 badtab=0 gated=2 | base_s1: ulp=559.0 >1ulp=5519 rel/base=1.150 | base_s3: ulp=135.0 >1ulp=3048 rel/base=1.026 | base_s16: ulp=119.5 >1ulp=751 rel/base=0.994
+   fixp   a: ulp=446.4 >1ulp=1195/32768 rel/base=0.881 det=True fin=True | b: chain6: ulp=119.5 abs=0.0156 branch2: ulp=32.0 abs=0.0156 ungated: ulp=446.4 abs=0.0703 relfp64=0.0047 fin=True
+   ext    a: ulp=446.4 >1ulp=2744/32768 rel/base=0.874 det=True fin=True | b: chain6: ulp=2.0 abs=0.0156 branch2: ulp=3.0 abs=0.0156 ungated: ulp=446.4 abs=0.0703 relfp64=0.00467 fin=True
+[exact B=4 p=mixed swa] base_relfp64=0.00534 badtab=0 gated=2 | base_s1: ulp=370.0 >1ulp=5452 rel/base=1.122 | base_s3: ulp=275.5 >1ulp=3152 rel/base=1.048 | base_s16: ulp=74.9 >1ulp=747 rel/base=0.991
+   fixp   a: ulp=360.0 >1ulp=3455/32768 rel/base=0.866 det=True fin=True | b: chain6: ulp=97.8 abs=0.0156 branch2: ulp=152.8 abs=0.0156 ungated: ulp=360.0 abs=0.0859 relfp64=0.00472 fin=True
+   ext    a: ulp=360.0 >1ulp=2872/32768 rel/base=0.844 det=True fin=True | b: chain6: ulp=74.9 abs=0.0234 branch2: ulp=41.9 abs=0.00781 ungated: ulp=360.0 abs=0.0859 relfp64=0.00461 fin=True
+[exact B=16 p=0 full] base_relfp64=0.00491 badtab=0 gated=12 | base_s1: ulp=0.0 >1ulp=0 rel/base=1.000 | base_s3: ulp=0.0 >1ulp=0 rel/base=1.000 | base_s16: ulp=0.0 >1ulp=0 rel/base=1.000
+   fixp   a: ulp=1112.0 >1ulp=271/131072 rel/base=1.001 det=True fin=True | b: chain6: ulp=45.0 abs=0.0312 branch2: ulp=422.0 abs=0.0625 ungated: ulp=58.0 abs=0.0742 relfp64=0.00503 fin=True
+   ext    a: ulp=1112.0 >1ulp=271/131072 rel/base=1.001 det=True fin=True | b: chain6: ulp=45.0 abs=0.0312 branch2: ulp=422.0 abs=0.0625 ungated: ulp=58.0 abs=0.0742 relfp64=0.00503 fin=True
+[exact B=16 p=0 swa] base_relfp64=0.00491 badtab=0 gated=14 | base_s1: ulp=0.0 >1ulp=0 rel/base=1.000 | base_s3: ulp=0.0 >1ulp=0 rel/base=1.000 | base_s16: ulp=0.0 >1ulp=0 rel/base=1.000
+   fixp   a: ulp=1112.0 >1ulp=271/131072 rel/base=1.001 det=True fin=True | b: chain6: ulp=260.0 abs=0.041 branch2: ulp=162.8 abs=0.0199 ungated: ulp=2.0 abs=0.0156 relfp64=0.00437 fin=True
+   ext    a: ulp=1112.0 >1ulp=271/131072 rel/base=1.001 det=True fin=True | b: chain6: ulp=260.0 abs=0.041 branch2: ulp=162.8 abs=0.0199 ungated: ulp=2.0 abs=0.0156 relfp64=0.00437 fin=True
+[exact B=16 p=5 full] base_relfp64=0.00661 badtab=0 gated=12 | base_s1: ulp=0.0 >1ulp=0 rel/base=1.000 | base_s3: ulp=0.0 >1ulp=0 rel/base=1.000 | base_s16: ulp=0.0 >1ulp=0 rel/base=1.000
+   fixp   a: ulp=534.0 >1ulp=14296/131072 rel/base=0.806 det=True fin=True | b: chain6: ulp=546.0 abs=0.0625 branch2: ulp=395.5 abs=0.0522 ungated: ulp=534.0 abs=0.0664 relfp64=0.0051 fin=True
+   ext    a: ulp=534.0 >1ulp=14296/131072 rel/base=0.806 det=True fin=True | b: chain6: ulp=546.0 abs=0.0625 branch2: ulp=395.5 abs=0.0522 ungated: ulp=534.0 abs=0.0664 relfp64=0.0051 fin=True
+[exact B=16 p=5 swa] base_relfp64=0.00661 badtab=0 gated=14 | base_s1: ulp=0.0 >1ulp=0 rel/base=1.000 | base_s3: ulp=0.0 >1ulp=0 rel/base=1.000 | base_s16: ulp=0.0 >1ulp=0 rel/base=1.000
+   fixp   a: ulp=703.5 >1ulp=15139/131072 rel/base=0.752 det=True fin=True | b: chain6: ulp=703.5 abs=0.0645 branch2: ulp=271.0 abs=0.0547 ungated: ulp=484.5 abs=0.0547 relfp64=0.00503 fin=True
+   ext    a: ulp=703.5 >1ulp=15139/131072 rel/base=0.752 det=True fin=True | b: chain6: ulp=703.5 abs=0.0645 branch2: ulp=271.0 abs=0.0547 ungated: ulp=484.5 abs=0.0547 relfp64=0.00503 fin=True
+[exact B=16 p=2040 full] base_relfp64=0.00484 badtab=0 gated=13 | base_s1: ulp=444.7 >1ulp=39042 rel/base=1.528 | base_s3: ulp=328.0 >1ulp=21661 rel/base=1.057 | base_s16: ulp=0.0 >1ulp=0 rel/base=1.000
+   fixp   a: ulp=236.0 >1ulp=2905/131072 rel/base=0.949 det=True fin=True | b: chain6: ulp=278.0 abs=0.0332 branch2: ulp=238.4 abs=0.0469 ungated: ulp=208.5 abs=0.0391 relfp64=0.0046 fin=True
+   ext    a: ulp=365.6 >1ulp=23213/131072 rel/base=0.833 det=True fin=True | b: chain6: ulp=274.0 abs=0.0352 branch2: ulp=206.5 abs=0.0391 ungated: ulp=185.0 abs=0.0273 relfp64=0.00403 fin=True
+[exact B=16 p=2040 swa] base_relfp64=0.00511 badtab=0 gated=13 | base_s1: ulp=410.9 >1ulp=37726 rel/base=1.405 | base_s3: ulp=459.0 >1ulp=21400 rel/base=1.008 | base_s16: ulp=0.0 >1ulp=0 rel/base=1.000
+   fixp   a: ulp=455.0 >1ulp=21851/131072 rel/base=0.970 det=True fin=True | b: chain6: ulp=20.0 abs=0.00781 branch2: ulp=86.5 abs=0.0156 ungated: ulp=217.0 abs=0.0508 relfp64=0.00495 fin=True
+   ext    a: ulp=303.0 >1ulp=25262/131072 rel/base=0.796 det=True fin=True | b: chain6: ulp=299.0 abs=0.0391 branch2: ulp=280.5 abs=0.0352 ungated: ulp=217.0 abs=0.0508 relfp64=0.00407 fin=True
+[exact B=16 p=2048 full] base_relfp64=0.00523 badtab=0 gated=14 | base_s1: ulp=431.0 >1ulp=38570 rel/base=1.361 | base_s3: ulp=552.0 >1ulp=23727 rel/base=1.029 | base_s16: ulp=0.0 >1ulp=0 rel/base=1.000
+   fixp   a: ulp=148.0 >1ulp=1573/131072 rel/base=0.954 det=True fin=True | b: chain6: ulp=262.0 abs=0.0352 branch2: ulp=380.0 abs=0.0391 ungated: ulp=110.0 abs=0.0117 relfp64=0.00499 fin=True
+   ext    a: ulp=558.0 >1ulp=24406/131072 rel/base=0.758 det=True fin=True | b: chain6: ulp=330.0 abs=0.0312 branch2: ulp=230.0 abs=0.0391 ungated: ulp=195.5 abs=0.0312 relfp64=0.00396 fin=True
+[exact B=16 p=2048 swa] base_relfp64=0.0047 badtab=0 gated=10 | base_s1: ulp=558.0 >1ulp=39196 rel/base=1.528 | base_s3: ulp=440.0 >1ulp=24085 rel/base=1.055 | base_s16: ulp=0.0 >1ulp=0 rel/base=1.000
+   fixp   a: ulp=440.0 >1ulp=24535/131072 rel/base=0.932 det=True fin=True | b: chain6: ulp=475.8 abs=0.0547 branch2: ulp=293.5 abs=0.0234 ungated: ulp=243.5 abs=0.0312 relfp64=0.00438 fin=True
+   ext    a: ulp=367.5 >1ulp=27421/131072 rel/base=0.753 det=True fin=True | b: chain6: ulp=321.0 abs=0.0361 branch2: ulp=273.5 abs=0.0312 ungated: ulp=243.0 abs=0.0439 relfp64=0.00355 fin=True
+[exact B=16 p=2100 full] base_relfp64=0.00463 badtab=0 gated=11 | base_s1: ulp=405.0 >1ulp=38048 rel/base=1.485 | base_s3: ulp=350.0 >1ulp=22119 rel/base=1.071 | base_s16: ulp=0.0 >1ulp=0 rel/base=1.000
+   fixp   a: ulp=42.0 >1ulp=254/131072 rel/base=0.998 det=True fin=True | b: chain6: ulp=312.5 abs=0.0312 branch2: ulp=198.2 abs=0.0312 ungated: ulp=38.9 abs=0.00781 relfp64=0.00462 fin=True
+   ext    a: ulp=314.5 >1ulp=23058/131072 rel/base=0.830 det=True fin=True | b: chain6: ulp=232.0 abs=0.0312 branch2: ulp=199.0 abs=0.0312 ungated: ulp=204.5 abs=0.0312 relfp64=0.00384 fin=True
+[exact B=16 p=2100 swa] base_relfp64=0.00498 badtab=0 gated=11 | base_s1: ulp=462.0 >1ulp=38455 rel/base=1.497 | base_s3: ulp=404.0 >1ulp=22537 rel/base=1.054 | base_s16: ulp=0.0 >1ulp=0 rel/base=1.000
+   fixp   a: ulp=416.0 >1ulp=23644/131072 rel/base=0.878 det=True fin=True | b: chain6: ulp=21.0 abs=0.00781 branch2: ulp=91.1 abs=0.0156 ungated: ulp=416.0 abs=0.0469 relfp64=0.00438 fin=True
+   ext    a: ulp=369.0 >1ulp=30117/131072 rel/base=0.724 det=True fin=True | b: chain6: ulp=257.0 abs=0.0322 branch2: ulp=338.0 abs=0.0391 ungated: ulp=346.0 abs=0.0469 relfp64=0.00362 fin=True
+[exact B=16 p=70000 full] base_relfp64=0.00451 badtab=0 gated=12 | base_s1: ulp=556.0 >1ulp=49864 rel/base=1.534 | base_s3: ulp=245.0 >1ulp=31607 rel/base=1.098 | base_s16: ulp=0.0 >1ulp=0 rel/base=1.000
+   fixp   a: ulp=1.6 >1ulp=1/131072 rel/base=1.000 det=True fin=True | b: chain6: ulp=206.8 abs=0.0312 branch2: ulp=190.4 abs=0.0234 ungated: ulp=1.0 abs=0.00391 relfp64=0.00451 fin=True
+   ext    a: ulp=205.2 >1ulp=27091/131072 rel/base=0.755 det=True fin=True | b: chain6: ulp=143.0 abs=0.0312 branch2: ulp=186.0 abs=0.0273 ungated: ulp=165.0 abs=0.0234 relfp64=0.00341 fin=True
+[exact B=16 p=70000 swa] base_relfp64=0.00487 badtab=0 gated=12 | base_s1: ulp=430.0 >1ulp=38308 rel/base=1.469 | base_s3: ulp=336.5 >1ulp=22420 rel/base=1.098 | base_s16: ulp=0.0 >1ulp=0 rel/base=1.000
+   fixp   a: ulp=245.0 >1ulp=23711/131072 rel/base=0.982 det=True fin=True | b: chain6: ulp=42.0 abs=0.0156 branch2: ulp=85.0 abs=0.0156 ungated: ulp=245.0 abs=0.0273 relfp64=0.00479 fin=True
+   ext    a: ulp=367.5 >1ulp=26162/131072 rel/base=0.844 det=True fin=True | b: chain6: ulp=370.2 abs=0.0339 branch2: ulp=238.9 abs=0.0312 ungated: ulp=271.0 abs=0.0391 relfp64=0.00411 fin=True
+[exact B=16 p=100000 full] base_relfp64=0.00473 badtab=0 gated=11 | base_s1: ulp=453.5 >1ulp=51787 rel/base=1.555 | base_s3: ulp=306.5 >1ulp=34876 rel/base=1.106 | base_s16: ulp=0.0 >1ulp=0 rel/base=1.000
+   fixp   a: ulp=1.0 >1ulp=0/131072 rel/base=1.000 det=True fin=True | b: chain6: ulp=218.8 abs=0.0391 branch2: ulp=260.5 abs=0.0332 ungated: ulp=1.0 abs=0.00195 relfp64=0.00473 fin=True
+   ext    a: ulp=295.0 >1ulp=28770/131072 rel/base=0.744 det=True fin=True | b: chain6: ulp=227.0 abs=0.0332 branch2: ulp=266.5 abs=0.0195 ungated: ulp=215.0 abs=0.0254 relfp64=0.00352 fin=True
+[exact B=16 p=100000 swa] base_relfp64=0.00471 badtab=0 gated=13 | base_s1: ulp=367.0 >1ulp=37726 rel/base=1.439 | base_s3: ulp=398.8 >1ulp=22311 rel/base=1.059 | base_s16: ulp=0.0 >1ulp=0 rel/base=1.000
+   fixp   a: ulp=448.8 >1ulp=24119/131072 rel/base=0.949 det=True fin=True | b: chain6: ulp=32.0 abs=0.00781 branch2: ulp=45.8 abs=0.0117 ungated: ulp=448.8 abs=0.043 relfp64=0.00447 fin=True
+   ext    a: ulp=452.8 >1ulp=30107/131072 rel/base=0.800 det=True fin=True | b: chain6: ulp=281.0 abs=0.0296 branch2: ulp=231.9 abs=0.0312 ungated: ulp=452.8 abs=0.043 relfp64=0.00377 fin=True
+[exact B=16 p=mixed full] base_relfp64=0.00589 badtab=0 gated=12 | base_s1: ulp=273.0 >1ulp=12463 rel/base=1.000 | base_s3: ulp=255.8 >1ulp=4312 rel/base=1.000 | base_s16: ulp=206.5 >1ulp=9433 rel/base=1.000
+   fixp   a: ulp=498.0 >1ulp=15885/131072 rel/base=0.862 det=True fin=True | b: chain6: ulp=366.5 abs=0.0625 branch2: ulp=497.5 abs=0.0469 ungated: ulp=498.0 abs=0.0547 relfp64=0.00495 fin=True
+   ext    a: ulp=498.0 >1ulp=31173/131072 rel/base=0.786 det=True fin=True | b: chain6: ulp=363.0 abs=0.0625 branch2: ulp=311.5 abs=0.0469 ungated: ulp=498.0 abs=0.0547 relfp64=0.00447 fin=True
+[exact B=16 p=mixed swa] base_relfp64=0.00537 badtab=0 gated=14 | base_s1: ulp=467.4 >1ulp=24153 rel/base=1.068 | base_s3: ulp=340.0 >1ulp=19640 rel/base=1.068 | base_s16: ulp=340.0 >1ulp=19878 rel/base=1.068
+   fixp   a: ulp=348.0 >1ulp=19411/131072 rel/base=0.828 det=True fin=True | b: chain6: ulp=453.6 abs=0.0703 branch2: ulp=549.0 abs=0.0508 ungated: ulp=272.8 abs=0.043 relfp64=0.00431 fin=True
+   ext    a: ulp=348.0 >1ulp=22409/131072 rel/base=0.789 det=True fin=True | b: chain6: ulp=455.6 abs=0.0703 branch2: ulp=517.0 abs=0.0508 ungated: ulp=285.5 abs=0.043 relfp64=0.00409 fin=True
+[exact B=32 p=0 full] base_relfp64=0.00509 badtab=0 gated=25 | base_s1: ulp=0.0 >1ulp=0 rel/base=1.000 | base_s3: ulp=0.0 >1ulp=0 rel/base=1.000 | base_s16: ulp=0.0 >1ulp=0 rel/base=1.000
+   fixp   a: ulp=1160.1 >1ulp=528/262144 rel/base=1.000 det=True fin=True | b: chain6: ulp=313.5 abs=0.0781 branch2: ulp=32.0 abs=0.0156 ungated: ulp=1160.1 abs=0.0938 relfp64=0.00434 fin=True
+   ext    a: ulp=1160.1 >1ulp=528/262144 rel/base=1.000 det=True fin=True | b: chain6: ulp=313.5 abs=0.0781 branch2: ulp=32.0 abs=0.0156 ungated: ulp=1160.1 abs=0.0938 relfp64=0.00434 fin=True
+[exact B=32 p=0 swa] base_relfp64=0.00478 badtab=0 gated=22 | base_s1: ulp=0.0 >1ulp=0 rel/base=1.000 | base_s3: ulp=0.0 >1ulp=0 rel/base=1.000 | base_s16: ulp=0.0 >1ulp=0 rel/base=1.000
+   fixp   a: ulp=656.4 >1ulp=550/262144 rel/base=1.003 det=True fin=True | b: chain6: ulp=656.4 abs=0.0938 branch2: ulp=56.8 abs=0.0176 ungated: ulp=302.0 abs=0.0312 relfp64=0.00385 fin=True
+   ext    a: ulp=656.4 >1ulp=550/262144 rel/base=1.003 det=True fin=True | b: chain6: ulp=656.4 abs=0.0938 branch2: ulp=56.8 abs=0.0176 ungated: ulp=302.0 abs=0.0312 relfp64=0.00385 fin=True
+[exact B=32 p=5 full] base_relfp64=0.00636 badtab=0 gated=23 | base_s1: ulp=0.0 >1ulp=0 rel/base=1.000 | base_s3: ulp=0.0 >1ulp=0 rel/base=1.000 | base_s16: ulp=0.0 >1ulp=0 rel/base=1.000
+   fixp   a: ulp=505.0 >1ulp=22772/262144 rel/base=0.741 det=True fin=True | b: chain6: ulp=363.0 abs=0.0547 branch2: ulp=350.0 abs=0.0352 ungated: ulp=505.0 abs=0.0547 relfp64=0.00461 fin=True
+   ext    a: ulp=505.0 >1ulp=22772/262144 rel/base=0.741 det=True fin=True | b: chain6: ulp=363.0 abs=0.0547 branch2: ulp=350.0 abs=0.0352 ungated: ulp=505.0 abs=0.0547 relfp64=0.00461 fin=True
+[exact B=32 p=5 swa] base_relfp64=0.00675 badtab=0 gated=23 | base_s1: ulp=0.0 >1ulp=0 rel/base=1.000 | base_s3: ulp=0.0 >1ulp=0 rel/base=1.000 | base_s16: ulp=0.0 >1ulp=0 rel/base=1.000
+   fixp   a: ulp=422.0 >1ulp=22190/262144 rel/base=0.807 det=True fin=True | b: chain6: ulp=459.7 abs=0.048 branch2: ulp=361.0 abs=0.0391 ungated: ulp=422.0 abs=0.043 relfp64=0.00523 fin=True
+   ext    a: ulp=422.0 >1ulp=22190/262144 rel/base=0.807 det=True fin=True | b: chain6: ulp=459.7 abs=0.048 branch2: ulp=361.0 abs=0.0391 ungated: ulp=422.0 abs=0.043 relfp64=0.00523 fin=True
+[exact B=32 p=2040 full] base_relfp64=0.00539 badtab=0 gated=24 | base_s1: ulp=414.0 >1ulp=57222 rel/base=1.265 | base_s3: ulp=0.0 >1ulp=0 rel/base=1.000 | base_s16: ulp=0.0 >1ulp=0 rel/base=1.000
+   fixp   a: ulp=331.0 >1ulp=2026/262144 rel/base=0.987 det=True fin=True | b: chain6: ulp=338.5 abs=0.0352 branch2: ulp=386.5 abs=0.043 ungated: ulp=261.5 abs=0.0391 relfp64=0.00533 fin=True
+   ext    a: ulp=342.0 >1ulp=53858/262144 rel/base=0.745 det=True fin=True | b: chain6: ulp=313.0 abs=0.043 branch2: ulp=380.5 abs=0.0527 ungated: ulp=280.0 abs=0.0469 relfp64=0.00402 fin=True
+[exact B=32 p=2040 swa] base_relfp64=0.00527 badtab=0 gated=22 | base_s1: ulp=468.5 >1ulp=54645 rel/base=1.275 | base_s3: ulp=0.0 >1ulp=0 rel/base=1.000 | base_s16: ulp=0.0 >1ulp=0 rel/base=1.000
+   fixp   a: ulp=311.2 >1ulp=22701/262144 rel/base=0.993 det=True fin=True | b: chain6: ulp=345.5 abs=0.0449 branch2: ulp=282.0 abs=0.0371 ungated: ulp=251.5 abs=0.0312 relfp64=0.00523 fin=True
+   ext    a: ulp=468.5 >1ulp=59527/262144 rel/base=0.784 det=True fin=True | b: chain6: ulp=329.0 abs=0.0547 branch2: ulp=289.0 abs=0.0371 ungated: ulp=337.8 abs=0.0391 relfp64=0.00413 fin=True
+[exact B=32 p=2048 full] base_relfp64=0.00591 badtab=0 gated=21 | base_s1: ulp=498.0 >1ulp=56411 rel/base=1.234 | base_s3: ulp=0.0 >1ulp=0 rel/base=1.000 | base_s16: ulp=0.0 >1ulp=0 rel/base=1.000
+   fixp   a: ulp=125.0 >1ulp=1072/262144 rel/base=0.993 det=True fin=True | b: chain6: ulp=450.0 abs=0.0391 branch2: ulp=336.0 abs=0.0391 ungated: ulp=67.6 abs=0.00781 relfp64=0.00587 fin=True
+   ext    a: ulp=525.0 >1ulp=54408/262144 rel/base=0.788 det=True fin=True | b: chain6: ulp=361.5 abs=0.0547 branch2: ulp=283.0 abs=0.0332 ungated: ulp=525.0 abs=0.032 relfp64=0.00466 fin=True
+[exact B=32 p=2048 swa] base_relfp64=0.00552 badtab=0 gated=25 | base_s1: ulp=545.0 >1ulp=57939 rel/base=1.268 | base_s3: ulp=0.0 >1ulp=0 rel/base=1.000 | base_s16: ulp=0.0 >1ulp=0 rel/base=1.000
+   fixp   a: ulp=447.5 >1ulp=24008/262144 rel/base=1.006 det=True fin=True | b: chain6: ulp=439.0 abs=0.043 branch2: ulp=345.2 abs=0.0312 ungated: ulp=192.8 abs=0.0312 relfp64=0.00555 fin=True
+   ext    a: ulp=445.5 >1ulp=61848/262144 rel/base=0.828 det=True fin=True | b: chain6: ulp=487.0 abs=0.0391 branch2: ulp=300.0 abs=0.0391 ungated: ulp=299.0 abs=0.0312 relfp64=0.00456 fin=True
+[exact B=32 p=2100 full] base_relfp64=0.00502 badtab=0 gated=26 | base_s1: ulp=550.0 >1ulp=56246 rel/base=1.311 | base_s3: ulp=0.0 >1ulp=0 rel/base=1.000 | base_s16: ulp=0.0 >1ulp=0 rel/base=1.000
+   fixp   a: ulp=81.5 >1ulp=561/262144 rel/base=1.000 det=True fin=True | b: chain6: ulp=362.0 abs=0.0508 branch2: ulp=370.0 abs=0.0391 ungated: ulp=58.0 abs=0.00977 relfp64=0.00501 fin=True
+   ext    a: ulp=573.0 >1ulp=53883/262144 rel/base=0.902 det=True fin=True | b: chain6: ulp=315.8 abs=0.0469 branch2: ulp=414.6 abs=0.0488 ungated: ulp=573.0 abs=0.0469 relfp64=0.00452 fin=True
+[exact B=32 p=2100 swa] base_relfp64=0.00558 badtab=0 gated=17 | base_s1: ulp=645.2 >1ulp=57441 rel/base=1.231 | base_s3: ulp=0.0 >1ulp=0 rel/base=1.000 | base_s16: ulp=0.0 >1ulp=0 rel/base=1.000
+   fixp   a: ulp=480.0 >1ulp=23084/262144 rel/base=1.013 det=True fin=True | b: chain6: ulp=408.0 abs=0.0508 branch2: ulp=490.1 abs=0.0312 ungated: ulp=300.0 abs=0.0469 relfp64=0.00565 fin=True
+   ext    a: ulp=462.0 >1ulp=59843/262144 rel/base=0.828 det=True fin=True | b: chain6: ulp=283.0 abs=0.0391 branch2: ulp=466.1 abs=0.0391 ungated: ulp=357.8 abs=0.0547 relfp64=0.00462 fin=True
+[exact B=32 p=70000 full] base_relfp64=0.00567 badtab=0 gated=23 | base_s1: ulp=406.0 >1ulp=77267 rel/base=1.194 | base_s3: ulp=0.0 >1ulp=0 rel/base=1.000 | base_s16: ulp=0.0 >1ulp=0 rel/base=1.000
+   fixp   a: ulp=66.5 >1ulp=68/262144 rel/base=1.000 det=True fin=True | b: chain6: ulp=350.5 abs=0.0391 branch2: ulp=261.0 abs=0.0234 ungated: ulp=66.5 abs=0.00781 relfp64=0.00567 fin=True
+   ext    a: ulp=367.5 >1ulp=67447/262144 rel/base=0.805 det=True fin=True | b: chain6: ulp=259.0 abs=0.0391 branch2: ulp=222.5 abs=0.0312 ungated: ulp=296.4 abs=0.0312 relfp64=0.00457 fin=True
+[exact B=32 p=70000 swa] base_relfp64=0.0058 badtab=0 gated=25 | base_s1: ulp=629.0 >1ulp=56360 rel/base=1.232 | base_s3: ulp=0.0 >1ulp=0 rel/base=1.000 | base_s16: ulp=0.0 >1ulp=0 rel/base=1.000
+   fixp   a: ulp=518.0 >1ulp=23897/262144 rel/base=0.992 det=True fin=True | b: chain6: ulp=414.5 abs=0.04 branch2: ulp=408.0 abs=0.043 ungated: ulp=277.5 abs=0.0312 relfp64=0.00576 fin=True
+   ext    a: ulp=467.5 >1ulp=60784/262144 rel/base=0.802 det=True fin=True | b: chain6: ulp=344.1 abs=0.0391 branch2: ulp=274.5 abs=0.04 ungated: ulp=329.0 abs=0.043 relfp64=0.00465 fin=True
+[exact B=32 p=100000 full] base_relfp64=0.00655 badtab=0 gated=23 | base_s1: ulp=374.0 >1ulp=77670 rel/base=1.233 | base_s3: ulp=0.0 >1ulp=0 rel/base=1.000 | base_s16: ulp=0.0 >1ulp=0 rel/base=1.000
+   fixp   a: ulp=29.0 >1ulp=53/262144 rel/base=1.000 det=True fin=True | b: chain6: ulp=271.5 abs=0.0469 branch2: ulp=302.5 abs=0.0391 ungated: ulp=2.0 abs=0.00391 relfp64=0.00655 fin=True
+   ext    a: ulp=532.0 >1ulp=69259/262144 rel/base=0.693 det=True fin=True | b: chain6: ulp=275.2 abs=0.0342 branch2: ulp=212.0 abs=0.0273 ungated: ulp=272.0 abs=0.0352 relfp64=0.00454 fin=True
+[exact B=32 p=100000 swa] base_relfp64=0.0054 badtab=0 gated=28 | base_s1: ulp=383.0 >1ulp=57041 rel/base=1.247 | base_s3: ulp=0.0 >1ulp=0 rel/base=1.000 | base_s16: ulp=0.0 >1ulp=0 rel/base=1.000
+   fixp   a: ulp=413.8 >1ulp=24771/262144 rel/base=1.018 det=True fin=True | b: chain6: ulp=438.6 abs=0.043 branch2: ulp=361.5 abs=0.0444 ungated: ulp=240.8 abs=0.0234 relfp64=0.00548 fin=True
+   ext    a: ulp=419.8 >1ulp=63228/262144 rel/base=0.853 det=True fin=True | b: chain6: ulp=412.6 abs=0.0547 branch2: ulp=413.1 abs=0.0469 ungated: ulp=242.0 abs=0.0312 relfp64=0.00459 fin=True
+[exact B=32 p=mixed full] base_relfp64=0.00639 badtab=0 gated=25 | base_s1: ulp=312.0 >1ulp=19343 rel/base=1.000 | base_s3: ulp=316.0 >1ulp=17975 rel/base=1.000 | base_s16: ulp=300.0 >1ulp=21159 rel/base=1.000
+   fixp   a: ulp=568.0 >1ulp=34426/262144 rel/base=0.813 det=True fin=True | b: chain6: ulp=592.2 abs=0.0586 branch2: ulp=363.0 abs=0.0469 ungated: ulp=568.0 abs=0.0547 relfp64=0.0048 fin=True
+   ext    a: ulp=568.0 >1ulp=60341/262144 rel/base=0.799 det=True fin=True | b: chain6: ulp=592.2 abs=0.0586 branch2: ulp=363.0 abs=0.0547 ungated: ulp=568.0 abs=0.0547 relfp64=0.0047 fin=True
+[exact B=32 p=mixed swa] base_relfp64=0.00579 badtab=0 gated=22 | base_s1: ulp=419.6 >1ulp=33035 rel/base=1.047 | base_s3: ulp=492.7 >1ulp=32929 rel/base=1.047 | base_s16: ulp=490.7 >1ulp=34861 rel/base=1.047
+   fixp   a: ulp=498.7 >1ulp=27763/262144 rel/base=0.885 det=True fin=True | b: chain6: ulp=455.0 abs=0.0469 branch2: ulp=522.0 abs=0.043 ungated: ulp=409.5 abs=0.0469 relfp64=0.00506 fin=True
+   ext    a: ulp=498.7 >1ulp=50491/262144 rel/base=0.846 det=True fin=True | b: chain6: ulp=427.0 abs=0.0547 branch2: ulp=522.0 abs=0.043 ungated: ulp=409.5 abs=0.0469 relfp64=0.00482 fin=True
+EXACT_WORST {"base_s1:full:a": {"max_ulp": 559.0, "max_abs": 0.0654296875}, "base_s1:full:rel_over_base_max": {"v": 3.7160829417714445}, "base_s3:full:a": {"max_ulp": 552.0, "max_abs": 0.046875}, "base_s3:full:rel_over_base_max": {"v": 2.3791169965626704}, "base_s16:full:a": {"max_ulp": 300.0, "max_abs": 0.046875}, "base_s16:full:rel_over_base_max": {"v": 1.3443811061056605}, "fixp:full:a": {"max_ulp": 1160.0625, "max_abs": 0.09375}, "fixp:full:chain6": {"max_ulp": 592.234375, "max_abs": 0.078125}, "fixp:full:branch2": {"max_ulp": 497.5, "max_abs": 0.0625}, "fixp:full:rel_over_base_max": {"v": 1.00080925752595}, "ext:full:a": {"max_ulp": 1160.0625, "max_abs": 0.09375}, "ext:full:chain6": {"max_ulp": 592.234375, "max_abs": 0.078125}, "ext:full:branch2": {"max_ulp": 422.0, "max_abs": 0.0625}, "ext:full:rel_over_base_max": {"v": 1.00080925752595}, "base_s1:swa:a": {"max_ulp": 645.25, "max_abs": 0.06640625}, "base_s1:swa:rel_over_base_max": {"v": 1.9773414482711313}, "base_s3:swa:a": {"max_ulp": 492.65625, "max_abs": 0.0546875}, "base_s3:swa:rel_over_base_max": {"v": 1.4411178161544305}, "base_s16:swa:a": {"max_ulp": 490.65625, "max_abs": 0.0625}, "base_s16:swa:rel_over_base_max": {"v": 1.0675386378853082}, "fixp:swa:a": {"max_ulp": 1112.0, "max_abs": 0.09375}, "fixp:swa:chain6": {"max_ulp": 703.5, "max_abs": 0.09375}, "fixp:swa:branch2": {"max_ulp": 549.0, "max_abs": 0.0546875}, "fixp:swa:rel_over_base_max": {"v": 1.113776708062572}, "ext:swa:a": {"max_ulp": 1112.0, "max_abs": 0.09375}, "ext:swa:chain6": {"max_ulp": 703.5, "max_abs": 0.09375}, "ext:swa:branch2": {"max_ulp": 522.0, "max_abs": 0.0546875}, "ext:swa:rel_over_base_max": {"v": 1.0031221056863922}, "fixp:full:ungated": {"max_ulp": 1160.0625, "max_abs": 0.09375}, "ext:full:ungated": {"max_ulp": 1160.0625, "max_abs": 0.09375}, "fixp:swa:ungated": {"max_ulp": 484.5, "max_abs": 0.0859375}, "ext:swa:ungated": {"max_ulp": 484.5, "max_abs": 0.0859375}}
+== part exact done in 18s
+[time B=1 rows=8] base=0.861 ms | fixp: +0.255 graph (p10 0.250 p90 0.261) +0.014 meta = ADDED 0.269 | ext: +0.039 graph (p10 0.033 p90 0.044) +0.000 meta = ADDED 0.039 | meta {'base': 0.10559999942779541, 'kmask': 0.12401599809527397, 'fixp': 0.11911999806761742} splits {'base': [64, 9], 'kmask': [64, 6], 'fixp': [64, 6]} replay_eq {'fixp': True, 'ext': True} (1s)
+USDT:2026-11-20 02:07:56 35:35 SyncActivityProfilerHandler.cpp:39] profiler_start
+USDT:2026-11-20 02:07:56 35:35 SyncActivityProfilerHandler.cpp:46] profiler_stop
+USDT:2026-11-20 02:07:56 35:35 SyncActivityProfilerHandler.cpp:39] profiler_start
+USDT:2026-11-20 02:07:56 35:35 SyncActivityProfilerHandler.cpp:46] profiler_stop
+USDT:2026-11-20 02:07:56 35:35 SyncActivityProfilerHandler.cpp:39] profiler_start
+USDT:2026-11-20 02:07:56 35:35 SyncActivityProfilerHandler.cpp:46] profiler_stop
+   base: void cutlass::device_kernel<flash::enabl=5.8us/layer  void cutlass::device_kernel<flash::enabl=4.6us/layer  void cutlass::device_kernel<flash::Flash=2.4us/layer  void cutlass::device_kernel<flash::Flash=1.7us/layer
+   fixp: void cutlass::device_kernel<flash::enabl=6.2us/layer  void cutlass::device_kernel<flash::enabl=4.5us/layer  void sglang::muse_spark_verify_tree::cor=3.9us/layer  void cutlass::device_kernel<flash::Flash=2.4us/layer  void cutlass::device_kernel<flash::Flash=1.8us/layer
+   ext: void sglang::muse_spark_verify_tree::cor=4.5us/layer  void sglang::muse_spark_verify_tree::pre=4.5us/layer  void sglang::muse_spark_verify_tree::pre=4.2us/layer  void at::native::vectorized_elementwise_=0.9us/layer  memcpy32_post=0.1us/layer
+[time B=4 rows=32] base=1.406 ms | fixp: +0.275 graph (p10 0.268 p90 0.281) +0.017 meta = ADDED 0.292 | ext: +-0.084 graph (p10 -0.092 p90 -0.076) +0.000 meta = ADDED -0.084 | meta {'base': 0.14260800182819366, 'kmask': 0.16644799709320068, 'fixp': 0.1595200002193451} splits {'base': [16, 9], 'kmask': [16, 6], 'fixp': [16, 6]} replay_eq {'fixp': True, 'ext': True} (1s)
+USDT:2026-11-20 02:07:57 35:35 SyncActivityProfilerHandler.cpp:39] profiler_start
+USDT:2026-11-20 02:07:57 35:35 SyncActivityProfilerHandler.cpp:46] profiler_stop
+USDT:2026-11-20 02:07:57 35:35 SyncActivityProfilerHandler.cpp:39] profiler_start
+USDT:2026-11-20 02:07:57 35:35 SyncActivityProfilerHandler.cpp:46] profiler_stop
+USDT:2026-11-20 02:07:57 35:35 SyncActivityProfilerHandler.cpp:39] profiler_start
+USDT:2026-11-20 02:07:57 35:35 SyncActivityProfilerHandler.cpp:46] profiler_stop
+   base: void cutlass::device_kernel<flash::enabl=13.3us/layer  void cutlass::device_kernel<flash::enabl=6.6us/layer  void cutlass::device_kernel<flash::Flash=3.5us/layer
+   fixp: void cutlass::device_kernel<flash::enabl=13.6us/layer  void cutlass::device_kernel<flash::enabl=7.3us/layer  void sglang::muse_spark_verify_tree::cor=3.8us/layer  void cutlass::device_kernel<flash::Flash=3.5us/layer  _tables_kernel=0.0us/layer
+   ext: void sglang::muse_spark_verify_tree::pre=10.3us/layer  void sglang::muse_spark_verify_tree::pre=5.5us/layer  void sglang::muse_spark_verify_tree::cor=4.3us/layer  void at::native::vectorized_elementwise_=0.8us/layer  _write_splits_kernel=0.1us/layer
+[time B=16 rows=128] base=3.623 ms | fixp: +0.328 graph (p10 0.320 p90 0.336) +0.017 meta = ADDED 0.345 | ext: +-0.853 graph (p10 -0.861 p90 -0.844) +0.000 meta = ADDED -0.853 | meta {'base': 0.1292639970779419, 'kmask': 0.15436799824237823, 'fixp': 0.1467200070619583} splits {'base': [4, 4], 'kmask': [4, 4], 'fixp': [4, 4]} replay_eq {'fixp': True, 'ext': True} (2s)
+USDT:2026-11-20 02:08:00 35:35 SyncActivityProfilerHandler.cpp:39] profiler_start
+USDT:2026-11-20 02:08:00 35:35 SyncActivityProfilerHandler.cpp:46] profiler_stop
+USDT:2026-11-20 02:08:00 35:35 SyncActivityProfilerHandler.cpp:39] profiler_start
+USDT:2026-11-20 02:08:00 35:35 SyncActivityProfilerHandler.cpp:46] profiler_stop
+USDT:2026-11-20 02:08:00 35:35 SyncActivityProfilerHandler.cpp:39] profiler_start
+USDT:2026-11-20 02:08:00 35:35 SyncActivityProfilerHandler.cpp:46] profiler_stop
+   base: void cutlass::device_kernel<flash::enabl=47.4us/layer  void cutlass::device_kernel<flash::enabl=8.6us/layer  void cutlass::device_kernel<flash::Flash=3.3us/layer
+   fixp: void cutlass::device_kernel<flash::enabl=47.6us/layer  void cutlass::device_kernel<flash::enabl=8.1us/layer  void sglang::muse_spark_verify_tree::cor=4.3us/layer  void cutlass::device_kernel<flash::Flash=3.8us/layer  _tables_kernel=0.1us/layer
+   ext: void sglang::muse_spark_verify_tree::pre=30.3us/layer  void sglang::muse_spark_verify_tree::pre=8.6us/layer  void sglang::muse_spark_verify_tree::cor=4.4us/layer  void at::native::vectorized_elementwise_=0.9us/layer  _write_splits_kernel=0.1us/layer
+[time B=32 rows=256] base=6.655 ms | fixp: +0.358 graph (p10 0.348 p90 0.369) +0.016 meta = ADDED 0.373 | ext: +-2.046 graph (p10 -2.057 p90 -2.035) +0.000 meta = ADDED -2.046 | meta {'base': 0.13288000226020813, 'kmask': 0.15700799971818924, 'fixp': 0.14857600629329681} splits {'base': [2, 2], 'kmask': [2, 2], 'fixp': [2, 2]} replay_eq {'fixp': True, 'ext': True} (4s)
+USDT:2026-11-20 02:08:04 35:35 SyncActivityProfilerHandler.cpp:39] profiler_start
+USDT:2026-11-20 02:08:04 35:35 SyncActivityProfilerHandler.cpp:46] profiler_stop
+USDT:2026-11-20 02:08:04 35:35 SyncActivityProfilerHandler.cpp:39] profiler_start
+USDT:2026-11-20 02:08:04 35:35 SyncActivityProfilerHandler.cpp:46] profiler_stop
+USDT:2026-11-20 02:08:04 35:35 SyncActivityProfilerHandler.cpp:39] profiler_start
+USDT:2026-11-20 02:08:04 35:35 SyncActivityProfilerHandler.cpp:46] profiler_stop
+   base: void cutlass::device_kernel<flash::enabl=92.9us/layer  void cutlass::device_kernel<flash::enabl=11.8us/layer  void cutlass::device_kernel<flash::Flash=3.6us/layer
+   fixp: void cutlass::device_kernel<flash::enabl=92.9us/layer  void cutlass::device_kernel<flash::enabl=11.3us/layer  void sglang::muse_spark_verify_tree::cor=5.6us/layer  void cutlass::device_kernel<flash::Flash=4.0us/layer  _tables_kernel=0.1us/layer
+   ext: void sglang::muse_spark_verify_tree::pre=56.4us/layer  void sglang::muse_spark_verify_tree::pre=11.1us/layer  void sglang::muse_spark_verify_tree::cor=5.7us/layer  void at::native::vectorized_elementwise_=0.8us/layer  _write_splits_kernel=0.1us/layer
+== part time done in 9s
+wrote /vol/out/kmask/20261120T020714Z/kmask.json
+===== rc=0 (52s)
+results: /vol/out/kmask/20261120T020714Z
+Stopping app - local entrypoint completed.
+✓ App completed. View run at 
+https://modal.com/apps/<workspace>/main/ap-bGZHvxApH12KlrJ1ZRPxRR

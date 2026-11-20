@@ -1,0 +1,149 @@
+✓ Initialized. View run at 
+https://modal.com/apps/<workspace>/main/ap-9KPWocqVk0WRdxY9V0Mp9N
+✓ Created objects.
+├── ✓ Uploaded 
+│   <repo>/serving/h
+│   arness/modal_kpatt3_ubench.py
+├── ✓ Uploaded 
+│   <repo>/serving/l
+│   anes/kpatt3_tools
+├── ✓ Uploaded 
+│   <repo>/serving/l
+│   anes/kpatt3/test
+├── ✓ Uploaded 
+│   <repo>/serving/l
+│   anes/kpatt3/python/sglang
+├── ✓ Created Function bench.
+└── ✓ Created Function cpu_compile.
+
+==========
+== CUDA ==
+==========
+
+CUDA Version 13.0.3
+
+Container image Copyright (c) 2016-2023, NVIDIA CORPORATION & AFFILIATES. All rights reserved.
+
+This container image and its contents are governed by the NVIDIA Deep Learning Container License.
+By pulling and using the container, you accept the terms and conditions of this license:
+https://developer.nvidia.com/ngc/nvidia-deep-learning-container-license
+
+A copy of this license is made available in this container at /NGC-DL-CONTAINER-LICENSE for your convenience.
+
+name, clocks.max.sm [MHz], power.limit [W]
+NVIDIA H200, 1980 MHz, 700.00 W
++ /opt/sglang/bin/python kpatt3_bench.py --out /vol/out/kpatt3/20261120T003646Z_bench/bench.json --modes 0
+gpu NVIDIA H200 132 SMs torch 2.14.1+cu130
+built [0] in 23s
+SASS _ZN6sglang23muse_spark_prefill_attn11attn_kernelILi8EEEvNS0_6ParamsE total=4832 ISETP=554 FMNMX=544 FFMA=544 MUFU=532 FADD=532 F2FP=272 FSEL=256 IMAD=168 VIADD=164 FMUL=146 UIADD3=124 BRA=85 PLOP3=52 ULOP3=52
+[acc rand_full_2k_h30k] fa3 max=0.03044 mean=0.00151 nan=0 | m0 max=0.03044 mean=0.00151 nan=0 | ops max=0.03044 mean=0.00151 nan=0 | m0_eq_ops_bits=True
+[acc rand_swa_2k_h16k] fa3 max=0.04814 mean=0.00245 nan=0 | m0 max=0.04814 mean=0.00244 nan=0 | ops max=0.04814 mean=0.00244 nan=0 | m0_eq_ops_bits=True
+[acc rand_short_1k_h0] fa3 max=0.04969 mean=0.00298 nan=0 | m0 max=0.04969 mean=0.00321 nan=0 | ops max=0.04969 mean=0.00321 nan=0 | m0_eq_ops_bits=True
+[acc rand_full_2k_h30k_s2] fa3 max=0.03119 mean=0.00152 nan=0 | m0 max=0.03119 mean=0.00152 nan=0 | ops max=0.03119 mean=0.00152 nan=0 | m0_eq_ops_bits=True
+[acc rand_full_4k_h60k] fa3 max=0.03517 mean=0.00132 nan=0 | m0 max=0.03517 mean=0.00132 nan=0 | ops max=0.03517 mean=0.00132 nan=0 | m0_eq_ops_bits=True
+[acc sink_full_2k_h30k] fa3 max=0.03047 mean=0.0015 nan=0 | m0 max=0.03047 mean=0.00149 nan=0 | ops max=0.03047 mean=0.00149 nan=0 | m0_eq_ops_bits=True
+[acc sink_swa_2k_h16k] fa3 max=0.04814 mean=0.00245 nan=0 | m0 max=0.04814 mean=0.00244 nan=0 | ops max=0.04814 mean=0.00244 nan=0 | m0_eq_ops_bits=True
+[acc rand_swa_short_1k_h0] fa3 max=0.04969 mean=0.00298 nan=0 | m0 max=0.04969 mean=0.00321 nan=0 | ops max=0.04969 mean=0.00321 nan=0 | m0_eq_ops_bits=True
+[acc peaked_full_2k_h8k] fa3 max=0.06798 mean=0.00257 nan=0 | m0 max=0.06798 mean=0.00257 nan=0 | ops max=0.06798 mean=0.00257 nan=0 | m0_eq_ops_bits=True
+[acc peaked_swa_2k_h8k] fa3 max=0.08546 mean=0.00251 nan=0 | m0 max=0.08546 mean=0.0025 nan=0 | ops max=0.08546 mean=0.0025 nan=0 | m0_eq_ops_bits=True
+[acc flat_full_2k_h8k] fa3 max=0.001209 mean=0.000187 nan=0 | m0 max=0.001209 mean=0.000188 nan=0 | ops max=0.001209 mean=0.000188 nan=0 | m0_eq_ops_bits=True
+[acc flat_swa_2k_h8k] fa3 max=0.002498 mean=0.000388 nan=0 | m0 max=0.002552 mean=0.000387 nan=0 | ops max=0.002552 mean=0.000387 nan=0 | m0_eq_ops_bits=True
+[acc large_full_1k_h4k] fa3 max=0.5268 mean=0.000387 nan=0 | m0 max=0.5268 mean=0.000393 nan=0 | ops max=0.5268 mean=0.000393 nan=0 | m0_eq_ops_bits=True
+[acc large_swa_1k_h4k] fa3 max=0.469 mean=0.000382 nan=0 | m0 max=0.469 mean=0.000389 nan=0 | ops max=0.469 mean=0.000389 nan=0 | m0_eq_ops_bits=True
+[acc growing_full_1k_h16k] fa3 max=0.04176 mean=0.00257 nan=0 | m0 max=0.04176 mean=0.00256 nan=0 | ops max=0.04176 mean=0.00256 nan=0 | m0_eq_ops_bits=True
+[acc growing_swa_1k_h16k] fa3 max=0.04094 mean=0.00243 nan=0 | m0 max=0.04094 mean=0.00272 nan=0 | ops max=0.04094 mean=0.00272 nan=0 | m0_eq_ops_bits=True
+[acc tail_g15.8_1k_h64k] fa3 max=0.003927 mean=0.000514 nan=0 | m0 max=0.003997 mean=0.000515 nan=0 | ops max=0.003997 mean=0.000515 nan=0 | m0_eq_ops_bits=True
+[acc tail_g17.8_1k_h64k] fa3 max=0.004039 mean=0.000819 nan=0 | m0 max=0.004094 mean=0.000819 nan=0 | ops max=0.004094 mean=0.000819 nan=0 | m0_eq_ops_bits=True
+[acc tail_g19.8_1k_h64k] fa3 max=0.004797 mean=0.000987 nan=0 | m0 max=0.004797 mean=0.000987 nan=0 | ops max=0.004797 mean=0.000987 nan=0 | m0_eq_ops_bits=True
+[full0] fa3=900us ops=831us m0=830us
+[full16k] fa3=2692us ops=2397us m0=2397us
+[full32k] fa3=4464us ops=3942us m0=3941us
+[full48k] fa3=6237us ops=5479us m0=5479us
+[full64k] fa3=8026us ops=7023us m0=7025us
+[swa0] fa3=284us ops=268us m0=268us
+[swa16k] fa3=311us ops=293us m0=293us
+chunk 1 ms: fa3=27.45 ops=25.63 m0=25.60
+chunk 2 ms: fa3=57.35 ops=51.82 m0=51.83
+chunk 3 ms: fa3=85.72 ops=76.54 m0=76.54
+chunk 4 ms: fa3=114.08 ops=101.14 m0=101.14
+chunk 5 ms: fa3=142.71 ops=125.83 m0=125.88
+mean over 4.5 chunks ms: fa3=79.10 (vs m0 -8.43) ops=70.68 (vs m0 -0.00) m0=70.68 (vs m0 +0.00)
+rc=0 after 43s
++ /opt/sglang/bin/python -m pytest -q -p no:cacheprovider /root/lane/kpatt3/test/registered/kernels/ops/attention/test_muse_spark_prefill_attention_kernel.py
+...........                                                              [100%]
+=============================== warnings summary ===============================
+../../../opt/sglang/lib/python3.12/site-packages/_pytest/config/__init__.py:1636
+  /opt/sglang/lib/python3.12/site-packages/_pytest/config/__init__.py:1636: PytestConfigWarning: Unknown config option: asyncio_mode
+  
+    self._warn_or_fail_if_strict(f"Unknown config option: {key}\n")
+
+registered/kernels/ops/attention/test_muse_spark_prefill_attention_kernel.py::test_matches_fa3_accuracy[reqs0-0]
+  /opt/sglang/lib/python3.12/site-packages/flashinfer/fused_moe/cute_dsl/blackwell/blockscaled_contiguous_gather_grouped_gemm_act_fusion.py:3459: DeprecationWarning: cutlass.utils.LayoutEnum is deprecated; use cutlass.tensor_utils.LayoutEnum instead. It will be removed in a future release.
+    c_layout: utils.LayoutEnum,
+
+registered/kernels/ops/attention/test_muse_spark_prefill_attention_kernel.py::test_matches_fa3_accuracy[reqs0-0]
+  /opt/sglang/lib/python3.12/site-packages/flashinfer/fused_moe/cute_dsl/blackwell/moe_w4a16_kernel.py:2386: DeprecationWarning: cutlass.utils.LayoutEnum is deprecated; use cutlass.tensor_utils.LayoutEnum instead. It will be removed in a future release.
+    c_layout: utils.LayoutEnum,
+
+registered/kernels/ops/attention/test_muse_spark_prefill_attention_kernel.py::test_matches_fa3_accuracy[reqs0-0]
+  /opt/sglang/lib/python3.12/site-packages/flashinfer/fused_moe/cute_dsl/hopper/utils.py:29: DeprecationWarning: cutlass.utils.LayoutEnum is deprecated; use cutlass.tensor_utils.LayoutEnum instead. It will be removed in a future release.
+    a_layout: utils.LayoutEnum,
+
+registered/kernels/ops/attention/test_muse_spark_prefill_attention_kernel.py::test_matches_fa3_accuracy[reqs0-0]
+  /opt/sglang/lib/python3.12/site-packages/flashinfer/fused_moe/cute_dsl/hopper/utils.py:31: DeprecationWarning: cutlass.utils.LayoutEnum is deprecated; use cutlass.tensor_utils.LayoutEnum instead. It will be removed in a future release.
+    b_layout: utils.LayoutEnum,
+
+registered/kernels/ops/attention/test_muse_spark_prefill_attention_kernel.py::test_matches_fa3_accuracy[reqs0-0]
+  /opt/sglang/lib/python3.12/site-packages/flashinfer/fused_moe/cute_dsl/hopper/utils.py:34: DeprecationWarning: cutlass.utils.LayoutEnum is deprecated; use cutlass.tensor_utils.LayoutEnum instead. It will be removed in a future release.
+    c_layout: utils.LayoutEnum,
+
+registered/kernels/ops/attention/test_muse_spark_prefill_attention_kernel.py::test_matches_fa3_accuracy[reqs0-0]
+  /opt/sglang/lib/python3.12/site-packages/flashinfer/fused_moe/cute_dsl/hopper/contiguous_grouped_gemm_finalize_fusion.py:968: DeprecationWarning: cutlass.utils.LayoutEnum is deprecated; use cutlass.tensor_utils.LayoutEnum instead. It will be removed in a future release.
+    a_layout: utils.LayoutEnum,
+
+registered/kernels/ops/attention/test_muse_spark_prefill_attention_kernel.py::test_matches_fa3_accuracy[reqs0-0]
+  /opt/sglang/lib/python3.12/site-packages/flashinfer/fused_moe/cute_dsl/hopper/contiguous_grouped_gemm_finalize_fusion.py:970: DeprecationWarning: cutlass.utils.LayoutEnum is deprecated; use cutlass.tensor_utils.LayoutEnum instead. It will be removed in a future release.
+    b_layout: utils.LayoutEnum,
+
+registered/kernels/ops/attention/test_muse_spark_prefill_attention_kernel.py::test_matches_fa3_accuracy[reqs0-0]
+  /opt/sglang/lib/python3.12/site-packages/flashinfer/gemm/kernels/grouped_gemm_masked_blackwell.py:427: DeprecationWarning: cutlass.utils.LayoutEnum is deprecated; use cutlass.tensor_utils.LayoutEnum instead. It will be removed in a future release.
+    epi_layout: utils.LayoutEnum,
+
+registered/kernels/ops/attention/test_muse_spark_prefill_attention_kernel.py::test_matches_fa3_accuracy[reqs0-0]
+  /opt/sglang/lib/python3.12/site-packages/flashinfer/gemm/kernels/grouped_gemm_masked_blackwell.py:2391: DeprecationWarning: cutlass.utils.LayoutEnum is deprecated; use cutlass.tensor_utils.LayoutEnum instead. It will be removed in a future release.
+    c_layout: utils.LayoutEnum,
+
+registered/kernels/ops/attention/test_muse_spark_prefill_attention_kernel.py::test_matches_fa3_accuracy[reqs0-0]
+  /opt/sglang/lib/python3.12/site-packages/flashinfer/gemm/kernels/cute_dsl/low_latency_blockscaled_gemm.py:102: DeprecationWarning: cutlass.utils.smem_allocator.get_smem_capacity_in_bytes is deprecated; use cutlass.memory.get_smem_capacity_in_bytes instead. It will be removed in a future release.
+    _SMEM_CAPACITY_BYTES = cutlass.utils.get_smem_capacity_in_bytes("sm_100")
+
+registered/kernels/ops/attention/test_muse_spark_prefill_attention_kernel.py::test_matches_fa3_accuracy[reqs0-0]
+  /opt/sglang/lib/python3.12/site-packages/flashinfer/gemm/kernels/grouped_gemm_masked_rubin.py:218: DeprecationWarning: cutlass.utils.LayoutEnum is deprecated; use cutlass.tensor_utils.LayoutEnum instead. It will be removed in a future release.
+    c_layout: utils.LayoutEnum,
+
+registered/kernels/ops/attention/test_muse_spark_prefill_attention_kernel.py::test_matches_fa3_accuracy[reqs0-0]
+registered/kernels/ops/attention/test_muse_spark_prefill_attention_kernel.py::test_matches_fa3_accuracy[reqs0-0]
+  /opt/sglang/lib/python3.12/site-packages/flashinfer/gdn_kernels/blackwell/gated_delta_net_chunked.py:95: DeprecationWarning: cutlass.utils.TensorMapUpdateMode is deprecated; use cutlass.tensor_utils.TensorMapUpdateMode instead. It will be removed in a future release.
+    from cutlass.utils import TensorMapManager, TensorMapUpdateMode
+
+registered/kernels/ops/attention/test_muse_spark_prefill_attention_kernel.py::test_matches_fa3_accuracy[reqs0-0]
+  /opt/sglang/lib/python3.12/site-packages/flashinfer/gdn_kernels/delta_rule_dsl/collective_store_tma.py:6: DeprecationWarning: cutlass.utils.tensormap_manager.TensorMapUpdateMode is deprecated; use cutlass.tensor_utils.TensorMapUpdateMode instead. It will be removed in a future release.
+    from cutlass.utils.tensormap_manager import TensorMapManager, TensorMapUpdateMode
+
+registered/kernels/ops/attention/test_muse_spark_prefill_attention_kernel.py::test_matches_fa3_accuracy[reqs0-0]
+registered/kernels/ops/attention/test_muse_spark_prefill_attention_kernel.py::test_matches_fa3_accuracy[reqs0-0]
+  /opt/sglang/lib/python3.12/site-packages/flashinfer/gdn_kernels/blackwell/gated_delta_net_cp_prefill.py:55: DeprecationWarning: cutlass.utils.TensorMapUpdateMode is deprecated; use cutlass.tensor_utils.TensorMapUpdateMode instead. It will be removed in a future release.
+    from cutlass.utils import TensorMapManager, TensorMapUpdateMode
+
+registered/kernels/ops/attention/test_muse_spark_prefill_attention_kernel.py::test_matches_fa3_accuracy[reqs0-0]
+  /opt/sglang/lib/python3.12/site-packages/flashinfer/cute_dsl/availability.py:136: DeprecationWarning: Arch from arch.py is deprecated. Use Arch from enums.py instead.
+    from cutlass.base_dsl.arch import Arch
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+11 passed, 18 warnings in 15.23s
+rc=0 after 18s
+results in /vol/out/kpatt3/20261120T003646Z_bench
+BENCH_JSON {  "gpu": "NVIDIA H200",  "modes": [   0  ],  "time": {   "full0": {    "fa3": {     "med_us": 899.8720049858093,     "p10_us": 898.4000086784363,     "p90_us": 907.8400135040283    },    "ops": {     "med_us": 830.6879997253418,     "p10_us": 829.4399976730347,     "p90_us": 837.664008140564    },    "m0": {     "med_us": 830.3200006484985,     "p10_us": 829.2160034179688,     "p90_us": 837.3759984970093    }   },   "full16k": {    "fa3": {     "med_us": 2691.5680170059204,     "p10_us": 2687.1039867401123,     "p90_us": 2698.5599994659424    },    "ops": {     "med_us": 2396.6879844665527,     "p10_us": 2394.304037094116,     "p90_us": 2401.952028274536    },    "m0": {     "med_us": 2396.9600200653076,     "p10_us": 2394.0160274505615,     "p90_us": 2401.695966720581    }   },   "full32k": {    "fa3": {     "med_us": 4464.415788650513,     "p10_us": 4458.591938018799,     "p90_us": 4473.440170288086    },    "ops": {     "med_us": 3941.9519901275635,     "p10_us": 3937.376022338867,     "p90_us": 3952.9600143432617    },    "m0": {     "med_us": 3941.1360025405884,     "p10_us": 3936.8960857391357,     "p90_us": 3948.767900466919    }   },   "full48k": {    "fa3": {     "med_us": 6236.9279861450195,     "p10_us": 6227.968215942383,     "p90_us": 6250.336170196533    },    "ops": {     "med_us": 5479.295969009399,     "p10_us": 5472.832202911377,     "p90_us": 5492.640018463135    },    "m0": {     "med_us": 5478.815793991089,     "p10_us": 5472.928047180176,     "p90_us": 5493.120193481445    }   },   "full64k": {    "fa3": {     "med_us": 8026.159763336182,     "p10_us": 8003.6163330078125,     "p90_us": 8089.471817016602    },    "ops": {     "med_us": 7022.576093673706,     "p10_us": 7003.488063812256,     "p90_us": 7081.31217956543    },    "m0": {     "med_us": 7025.10404586792,     "p10_us": 7004.767894744873,     "p90_us": 7081.151962280273    }   },   "swa0": {    "fa3": {     "med_us": 283.7280035018921,     "p10_us": 282.6879918575287,     "p90_us": 285.0880026817322    },    "ops": {     "med_us": 268.2560086250305,     "p10_us": 267.13600754737854,     "p90_us": 269.1519856452942    },    "m0": {     "med_us": 267.68000423908234,     "p10_us": 267.0400142669678,     "p90_us": 268.7999904155731    }   },   "swa16k": {    "fa3": {     "med_us": 310.62400341033936,     "p10_us": 308.0640137195587,     "p90_us": 312.25600838661194    },    "ops": {     "med_us": 292.83198714256287,     "p10_us": 291.8719947338104,     "p90_us": 293.503999710083    },    "m0": {     "med_us": 292.9919958114624,     "p10_us": 291.5840148925781,     "p90_us": 293.7600016593933    }   }  },  "acc": {   "rand_full_2k_h30k": {    "fa3": {     "max_abs": 0.030441106404557106,     "mean_abs": 0.001514348792324509,     "rel_fro": 0.010794761242282928,     "nan": 0    },    "m0": {     "max_abs": 0.030441106404557106,     "mean_abs": 0.0015139520192195004,     "rel_fro": 0.010792472390778483,     "nan": 0    },    "ops": {     "max_abs": 0.030441106404557106,     "mean_abs": 0.0015139520192195004,     "rel_fro": 0.010792472390778483,     "nan": 0    },    "m0_eq_ops_bits": true   },   "rand_swa_2k_h16k": {    "fa3": {     "max_abs": 0.04813885470983248,     "mean_abs": 0.0024533232736732545,     "rel_fro": 0.01002036871734671,     "nan": 0    },    "m0": {     "max_abs": 0.04813885470983248,     "mean_abs": 0.002440766333375334,     "rel_fro": 0.009970743186191304,     "nan": 0    },    "ops": {     "max_abs": 0.04813885470983248,     "mean_abs": 0.002440766333375334,     "rel_fro": 0.009970743186191304,     "nan": 0    },    "m0_eq_ops_bits": true   },   "rand_short_1k_h0": {    "fa3": {     "max_abs": 0.0496917059374582,     "mean_abs": 0.002982874024309126,     "rel_fro": 0.009356928235237844,     "nan": 0    },    "m0": {     "max_abs": 0.0496917059374582,     "mean_abs": 0.003209079129447295,     "rel_fro": 0.009936071776232618,     "nan": 0    },    "ops": {     "max_abs": 0.0496917059374582,     "mean_abs": 0.003209079129447295,     "rel_fro": 0.009936071776232618,     "nan": 0    },    "m0_eq_ops_bits": true   },   "rand_full_2k_h30k_s2": {    "fa3": {     "max_abs": 0.0311883025820332,     "mean_abs": 0.001519192391210887,     "rel_fro": 0.010862212670336137,     "nan": 0    },    "m0": {     "max_abs": 0.0311883025820332,     "mean_abs": 0.0015189497939599272,     "rel_fro": 0.010858786571689021,     "nan": 0    },    "ops": {     "max_abs": 0.0311883025820332,     "mean_abs": 0.0015189497939599272,     "rel_fro": 0.010858786571689021,     "nan": 0    },    "m0_eq_ops_bits": true   },   "rand_full_4k_h60k": {    "fa3": {     "max_abs": 0.035173802062698156,     "mean_abs": 0.0013179295668300992,     "rel_fro": 0.010985034792105806,     "nan": 0    },    "m0": {     "max_abs": 0.035173802062698156,     "mean_abs": 0.0013177478407065946,     "rel_fro": 0.01098313435696537,     "nan": 0    },    "ops": {     "max_abs": 0.035173802062698156,     "mean_abs": 0.0013177478407065946,     "rel_fro": 0.01098313435696537,     "nan": 0    },    "m0_eq_ops_bits": true   },   "sink_full_2k_h30k": {    "fa3": {     "max_abs": 0.030467795280674226,     "mean_abs": 0.0014952711699056614,     "rel_fro": 0.008981928824667924,     "nan": 0    },    "m0": {     "max_abs": 0.030467795280674226,     "mean_abs": 0.0014948053790270243,     "rel_fro": 0.008980125473145154,     "nan": 0    },    "ops": {     "max_abs": 0.030467795280674226,     "mean_abs": 0.0014948053790270243,     "rel_fro": 0.008980125473145154,     "nan": 0    },    "m0_eq_ops_bits": true   },   "sink_swa_2k_h16k": {    "fa3": {     "max_abs": 0.04813885470983248,     "mean_abs": 0.0024533232736732545,     "rel_fro": 0.01002036871734671,     "nan": 0    },    "m0": {     "max_abs": 0.04813885470983248,     "mean_abs": 0.002440766333375334,     "rel_fro": 0.009970743186191304,     "nan": 0    },    "ops": {     "max_abs": 0.04813885470983248,     "mean_abs": 0.002440766333375334,     "rel_fro": 0.009970743186191304,     "nan": 0    },    "m0_eq_ops_bits": true   },   "rand_swa_short_1k_h0": {    "fa3": {     "max_abs": 0.0496917059374582,     "mean_abs": 0.002982874024309126,     "rel_fro": 0.009356928235237844,     "nan": 0    },    "m0": {     "max_abs": 0.0496917059374582,     "mean_abs": 0.003209079129447295,     "rel_fro": 0.009936071776232618,     "nan": 0    },    "ops": {     "max_abs": 0.0496917059374582,     "mean_abs": 0.003209079129447295,     "rel_fro": 0.009936071776232618,     "nan": 0    },    "m0_eq_ops_bits": true   },   "peaked_full_2k_h8k": {    "fa3": {     "max_abs": 0.06797708151703885,     "mean_abs": 0.0025678144048600898,     "rel_fro": 0.005604295225498055,     "nan": 0    },    "m0": {     "max_abs": 0.06797708151703885,     "mean_abs": 0.002566950019851145,     "rel_fro": 0.005605557628670028,     "nan": 0    },    "ops": {     "max_abs": 0.06797708151703885,     "mean_abs": 0.002566950019851145,     "rel_fro": 0.005605557628670028,     "nan": 0    },    "m0_eq_ops_bits": true   },   "peaked_swa_2k_h8k": {    "fa3": {     "max_abs": 0.08546326469874987,     "mean_abs": 0.0025104553671777344,     "rel_fro": 0.005428167732511926,     "nan": 0    },    "m0": {     "max_abs": 0.08546326469874987,     "mean_abs": 0.0024966347734099795,     "rel_fro": 0.005402563578622189,     "nan": 0    },    "ops": {     "max_abs": 0.08546326469874987,     "mean_abs": 0.0024966347734099795,     "rel_fro": 0.005402563578622189,     "nan": 0    },    "m0_eq_ops_bits": true   },   "flat_full_2k_h8k": {    "fa3": {     "max_abs": 0.0012086473236447189,     "mean_abs": 0.00018747101780136513,     "rel_fro": 0.022547462322566218,     "nan": 0    },    "m0": {     "max_abs": 0.0012086473236447189,     "mean_abs": 0.00018750923835795928,     "rel_fro": 0.02255104999089936,     "nan": 0    },    "ops": {     "max_abs": 0.0012086473236447189,     "mean_abs": 0.00018750923835795928,     "rel_fro": 0.02255104999089936,     "nan": 0    },    "m0_eq_ops_bits": true   },   "flat_swa_2k_h8k": {    "fa3": {     "max_abs": 0.0024984022589873388,     "mean_abs": 0.0003876668514728506,     "rel_fro": 0.02052894092803061,     "nan": 0    },    "m0": {     "max_abs": 0.002552418582490652,     "mean_abs": 0.0003872539675822546,     "rel_fro": 0.020510323548229056,     "nan": 0    },    "ops": {     "max_abs": 0.002552418582490652,     "mean_abs": 0.0003872539675822546,     "rel_fro": 0.020510323548229056,     "nan": 0    },    "m0_eq_ops_bits": true   },   "large_full_1k_h4k": {    "fa3": {     "max_abs": 0.5268395669176013,     "mean_abs": 0.00038687842562779793,     "rel_fro": 0.004954064910342784,     "nan": 0    },    "m0": {     "max_abs": 0.5268395669176013,     "mean_abs": 0.00039251419255528053,     "rel_fro": 0.004970336474443184,     "nan": 0    },    "ops": {     "max_abs": 0.5268395669176013,     "mean_abs": 0.00039251419255528053,     "rel_fro": 0.004970336474443184,     "nan": 0    },    "m0_eq_ops_bits": true   },   "large_swa_1k_h4k": {    "fa3": {     "max_abs": 0.4690397368550798,     "mean_abs": 0.0003818964798297598,     "rel_fro": 0.005209127012894482,     "nan": 0    },    "m0": {     "max_abs": 0.4690397368550798,     "mean_abs": 0.0003888254669828392,     "rel_fro": 0.005271507573546419,     "nan": 0    },    "ops": {     "max_abs": 0.4690397368550798,     "mean_abs": 0.0003888254669828392,     "rel_fro": 0.005271507573546419,     "nan": 0    },    "m0_eq_ops_bits": true   },   "growing_full_1k_h16k": {    "fa3": {     "max_abs": 0.04175720058552068,     "mean_abs": 0.0025734454305478094,     "rel_fro": 0.010785960569154998,     "nan": 0    },    "m0": {     "max_abs": 0.04175720058552068,     "mean_abs": 0.0025595068202979897,     "rel_fro": 0.0107329156601833,     "nan": 0    },    "ops": {     "max_abs": 0.04175720058552068,     "mean_abs": 0.0025595068202979897,     "rel_fro": 0.0107329156601833,     "nan": 0    },    "m0_eq_ops_bits": true   },   "growing_swa_1k_h16k": {    "fa3": {     "max_abs": 0.04094290537153933,     "mean_abs": 0.0024312099682948438,     "rel_fro": 0.009556115979658818,     "nan": 0    },    "m0": {     "max_abs": 0.04094290537153933,     "mean_abs": 0.002719135279046759,     "rel_fro": 0.010694406375063662,     "nan": 0    },    "ops": {     "max_abs": 0.04094290537153933,     "mean_abs": 0.002719135279046759,     "rel_fro": 0.010694406375063662,     "nan": 0    },    "m0_eq_ops_bits": true   },   "tail_g15.8_1k_h64k": {    "fa3": {     "max_abs": 0.003927360195915552,     "mean_abs": 0.0005144297162061707,     "rel_fro": 0.0016785201191709723,     "nan": 0    },    "m0": {     "max_abs": 0.003997381801488009,     "mean_abs": 0.0005146943886653207,     "rel_fro": 0.0016750134087011059,     "nan": 0    },    "ops": {     "max_abs": 0.003997381801488009,     "mean_abs": 0.0005146943886653207,     "rel_fro": 0.0016750134087011059,     "nan": 0    },    "m0_eq_ops_bits": true   },   "tail_g17.8_1k_h64k": {    "fa3": {     "max_abs": 0.004038870848957377,     "mean_abs": 0.0008185345379018957,     "rel_fro": 0.0015847915703902553,     "nan": 0    },    "m0": {     "max_abs": 0.004094198587798248,     "mean_abs": 0.0008186493358401865,     "rel_fro": 0.0015847806503848795,     "nan": 0    },    "ops": {     "max_abs": 0.004094198587798248,     "mean_abs": 0.0008186493358401865,     "rel_fro": 0.0015847806503848795,     "nan": 0    },    "m0_eq_ops_bits": true   },   "tail_g19.8_1k_h64k": {    "fa3": {     "max_abs": 0.004797057835525198,     "mean_abs": 0.000986625462500657,     "rel_fro": 0.0015386390035291213,     "nan": 0    },    "m0": {     "max_abs": 0.004797057835525198,     "mean_abs": 0.0009865713132151473,     "rel_fro": 0.0015387050915593116,     "nan": 0    },    "ops": {     "max_abs": 0.004797057835525198,     "mean_abs": 0.0009865713132151473,     "rel_fro": 0.0015387050915593116,     "nan": 0    },    "m0_eq_ops_bits": true   }  },  "sass": {   "_ZN6sglang23muse_spark_prefill_attn11attn_kernelILi8EEEvNS0_6ParamsE": {    "total": 4832,    "top": [     [      "ISETP",      554     ],     [      "FMNMX",      544     ],     [      "FFMA",      544     ],     [      "MUFU",      532     ],     [      "FADD",      532     ],     [      "F2FP",      272     ],     [      "FSEL",      256     ],     [      "IMAD",      168     ],     [      "VIADD",      164     ],     [      "FMUL",      146     ],     [      "UIADD3",      124     ],     [      "BRA",      85     ],     [      "PLOP3",      52     ],     [      "ULOP3",      52     ]    ]   }  },  "chunks_ms": {   "1": {    "fa3": 27.449440240859985,    "ops": 25.630784392356873,    "m0": 25.598400205373764   },   "2": {    "fa3": 57.35379242897034,    "ops": 51.817279160022736,    "m0": 51.82899212837219   },   "3": {    "fa3": 85.71935677528381,    "ops": 76.54150325059891,    "m0": 76.53580784797668   },   "4": {    "fa3": 114.07955193519592,    "ops": 101.13900691270828,    "m0": 101.13868451118469   },   "5": {    "fa3": 142.70726037025452,    "ops": 125.83148890733719,    "m0": 125.87929654121399   }  },  "mean_4p5_chunks_ms": {   "fa3": 79.10128257009718,   "ops": 70.67651514874564,   "m0": 70.67589621411429  } }
+Stopping app - local entrypoint completed.
+✓ App completed. View run at 
+https://modal.com/apps/<workspace>/main/ap-9KPWocqVk0WRdxY9V0Mp9N

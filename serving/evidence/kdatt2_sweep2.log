@@ -1,0 +1,135 @@
+✓ Initialized. View run at 
+https://modal.com/apps/<workspace>/main/ap-MjZJpfUfGxEA8vXo0NHB8x
+✓ Created objects.
+├── ✓ Uploaded 
+│   <repo>/serving/h
+│   arness/modal_kmask_ubench.py
+├── ✓ Uploaded 
+│   <repo>/serving/l
+│   anes/kpatt3_tools
+├── ✓ Uploaded 
+│   <repo>/serving/l
+│   anes/kmask_tools
+├── ✓ Uploaded 
+│   <repo>/serving/l
+│   anes/kwide2_tools
+├── ✓ Uploaded 
+│   <repo>/serving/l
+│   anes/kdatt2/test
+├── ✓ Uploaded 
+│   <repo>/serving/l
+│   anes/kdatt2/python/sglang
+├── ✓ Created Function cpu_compile.
+├── ✓ Created Function cputests.
+├── ✓ Created Function run.
+├── ✓ Created Function diag.
+├── ✓ Created Function adv.
+├── ✓ Created Function gputests.
+├── ✓ Created Function sweep.
+├── ✓ Created Function abtime.
+└── ✓ Created Function pfab.
+
+==========
+== CUDA ==
+==========
+
+CUDA Version 13.0.3
+
+Container image Copyright (c) 2016-2023, NVIDIA CORPORATION & AFFILIATES. All rights reserved.
+
+This container image and its contents are governed by the NVIDIA Deep Learning Container License.
+By pulling and using the container, you accept the terms and conditions of this license:
+https://developer.nvidia.com/ngc/nvidia-deep-learning-container-license
+
+A copy of this license is made available in this container at /NGC-DL-CONTAINER-LICENSE for your convenience.
+
+===== /opt/sglang/bin/python kdatt_bs_sweep.py  (limit 480s)
+[W=0 bs=1] max|kdatt-fa3tree|=0.0000 replay==eager True finite True
+[W=0 bs=2] max|kdatt-fa3tree|=0.0000 replay==eager True finite True
+[W=0 bs=3] max|kdatt-fa3tree|=0.0000 replay==eager True finite True
+[W=0 bs=4] max|kdatt-fa3tree|=0.0156 replay==eager True finite True
+[W=0 bs=5] max|kdatt-fa3tree|=0.0312 replay==eager True finite True
+[W=0 bs=6] max|kdatt-fa3tree|=0.0117 replay==eager True finite True
+[W=0 bs=7] max|kdatt-fa3tree|=0.0156 replay==eager True finite True
+[W=0 bs=8] max|kdatt-fa3tree|=0.0186 replay==eager True finite True
+[W=0 bs=9] max|kdatt-fa3tree|=0.0234 replay==eager True finite True
+[W=0 bs=10] max|kdatt-fa3tree|=0.0327 replay==eager True finite True
+[W=0 bs=11] max|kdatt-fa3tree|=0.0273 replay==eager True finite True
+[W=0 bs=12] max|kdatt-fa3tree|=0.0225 replay==eager True finite True
+[W=0 bs=13] max|kdatt-fa3tree|=0.0469 replay==eager True finite True
+[W=0 bs=14] max|kdatt-fa3tree|=0.0488 replay==eager True finite True
+[W=0 bs=15] max|kdatt-fa3tree|=0.0234 replay==eager True finite True
+[W=0 bs=16] max|kdatt-fa3tree|=0.0352 replay==eager True finite True
+[W=0 bs=17] max|kdatt-fa3tree|=0.0391 replay==eager True finite True
+[W=0 bs=18] max|kdatt-fa3tree|=0.0259 replay==eager True finite True
+[W=0 bs=19] max|kdatt-fa3tree|=0.0176 replay==eager True finite True
+[W=0 bs=20] max|kdatt-fa3tree|=0.0441 replay==eager True finite True
+[W=0 bs=21] max|kdatt-fa3tree|=0.0371 replay==eager True finite True
+[W=0 bs=22] max|kdatt-fa3tree|=0.0352 replay==eager True finite True
+[W=0 bs=23] max|kdatt-fa3tree|=0.0430 replay==eager True finite True
+[W=0 bs=24] max|kdatt-fa3tree|=0.0293 replay==eager True finite True
+[W=0 bs=25] max|kdatt-fa3tree|=0.0352 replay==eager True finite True
+[W=0 bs=26] max|kdatt-fa3tree|=0.0312 replay==eager True finite True
+[W=0 bs=27] max|kdatt-fa3tree|=0.0332 replay==eager True finite True
+[W=0 bs=28] max|kdatt-fa3tree|=0.0278 replay==eager True finite True
+[W=0 bs=29] max|kdatt-fa3tree|=0.0352 replay==eager True finite True
+[W=0 bs=30] max|kdatt-fa3tree|=0.0312 replay==eager True finite True
+[W=0 bs=31] max|kdatt-fa3tree|=0.0234 replay==eager True finite True
+[W=0 bs=32] max|kdatt-fa3tree|=0.0312 replay==eager True finite True
+[W=0 bs=33] max|kdatt-fa3tree|=0.0312 replay==eager True finite True
+[W=0 bs=34] max|kdatt-fa3tree|=0.0312 replay==eager True finite True
+[W=0 bs=35] max|kdatt-fa3tree|=0.0273 replay==eager True finite True
+[W=0 bs=36] max|kdatt-fa3tree|=0.0312 replay==eager True finite True
+[W=0 bs=37] max|kdatt-fa3tree|=0.0312 replay==eager True finite True
+[W=0 bs=38] max|kdatt-fa3tree|=0.0430 replay==eager True finite True
+[W=0 bs=39] max|kdatt-fa3tree|=0.0400 replay==eager True finite True
+[W=0 bs=40] max|kdatt-fa3tree|=0.0391 replay==eager True finite True
+[W=0 bs=48] max|kdatt-fa3tree|=0.0234 replay==eager True finite True
+[W=0 bs=64] max|kdatt-fa3tree|=0.0195 replay==eager True finite True
+[W=2047 bs=1] max|kdatt-fa3tree|=0.0005 replay==eager True finite True
+[W=2047 bs=2] max|kdatt-fa3tree|=0.0000 replay==eager True finite True
+[W=2047 bs=3] max|kdatt-fa3tree|=0.0000 replay==eager True finite True
+[W=2047 bs=4] max|kdatt-fa3tree|=0.0156 replay==eager True finite True
+[W=2047 bs=5] max|kdatt-fa3tree|=0.0241 replay==eager True finite True
+[W=2047 bs=6] max|kdatt-fa3tree|=0.0195 replay==eager True finite True
+[W=2047 bs=7] max|kdatt-fa3tree|=0.0156 replay==eager True finite True
+[W=2047 bs=8] max|kdatt-fa3tree|=0.0234 replay==eager True finite True
+[W=2047 bs=9] max|kdatt-fa3tree|=0.0168 replay==eager True finite True
+[W=2047 bs=10] max|kdatt-fa3tree|=0.0186 replay==eager True finite True
+[W=2047 bs=11] max|kdatt-fa3tree|=0.0234 replay==eager True finite True
+[W=2047 bs=12] max|kdatt-fa3tree|=0.0222 replay==eager True finite True
+[W=2047 bs=13] max|kdatt-fa3tree|=0.0293 replay==eager True finite True
+[W=2047 bs=14] max|kdatt-fa3tree|=0.0215 replay==eager True finite True
+[W=2047 bs=15] max|kdatt-fa3tree|=0.0273 replay==eager True finite True
+[W=2047 bs=16] max|kdatt-fa3tree|=0.0352 replay==eager True finite True
+[W=2047 bs=17] max|kdatt-fa3tree|=0.0312 replay==eager True finite True
+[W=2047 bs=18] max|kdatt-fa3tree|=0.0391 replay==eager True finite True
+[W=2047 bs=19] max|kdatt-fa3tree|=0.0254 replay==eager True finite True
+[W=2047 bs=20] max|kdatt-fa3tree|=0.0312 replay==eager True finite True
+[W=2047 bs=21] max|kdatt-fa3tree|=0.0273 replay==eager True finite True
+[W=2047 bs=22] max|kdatt-fa3tree|=0.0234 replay==eager True finite True
+[W=2047 bs=23] max|kdatt-fa3tree|=0.0332 replay==eager True finite True
+[W=2047 bs=24] max|kdatt-fa3tree|=0.0312 replay==eager True finite True
+[W=2047 bs=25] max|kdatt-fa3tree|=0.0273 replay==eager True finite True
+[W=2047 bs=26] max|kdatt-fa3tree|=0.0322 replay==eager True finite True
+[W=2047 bs=27] max|kdatt-fa3tree|=0.0547 replay==eager True finite True
+[W=2047 bs=28] max|kdatt-fa3tree|=0.0391 replay==eager True finite True
+[W=2047 bs=29] max|kdatt-fa3tree|=0.0391 replay==eager True finite True
+[W=2047 bs=30] max|kdatt-fa3tree|=0.0400 replay==eager True finite True
+[W=2047 bs=31] max|kdatt-fa3tree|=0.0352 replay==eager True finite True
+[W=2047 bs=32] max|kdatt-fa3tree|=0.0312 replay==eager True finite True
+[W=2047 bs=33] max|kdatt-fa3tree|=0.0361 replay==eager True finite True
+[W=2047 bs=34] max|kdatt-fa3tree|=0.0469 replay==eager True finite True
+[W=2047 bs=35] max|kdatt-fa3tree|=0.0391 replay==eager True finite True
+[W=2047 bs=36] max|kdatt-fa3tree|=0.0352 replay==eager True finite True
+[W=2047 bs=37] max|kdatt-fa3tree|=0.0234 replay==eager True finite True
+[W=2047 bs=38] max|kdatt-fa3tree|=0.0352 replay==eager True finite True
+[W=2047 bs=39] max|kdatt-fa3tree|=0.0312 replay==eager True finite True
+[W=2047 bs=40] max|kdatt-fa3tree|=0.0352 replay==eager True finite True
+[W=2047 bs=48] max|kdatt-fa3tree|=0.0234 replay==eager True finite True
+[W=2047 bs=64] max|kdatt-fa3tree|=0.0391 replay==eager True finite True
+WORST 0.0547
+===== rc=0 (42s)
+Stopping app - local entrypoint completed.
+✓ App completed. View run at 
+https://modal.com/apps/<workspace>/main/ap-MjZJpfUfGxEA8vXo0NHB8x

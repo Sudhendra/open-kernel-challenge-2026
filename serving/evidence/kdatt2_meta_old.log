@@ -1,0 +1,55 @@
+✓ Initialized. View run at 
+https://modal.com/apps/<workspace>/main/ap-7WwzFQJmLwynOqd9BqP0Kg
+✓ Created objects.
+├── ✓ Uploaded 
+│   <repo>/serving/h
+│   arness/modal_kmask_ubench.py
+├── ✓ Uploaded 
+│   <repo>/serving/l
+│   anes/kpatt3_tools
+├── ✓ Uploaded 
+│   <repo>/serving/l
+│   anes/kwide2_tools
+├── ✓ Uploaded 
+│   <repo>/serving/l
+│   anes/kmask_tools
+├── ✓ Uploaded 
+│   <repo>/serving/l
+│   anes/kdatt2/test
+├── ✓ Uploaded 
+│   <repo>/serving/l
+│   anes/kdatt2/python/sglang
+├── ✓ Created Function cpu_compile.
+├── ✓ Created Function cputests.
+├── ✓ Created Function run.
+├── ✓ Created Function diag.
+├── ✓ Created Function adv.
+├── ✓ Created Function gputests.
+├── ✓ Created Function sweep.
+├── ✓ Created Function abtime.
+├── ✓ Created Function pfab.
+└── ✓ Created Function tool.
+
+==========
+== CUDA ==
+==========
+
+CUDA Version 13.0.3
+
+Container image Copyright (c) 2016-2023, NVIDIA CORPORATION & AFFILIATES. All rights reserved.
+
+This container image and its contents are governed by the NVIDIA Deep Learning Container License.
+By pulling and using the container, you accept the terms and conditions of this license:
+https://developer.nvidia.com/ngc/nvidia-deep-learning-container-license
+
+A copy of this license is made available in this container at /NGC-DL-CONTAINER-LICENSE for your convenience.
+
+===== /opt/sglang/bin/python kdatt_meta.py  (limit 540s)
+[meta B=1] | with_schedules: host 0.2045 ms, gpu span 0.1971 ms | tables_only: host 0.0942 ms, gpu span 0.0877 ms
+[meta B=4] | with_schedules: host 0.2060 ms, gpu span 0.1985 ms | tables_only: host 0.0955 ms, gpu span 0.0890 ms
+[meta B=16] | with_schedules: host 0.2050 ms, gpu span 0.1977 ms | tables_only: host 0.0952 ms, gpu span 0.0887 ms
+[meta B=32] | with_schedules: host 0.2168 ms, gpu span 0.2091 ms | tables_only: host 0.1001 ms, gpu span 0.0933 ms
+===== rc=0 (32s)
+Stopping app - local entrypoint completed.
+✓ App completed. View run at 
+https://modal.com/apps/<workspace>/main/ap-7WwzFQJmLwynOqd9BqP0Kg

@@ -1,0 +1,52 @@
+#!/usr/bin/env bash
+# okloop control. usage: okloop start|stop|status|log|aa|gate FILE|attempt LANE PROVIDER|approve|pause|resume|box check|setup|sync
+set -uo pipefail
+HERE=$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd); source "$HERE/config.env"; cd "$HERE"
+case "${1:-status}" in
+  start)  pgrep -f "okloop/loop.py" >/dev/null && { echo "already running"; exit 0; }
+          nohup caffeinate -i python3 "$HERE/loop.py" >> "$HERE/logs/loop.out" 2>&1 & echo "started pid $! (logs/loop.out)";;
+  stop)   pkill -f "okloop/loop.py"; pkill -f "okloop/attempt.sh"; echo "stopped (remote GPU jobs finish on their own)";;
+  research2) # second, independent research scanner: okloop research2 [start|stop|status] (provider opencode, lane research-ds)
+          case "${2:-start}" in
+            start) pgrep -f "okloop/research2.py" >/dev/null && { echo "research2 already running"; exit 0; }
+                   nohup caffeinate -i python3 "$HERE/research2.py" "${3:-opencode}" "${4:-research-ds}" >> "$HERE/logs/research-ds.out" 2>&1 & echo "research2 started pid $! (logs/research-ds.out)";;
+            stop)  pkill -f "okloop/research2.py"; echo "research2 stopped";;
+            status) pgrep -f "okloop/research2.py" >/dev/null && echo RUNNING || echo STOPPED; cat state/research-ds.json 2>/dev/null;;
+          esac;;
+  pause)  touch state/PAUSE; echo "paused: running attempts finish, no new ones";;
+  resume) rm -f state/PAUSE; echo "resumed";;
+  approve) touch state/approved; echo "approved pending submission (if any): $(cat state/pending_submit.txt 2>/dev/null)";;
+  log)    tail -n "${2:-40}" -f state/log.tsv;;
+  aa)     echo "A/A calibration: two paired runs of best vs its own copy (~10 min)"; ./box.sh A sync || exit 2
+          ./box.sh A run aa1 "best/submission.py best/aa_copy.py --reps $REPS" > logs/aa1.log 2>&1
+          ./box.sh A run aa2 "best/aa_copy.py best/submission.py --reps $REPS" > logs/aa2.log 2>&1
+          python3 - <<'PY'
+import re
+def sc(f): return {l.split()[1].rstrip(':'):float(l.split()[2]) for l in open(f) if l.startswith('SCORE ')}
+a,b=sc('logs/aa1.log'),sc('logs/aa2.log')
+d=[abs(a['aa_copy.py']/a['submission.py']-1), abs(b['aa_copy.py']/b['submission.py']-1)]
+band=max(max(d),0.002); open('state/aa_band.txt','w').write(f"{band:.4f}"); open('state/best_score.txt','w').write(f"{a['submission.py']:.4f}")
+import os
+if not os.path.exists('state/last_submitted_score.txt'): open('state/last_submitted_score.txt','w').write(f"{a['submission.py']:.4f}")
+print(f"A/A diffs {d[0]:+.4f} {d[1]:+.4f} -> band {band:.4f}; keep threshold {max(float(open('config.env').read().split('KEEP_MIN=')[1].split()[0]),2*band):.4f}; local best score {a['submission.py']:.4f}")
+PY
+          ;;
+  gate)   ATTEMPT=manual-$(date +%H%M%S) ./gate.sh --stage "${3:-all}" "$2";;
+  attempt) ./attempt.sh "$2" "$3";;
+  box)    ./box.sh A "${2:-check}"; [[ -n "$BOX_B" ]] && ./box.sh B "${2:-check}";;
+  status) python3 - <<'PY'
+import json,os,subprocess,datetime as dt
+try: s=json.load(open('state/status.json'))
+except Exception: print("no status yet (loop not started)"); raise SystemExit
+run=subprocess.run("pgrep -f okloop/loop.py >/dev/null && echo RUNNING || echo STOPPED",shell=True,capture_output=True,text=True).stdout.strip()
+print(f"okloop {run}  since {s['started']}  now {s['time']}  attempts {s['attempts']}  keeps {s['keeps']}  paused={s['paused']} boxA_down={s['box_down']}")
+print(f"local best {s.get('best_score')}  A/A band {s.get('aa_band')}  submits today {s.get('submits_today')}")
+print(f"{'lane':9s} {'provider':9s} {'stage':9s} {'since':15s} {'att':>4s} {'keep':>4s}  last")
+for k,v in s['lanes'].items(): print(f"{k:9s} {v['provider']:9s} {v['stage']:9s} {v['since']:15s} {v['attempts']:4d} {v['keeps']:4d}  {v['last'][:60]}")
+if os.path.exists('state/pending_submit.txt'): print("PENDING SUBMISSION -> okloop approve :", open('state/pending_submit.txt').read().strip())
+if os.path.exists('state/submits.tsv'):
+    print("submits:"); [print("  "+l.rstrip()[:150]) for l in open('state/submits.tsv').readlines()[-5:]]
+PY
+          echo "--- last 8 log lines"; tail -8 state/log.tsv 2>/dev/null;;
+  *) echo "usage: okloop start|stop|pause|resume|status|log [n]|aa|gate FILE [stage]|attempt LANE PROVIDER|approve|box [check|setup|sync]";;
+esac
